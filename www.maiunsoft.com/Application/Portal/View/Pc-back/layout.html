@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <!-- IE支持 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <!-- 页面描述 -->
+    <title>脉云软件 | {$_PageHeader.title}</title>
+    <meta name="keyword" content="{$_PageHeader.keywords}">
+    <meta name="description" content="{$_PageHeader.description}">
+    <link rel="shortcut icon" href="__PUBLIC__/icon.png">
+    <!-- Bootstrap 核心 CSS -->
+    <css href="http://static.maiunsoft.com/assets/bootstrap-3.3.5/css/bootstrap.min.css" />
+    <!--external css-->
+    
+    <css href="__PC_STATIC__/css/style.css" />
+    <!-- 将jQuery提前导入，以便于后面的内容引用 -->
+    <js href="http://static.maiunsoft.com/assets/jquery-2.2.0.min.js" />
+    <js href="__PC_STATIC__/js/html5.js" />
+    <!--[if lt IE 9]>
+    <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <script>alert('本站无法在IE8以下的IE浏览器中正常访问，请下载IE8及以上的浏览器');</script>
+    <![endif]-->
+    <css href="__PUBLIC__/Static/Assets/font-awesome-4.4.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+    <!--header start-->
+    <div style="background:#fff;width:100%;overflow:auto;">
+        <div class="container">
+            <div class="header">
+                <!-- 顶部logo和登录状态菜单 -->
+                <a class="logo" href="{:U('Index/index')}"></a>
+                <!-- 开始 - 主菜单栏 -->
+                <ul class="menus list-unstyled">
+                    <li>
+                        <a href="http://shop.maiunsoft.com" target="_blank">脉云商城</a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a href="http://club.maiunsoft.com" target="_blank">互动社区</a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="__PUBLIC__/weixin.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://weibo.com/mainusoft" target="_blank">
+                            <img src="__PUBLIC__/weibo.png" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.linkedin.com/company/maiunsoft" target="_blank">
+                            <img src="__PUBLIC__/linkedin.png" />
+                        </a>
+                    </li>
+                </ul>
+                <!-- 结束 - 主菜单栏 --> </div>
+        </div>
+    </div>
+    <include file="Public/main_menu" />
+    <!--header end-->
+    {__CONTENT__}
+    <!-- 开始 页脚内容 -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <php>$articleTypes = C('ARTICLE_TYPES');</php>
+                <div class="col-lg-2 menu">
+                    <h1>关于脉云</h1>
+                    <ul class="list-unstyled">
+                        <foreach name="footAboutGroupList" item="group">
+                            <li>
+                                <a href="__ROOT__/about/{$group.id}.html">-&nbsp;{$group.name}</a>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+                <php>$hireTypes = C('HIRE_TYPES');</php>
+                <div class="col-lg-2 menu">
+                    <h1>合作加盟</h1>
+                    <ul class="list-unstyled">
+                        <foreach name="footJoinGroupList" item="group">
+                            <li>
+                                <a href="__ROOT__/join/{$group.id}.html">-&nbsp;{$group.name}</a>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+                <div class="col-lg-2 menu">
+                    <h1>新闻资讯</h1>
+                    <ul class="list-unstyled">
+                        <foreach name="footNewsGroupList" item="group">
+                            <li>
+                                <a href="__ROOT__/news/{$group.id}.html">-&nbsp;{$group.name}</a>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+                <div class="col-lg-2 menu">
+                    <h1>移动脉云</h1>
+                    <div>
+                        <img src="__PUBLIC__/qcode.jpg" alt="" style="height:100px" />
+                    </div>
+                </div>
+                <div class="col-xs-4 menu">
+                    <h1 style="text-align:center;letter-spacing:4px;">聚焦数字世界，服务现代生活</h1>
+                    <div class="world"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row last-footer">
+        <div class="container">
+            <div class="row">
+                <a class="fa fa-copyright">版权所有：脉云软件(上海)有限公司&nbsp;&nbsp;2016-2017</a>
+                <a class="fa fa-shield">&nbsp;&nbsp;沪ICP备14051784号</a>
+                <div class="bdsharebuttonbox" style="float:right;">
+                    <a href="#" class="bds_more" data-cmd="more"></a>
+                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "2",
+            "bdSize": "16"
+        },
+        "share": {},
+        "image": {
+            "viewList": ["qzone", "tsina", "tqq", "renren", "weixin"],
+            "viewText": "分享到：",
+            "viewSize": "16"
+        },
+        "selectShare": {
+            "bdContainerClass": null,
+            "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]
+        }
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+    </script>
+    <!-- 结束 页脚内容 -->
+    <!-- js placed at the end of the document so the pages load faster -->
+    <js href="http://static.maiunsoft.com/assets/bootstrap-3.3.5/js/bootstrap.min.js" />
+    <js href="__PUBLIC_STATIC__/js/respond.min.js" />
+</body>
+
+</html>

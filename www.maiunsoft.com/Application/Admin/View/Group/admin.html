@@ -1,0 +1,152 @@
+<style type="text/css">
+    .edui-editor{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+function delete_group(id) {
+    location.href = '__URL__/delete/id/' + id;
+}
+
+function edit_group (id) {
+    $.get(
+        "{:U('group/single')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(data['status']==0){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                $("#editGroupModal button[name='group_id']").val(data['id']);
+                $("#editGroupModal input[name='group_name']").val(data['name']);
+                $("#editGroupModal textarea[name='group_bref']").text(data['bref']);
+                $("#editGroupModal select[name='group_type'] option[value="+data['type']+"]").attr("selected",true);
+
+                $("#editGroupModal .modal-title").html('修改分组:'+data['name']);
+                $("#editGroupModal").modal(); 
+            }
+        });
+}
+
+function edit_image (id) {
+    $.get(
+        "{:U('group/single')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(data==0){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                $("#editImageModal button[name='group_id']").val(data['id']);
+                $("#editImageModal .modal-title").html('上传图片：'+data['name']);
+                var imageUrl = "{:UploadUrl('group')}"+data['image'];
+                $("#editImageModal img[name='image_show']").attr('src',imageUrl);
+                $("#editImageModal").modal(); 
+            }
+        });
+}
+
+$(document).ready(function(){
+    
+
+    // 选择不同的库，显示相应的库存信息
+    $("#typeSelector").change(function(){
+        var url = "{:U('group/admin')}?type=" + $("#typeSelector").val();
+        window.location.href = url;
+    });
+
+    $("#addGroupBtn").click(function(){
+        $("#editGroupModal .modal-title").html('新建分组');
+        $("#editGroupModal input").val(null);
+        $("#editGroupModal").modal();  
+    });
+});
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <li>
+            <html:select name="type" title="name" options="typeList" selected="type" id="typeSelector"/>
+        </li>
+        <a id="addGroupBtn" class="pull-right fa fa-plus create-btn">&nbsp;新建分组</a>
+    </ul>
+    <html:grid datasource="groupList" key="true" pk="id" show="name:名称" style="table table-advance table-hover" action="true" actionList="edit_group:编辑,edit_image:图片,delete_group:删除" />
+</section>
+
+<!-- 新品编辑文章窗口 -->
+<div class="modal" id="editGroupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:600px;">
+            <form action="{:U('group/save')}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title">编辑分组</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>分组标题</label>
+                            <input type="text" name="group_name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>分组类型</label>
+                            <html:select name="group_type" title="name" options="typeList" selected="type" style="form-control"/>
+                        </div>
+                        <div class="c-group">
+                            <label>分组简介</label>
+                            <textarea class="form-control" name="group_bref" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-danger" name="group_id" value="">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="editImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:1000px;">
+            <form action="{:U('group/image')}" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title" id="editArticleModalTitle">编辑图片信息</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>上传</label>
+                            <input class="form-control" type="file" name="group_image" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>图片</label>
+                            <img name="image_show" src="" style="max-width:100%;max-height:150px;"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <input type="hidden" name="group_type" value="{$type}" />
+                        <button type="submit" class="btn btn-danger" name="group_id" value="">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

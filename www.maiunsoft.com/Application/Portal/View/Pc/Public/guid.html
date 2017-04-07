@@ -1,0 +1,27 @@
+<css href="__PC_STATIC__/css/breadcrumb.css" />
+<div class="container">
+	<div class="breadcrumb">
+		<ul>
+			<li>
+				<a href="{:U('Index/index')}">首页</a>
+			</li>
+			<foreach name="breadcrumbs" item="bread">
+				<li>
+					<a href="{$bread.url}">{$bread.caption}</a>
+				</li>
+			</foreach>
+		</ul>
+		<notempty name="directoryList">
+			<div class="btn-group pull-right more-menu">
+				<button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					目录&nbsp; <i class="fa fa-sort"></i>
+				</button>
+				<div class="dropdown-menu">
+					<foreach name="directoryList" item="dir">
+						<a class="dropdown-item" href="{$dir.url}">{$dir.name}</a>
+					</foreach>
+				</div>
+			</div>
+		</notempty>
+	</div>
+</div>

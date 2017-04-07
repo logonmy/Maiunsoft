@@ -1,0 +1,20 @@
+<include file="Mobile:Public:TopGuid" />
+<div class="container">
+    <div class="package">
+        <h1>{$group.name}</h1>
+        <p>{$group.bref|htmlspecialchars_decode}</p>
+    </div>
+    <ul class="list-unstyled items">
+        <foreach name="articleList" item="article">
+            <li>
+                <a href="__ROOT__/article/{$article.id}">
+                    <img src="{:UploadUrl('article')}{$article.id}/{$article.thumbnail}" />
+                    <div class="bref">
+                        <h3>{$article.title}</h3>
+                        <p>{$article.bref}</p>
+                    </div>
+                </a>
+            </li>
+        </foreach>
+    </ul>
+</div>

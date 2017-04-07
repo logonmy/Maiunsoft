@@ -1,0 +1,67 @@
+<section class="panel">
+    <header class="panel-heading">
+        [编辑企业信息]： {$self_info.name}
+        <a href="{:U('index')}" class="fa fa-reply pull-right" style="font-size:30px;"></a>
+    </header>
+
+    <!-- start tab 1 base -->
+    <div class="row tab-pane active" id="base">
+
+        <div class="panel-body">
+            <section class="panel row col-lg-12">
+                <form role="form" action="{:U('Selfinfo/save')}" method="post">
+                    <div class="panel-body row col-lg-5">
+                        <div class="form-group">
+                            <label>企业名称</label>
+                            <input class="form-control" name="name" value="{$self_info.name}" />
+                        </div>
+                        <div class="form-group">
+                            <label>企业标题</label>
+                            <input class="form-control" name="title" value="{$self_info.title}" />
+                        </div>
+                        <div class="form-group">
+                            <label>企业官网</label>
+                            <input class="form-control" name="domain" value="{$self_info.domain}" />
+                        </div>
+                        <div class="form-group">
+                            <label>企业代码</label>
+                            <input class="form-control" name="code" value="{$self_info.code}" />
+                        </div>
+                        <div class="form-group">
+                            <label>关键词</label>
+                            <input class="form-control" name="keywords" value="{$self_info.keywords}" />
+                        </div>
+                    </div>
+                    <div class=" panel-body col-lg-5">
+                        <div class="form-group">
+                            <label>QQ</label>
+                            <input class="form-control" name="qq" value="{$self_info.qq}" />
+                        </div>
+                        <div class="form-group">
+                            <label>微信</label>
+                            <input class="form-control" name="wechat" value="{$self_info.wechat}" />
+                        </div>
+                        <div class="form-group">
+                            <label>微博</label>
+                            <input class="form-control" name="weibo" value="{$self_info.weibo}" />
+                        </div>
+                        <div class="form-group">
+                            <label>负责人</label>
+                            <input class="form-control" name="founder" value="{$self_info.founder}" />
+                        </div>
+                    </div>
+                    <div class="panel-body row col-lg-12">
+                        <div class="form-group">
+                            <label>摘要</label>
+                            <textarea class="form-control"  rows="4"  name="bref" >{$self_info.bref}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden"  />
+                            <button type="submit" class="fa fa-save" name="id" value="{$self_info._id}">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</section>

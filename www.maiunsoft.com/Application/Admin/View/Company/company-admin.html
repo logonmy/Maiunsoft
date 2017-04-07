@@ -1,0 +1,125 @@
+<script>
+
+function del_param(id) {
+    location.href = '__URL__/delete_param?id=' + id;
+}
+
+$(document).ready(function(){
+    $("#typeSelector").change(function(){
+        var url = "{:U('company/admin')}?type=" + $("#typeSelector").val();
+        window.location.href = url;
+    });
+
+    $("#groupSelector").change(function(){
+        var url = "{:U('company/admin')}?type={$type}&gid=" + $("#groupSelector").val();
+        window.location.href = url;
+    });
+    $("#addCompanyBtn").click(function(){
+        $("#editCompanyModal input").val(null);
+        $("#editCompanyModal textarea").val(null);
+        $("#editCompanyModal button").val(null);
+        $("#editCompanyModal .modal-title").text('添加新公司');
+        $("#editCompanyModal").modal();  
+    });
+
+    $(".edit-company").click(function(){
+        var curId = $(this).val();
+        $.get(
+            "{:U('company/edit')}", {
+                'id': curId
+            },
+            function(data) 
+            {
+                if(data==0){
+                    alert('没有找到您要修改的数据');
+                    return;
+                }else{
+                    $("#editCompanyModal button[name='company_id']").val(data['id']);
+                    $("#editCompanyModal input[name='company_name']").val(data['name']);
+                    $("#editCompanyModal input[name='company_website']").val(data['website']);
+                    $("#editCompanyModal textarea[name='company_bref']").text(data['bref']);
+                    var logo = "{:UploadUrl('company')}"+data['id']+'/'+data['logo'];
+                    $("#editCompanyModal img[name='company_logo_image']").attr('src',logo);
+                    $("#editCompanyModal .modal-title").html('编辑公司：'+data['name']);
+                    $("#editCompanyModal").modal(); 
+                }
+            });
+    });
+});
+
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <li>
+            <tagLib name="html" />
+            <html:select name="type" title="name" options="typeList" selected="type" id="typeSelector"/>
+            <html:select name="group" title="name" options="groupList" selected="groupId" id="groupSelector"/>
+        </li>
+        <a class="pull-right fa fa-plus create-btn" id="addCompanyBtn">&nbsp;添加公司</a>
+    </ul>
+    <div class="row">
+        <foreach name="companyList" item="com">
+            <div class="col-lg-2">
+                <div class="card">
+                    <img class="card-img-top" src="{:UploadUrl('company')}{$key}/{$com.logo}" style="width:100%">
+                    <div class="card-block" style="text-align: center;">
+                        <h4 class="card-title">{$com.name}</h4>
+                        <p class="card-text">
+                            {$com.bref}
+                        </p>
+                        <button class="edit-company" value="{$com.id}">编辑</button>
+                        <a href="{:U('company/delete?id='.$com['id'])}">删除</a>
+                    </div>
+                </div>
+            </div>
+        </foreach>
+    </div>
+    <div class="page">{$page_show}</div>
+</section>
+
+<!-- 编辑产品信息窗口 -->
+<div class="modal" id="editCompanyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:600px">
+            <form action="{:U('company/save')}" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title fa fa-cube" id="myModalLabel">&nbsp;添加参数</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>公司名称</label>
+                            <input type="text" name="company_name" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>公司类型</label>
+                            <html:select name="company_group" title="name" options="groupList" selected="groupId" style="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>公司网址</label>
+                            <input type="text" name="company_website" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>选择图片</label>
+                            <input type="file" name="company_logo" class="form-control" /> 
+                            <img src="" name="company_logo_image" style="width:100px" />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>公司简介</label>
+                            <textarea class="form-control" name="company_bref"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="company_id" value="">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

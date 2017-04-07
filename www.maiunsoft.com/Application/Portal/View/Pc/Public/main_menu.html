@@ -1,0 +1,316 @@
+<div class="nav">
+    <div class="container list" id="navlist">
+        <ul id="navfouce" class="unstyled-list list-inline">
+            <li class="have-subs fwzd">
+                <a>快捷服务</a>
+            </li>
+
+            <li class="have-subs">
+                <a class=""> <i class="fa fa-bar-chart fa-fw"></i>
+                    财经
+                </a>
+            </li>
+            <li class="have-subs">
+                <a class=""> <i class="fa fa-cart-plus fa-fw"></i>
+                    电商
+                </a>
+            </li>
+            <li class="have-subs">
+                <a>服务支持</a>
+            </li>
+            <li>
+                <a href="{:U('company/client')}">经典客户</a>
+            </li>
+
+            <li class="have-subs">
+                <a>关于我们</a>
+            </li>
+        </ul>
+        <form class="search-box pull-right" action="__ROOT__/query" method="get">
+            <input type="text" name="k" class="keywords" />
+            <input type="submit" class="submit" value="" />
+        </form>
+    </div>
+</div>
+<div class="nav-box" id="navbox">
+    <div class="container" style="overflow:auto;">
+        <div class="cont" style="display:none;">
+            <ul class="sublist clearfix list-unstyled">
+                <li class="col-lg-1">
+                    <img src="__PUBLIC__/server.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="/index.php/solution/index.html">查找解决方案</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/product/index.html">查找软件系统</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/case/index.html">浏览成功案例</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/help/index.html">查找支持说明</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-lg-1">
+                    <img src="__PUBLIC__/cloud.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="/index.php/report/index.html">了解云知识</a>
+                        </li>
+                        <li>
+                            <a href="http://demo.maiunsoft.com">体验云服务</a>
+                        </li>
+                        <li>
+                            <a href="http://support.maiunsoft.com">获取云支持</a>
+                        </li>
+                        <li>
+                            <a href="http://buy.maiunsoft.com">购买云服务</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-lg-1">
+                    <img src="__PUBLIC__/person.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="http://service.maiunsoft.com">反馈产品问题</a>
+                        </li>
+                        <li>
+                            <a href="http://service.maiunsoft.com">跟踪项目进度</a>
+                        </li>
+                        <li>
+                            <a href="http://partner.maiunsoft.com">成为合作伙伴</a>
+                        </li>
+                        <li>
+                            <a href="/index.php/hire/index.html">加入脉云</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cont" style="display:none;">
+            <ul class="sublist row">
+                <li class="col-lg-1">
+                    <img src="__PC_STATIC__/img/slogo.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <a class="sub-title">U财经</a>
+                    <p class="company">首个以投资者视角为根本出发点，以财经资讯、互动社区、投资学习、投资工具、财富管理、大数据预测等多位一体的投资服务平台。</p>
+                    <a href="http://www.ucaijing.com.cn" class="company-more">进入U财官网</a>
+                </li>
+                <li class="col-lg-5 cloud-apps">
+                    <a class="sub-title">云应用</a>
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="http://www.ucaijing.com.cn">[全平台]&nbsp;财经资讯</a>
+                        </li>
+                        <li>
+                            <a href="http://live.ucaijing.com.cn">[全平台]&nbsp;财经直播</a>
+                        </li>
+                        <li>
+                            <a href="http://course.ucaijing.com.cn">[全平台]&nbsp;投资课堂</a>
+                        </li>
+                        <li>
+                            <a href="http://www.archimedia.cn">[全平台]&nbsp;阿基米德</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-lg-3">
+                    <div class="">
+                        <a href="{:U('articles/24')}" class="sub-title">最新文章</a>
+                        <ul class="sub-sublist">
+                            <foreach name="menuFinanceArticleList" item="art">
+                                <li class="sub-subitem">
+                                    <a href="__ROOT__/article/{$key}.html">{$art}</a>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 品牌云 -->
+        <div class="cont" style="display:none;">
+            <ul class="sublist row">
+                <li class="col-lg-1">
+                    <img src="__PC_STATIC__/img/slogo.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <a class="sub-title">电商云</a>
+                    <p class="company">紧密链接品牌与客户，搭建品牌运营生态圈,紧密整合品牌官网、商城和服务中心，大幅度提升品牌营销效果和客户满意度</p>
+                    <a href="http://bcloud.maiunsoft.com" class="company-more">进入品牌云官网</a>
+                </li>
+                <li class="col-lg-5 cloud-apps">
+                    <a href="http://brand.maiun.cn/apps" class="sub-title">云应用</a>
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="http://brand.maiun.cn/apps">[全平台]&nbsp;ThinkMall商城</a>
+                        </li>
+                        <li>
+                            <a href="http://brand.maiun.cn/apps">[全平台]&nbsp;官网建设</a>
+                        </li>
+                        <li>
+                            <a href="http://brand.maiun.cn/apps">[全平台]&nbsp;O2O服务</a>
+                        </li>
+                        <li>
+                            <a href="http://brand.maiun.cn/apps">[全平台]&nbsp;O2O会员</a>
+                        </li>
+                        <li>
+                            <a href="http://brand.maiun.cn/apps">[全平台]&nbsp;O2O分销</a>
+                        </li>
+                        <li>
+                            <a href="http://brand.maiun.cn/apps">[全平台]&nbsp;O2O运营</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-lg-3">
+                    <div class="">
+                        <a href="{:U('articles/23')}" class="sub-title">最新文章</a>
+                        <ul class="sub-sublist">
+                            <foreach name="menuBrandArticleList" item="art">
+                                <li class="sub-subitem">
+                                    <a href="__ROOT__/article/{$key}.html">{$art}</a>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 财经云 -->
+
+        <!-- 帮助文档 -->
+        <div class="cont" style="display:none;">
+            <ul class="sublist clearfix">
+                <foreach name="menuHelpList" item="pkg">
+                    <li class="col-lg-3">
+                        <a href="__ROOT__/help/{$pkg.id}.html" class="sub-title">{$pkg.name}</a>
+                        <ul class="sub-sublist">
+                            <foreach name="pkg.childs" item="help">
+                                <li>
+                                    <a href="__ROOT__/article/{$help.id}.html">{$help.title}</a>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        <div class="cont row" style="display:none;">
+            <ul class="sublist clearfix">
+                <li class="col-lg-3">
+                    <img src="__PUBLIC__/location.jpg" style="width:100%" />
+                </li>
+                <li class="col-lg-5" style="border-right:1px solid #ddd;">
+                    <a class="sub-title">脉云软件(上海)有限公司</a>
+                    <p class="company">
+                        脉云软件是一家为金融、品牌、教育等行业客户提供创新型业务支撑系统的高科技互联网公司，我们开发并运营财经云、教育云和品牌云三个系列的云产品，持续帮助客户提高业务竞争能力。截止目前，全国有100多家企业正在使用我们的云产品服务，并且获得了良好的收益。
+                    </p>
+                    <a href="__ROOT__/about" class="company-more">了解更多...</a>
+                </li>
+                <li class="col-lg-4">
+                    <a class="sub-title">联系方式</a>
+                    <ul class="sub-sublist">
+                        <li>
+                            <i class="fa fa-map"></i>
+                            &nbsp;
+                            <a>上海市普陀区新村路666号1号楼1层</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            &nbsp;
+                            <a>service@maiunsoft.com</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-headphones"></i>
+                            &nbsp;
+                            <a>400-9910-560</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-qq"></i>
+                            &nbsp;
+                            <a href="tencent://message/?uin=3323438118&Site=www.maiunsoft.com&Menu=yes">客服一</a>
+                            &nbsp;
+                            <a href="tencent://message/?uin=318206556&Site=www.maiunsoft.com&Menu=yes">客服二</a>
+                            &nbsp;
+                            <a href="tencent://message/?uin=603598565&Site=www.maiunsoft.com&Menu=yes">客服三</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+(function() {
+
+    var time = null;
+    var list = $(".have-subs");
+    var box = $("#navbox");
+    var lista = list.find("a");
+
+    for (var i = 0, j = lista.length; i < j; i++) {
+        if (lista[i].className == "now") {
+            var olda = i;
+        }
+    }
+
+    var box_show = function(hei) {
+        box.stop().animate({
+            height: hei,
+            opacity: 1
+        }, 400);
+    }
+
+    var box_hide = function() {
+        box.stop().animate({
+            height: 0,
+            opacity: 0
+        }, 400);
+    }
+
+    lista.hover(function() {
+        lista.removeClass("now");
+        $(this).addClass("now");
+        clearTimeout(time);
+        var index = list.find("a").index($(this));
+        box.find(".cont").hide().eq(index).show();
+        var _height = box.find(".cont").eq(index).height() + 54;
+        box_show(_height)
+    }, function() {
+        time = setTimeout(function() {
+            box.find(".cont").hide();
+            box_hide();
+        }, 50);
+        lista.removeClass("now");
+        lista.eq(olda).addClass("now");
+    });
+
+    box.find(".cont").hover(function() {
+        var _index = box.find(".cont").index($(this));
+        lista.removeClass("now");
+        lista.eq(_index).addClass("now");
+        clearTimeout(time);
+        $(this).show();
+        var _height = $(this).height() + 54;
+        box_show(_height);
+    }, function() {
+        time = setTimeout(function() {
+            $(this).hide();
+            box_hide();
+        }, 50);
+        lista.removeClass("now");
+        lista.eq(olda).addClass("now");
+    });
+
+})();
+</script>

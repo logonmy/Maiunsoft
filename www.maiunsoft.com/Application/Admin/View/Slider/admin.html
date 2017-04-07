@@ -1,0 +1,171 @@
+<script>
+
+function delete_slider(id) {
+    location.href = '__URL__/delete?id=' + id + '&type={$sliderTypeId}';
+}
+
+function edit_slider(id) {
+    $.get(
+        "{:U('slider/edit')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(data==0){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                $("#editSliderModal button[name='slider_id']").val(data['id']);
+                $("#editSliderModal input[name='slider_title']").val(data['title']);
+                $("#editSliderModal input[name='slider_type']").val(data['type']);
+                $("#editSliderModal input[name='slider_url']").val(data['url']);
+                $("#editSliderModal textarea[name='slider_bref']").val(data['bref']);
+               
+                $("#editSliderModal .modal-title").html('编辑广告：'+data['title']);
+                $("#editSliderModal").modal(); 
+            }
+        });
+}
+
+function edit_image(id) {
+    $.get(
+        "{:U('slider/edit')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(data==0){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                var imageUrl = "{:UploadUrl('slider')}"+data['image'];
+                $("#editImageModal button[name='slider_id']").val(data['id']);
+                $("#editImageModal input[name='slider_type']").val(data['type']);
+                $("#editImageModal img[name='image_show']").attr('src',imageUrl);
+               
+                $("#editImageModal .modal-title").html('编辑广告图片：'+data['title']);
+                $("#editImageModal").modal(); 
+            }
+        });
+}
+
+
+
+$(document).ready(function(){
+    $("#positionSelector").change(function(){
+        var url = "{:U('slider/admin')}?position=" + $("#positionSelector").val();
+        window.location.href = url;
+    });
+
+    $("#addSliderBtn").click(function(){
+        $("#editSliderModal .modal-title").text('添加新广告');
+        $("#editSliderModal").modal();  
+    });
+
+    $(".edit-slider").click(function(){
+        var curId = $(this).val();
+        $.get(
+            "{:U('slider/edit')}", {
+                'id': curId
+            },
+            function(data) 
+            {
+                if(data==0){
+                    alert('没有找到您要修改的数据');
+                    return;
+                }else{
+                    $("#editSliderModal button[name='slider_id']").val(data['id']);
+                    $("#editSliderModal input[name='slider_name']").val(data['name']);
+                    $("#editSliderModal input[name='slider_url']").val(data['url']);
+                    var image = "{:UploadUrl('slider')}"+data['id']+'/'+data['image'];
+                    $("#editSliderModal img[name='slider_image_show']").attr('src',image);
+                    $("#editSliderModal .modal-title").html('编辑幻灯片：'+data['name']);
+                    $("#editSliderModal").modal(); 
+                }
+            });
+    });
+});
+
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <li>
+            <tagLib name="html" />
+        </li>
+        <a class="pull-right fa fa-plus create-btn" id="addSliderBtn">&nbsp;添加广告</a>
+    </ul>
+    <html:grid datasource="sliderList" key="true" pk="id" show="title:标题,create_time:创建时间,image:图片" style="table table-advance table-hover" action="true" actionList="edit_slider:编辑,edit_image:图片,delete_slider:删除" />
+    <div class="page">{$page_show}</div>
+</section>
+
+<!-- 编辑产品信息窗口 -->
+<div class="modal" id="editSliderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:1000px">
+            <form action="{:U('slider/save')}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title fa fa-cube" id="myModalLabel">&nbsp;添加广告</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                            <label>名称</label>
+                            <input type="text" name="slider_title" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>网址</label>
+                            <input type="text" name="slider_url" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="form-group">
+                            <label>摘要</label>
+                            <textarea class="form-control" name="slider_bref" class="form-control" style="height:110px"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="slider_type" value="{$sliderTypeId}" />
+                    <button type="submit" class="btn btn-danger" name="slider_id" value="">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="editImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:1000px">
+            <form action="{:U('slider/image')}" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title fa fa-cube" id="myModalLabel">&nbsp;修改图片</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>上传</label>
+                            <input type="file" name="slider_image" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <label>图片</label>
+                            <img name="image_show" src="" style="max-width:100%;max-height:150px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="slider_type" value="{$sliderTypeId}" />
+                    <button type="submit" class="btn btn-danger" name="slider_id" value="">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

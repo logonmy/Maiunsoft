@@ -1,0 +1,863 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"border-bo",
+				"border-bottom-color"
+			],
+			[
+				"border-bot",
+				"border-bottom-style"
+			],
+			[
+				"bor",
+				"border-bottom-width"
+			],
+			[
+				"cor",
+				"color"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"p",
+				"padding-right"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"border-b",
+				"border-bottom-width"
+			],
+			[
+				"bo",
+				"border-bottom-color"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"border-bottom-",
+				"border-bottom-width"
+			],
+			[
+				"session_d",
+				"session_destroy"
+			],
+			[
+				"session_un",
+				"session_unset"
+			],
+			[
+				"redi",
+				"redirect()"
+			],
+			[
+				"SESSION",
+				"session"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"type",
+				"type_key"
+			],
+			[
+				"typ",
+				"type_list"
+			],
+			[
+				"TYPE",
+				"types_key"
+			],
+			[
+				"k",
+				"type_key"
+			],
+			[
+				"drop",
+				"dropdownHover"
+			],
+			[
+				"arr",
+				"array	$… = array (…)"
+			],
+			[
+				"fun",
+				"fun	function …"
+			],
+			[
+				"DEFAUL",
+				"DEFAULT_THEME"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"CU",
+				"currSlide"
+			],
+			[
+				"FA",
+				"fadeOut"
+			],
+			[
+				"r",
+				"removeClass"
+			],
+			[
+				"sli",
+				"slideCount"
+			],
+			[
+				"cu",
+				"currSlide"
+			],
+			[
+				"solution",
+				"solution_types"
+			],
+			[
+				"a",
+				"action	Attr"
+			],
+			[
+				"s",
+				"style	Attr"
+			],
+			[
+				"solut",
+				"solution_types"
+			],
+			[
+				"new",
+				"newRoot"
+			],
+			[
+				"dst",
+				"destChilds"
+			],
+			[
+				"des",
+				"destArray"
+			],
+			[
+				"dest",
+				"destChild"
+			],
+			[
+				"array_d",
+				"array_diff_assoc"
+			],
+			[
+				"de",
+				"destKey"
+			],
+			[
+				"pr",
+				"print_r"
+			],
+			[
+				"array_m",
+				"array_merge"
+			],
+			[
+				"le",
+				"level"
+			],
+			[
+				"conti",
+				"apd_continue"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"menu",
+				"menu_list"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"func",
+				"create_function"
+			],
+			[
+				"private",
+				"openssl_private_encrypt"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Solution/index.html",
+			"settings":
+			{
+				"buffer_size": 513,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Public/guid.html",
+			"settings":
+			{
+				"buffer_size": 554,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "PortalController.class.php",
+			"settings":
+			{
+				"buffer_size": 303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SolutionController.class.php",
+			"settings":
+			{
+				"buffer_size": 969,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insall",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"View: Toggle Minimap"
+			]
+		],
+		"width": 283.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import  urllib.request,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler()));open(os.path.join(ipp,pf),'wb').write(urllib.request.urlopen('http://sublime.wbond.net/'+pf.replace(' ',' ')).read())",
+			"import urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_packages_path();os.makedirs(ipp) if not os.path.exists(ipp) else None;open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/PageController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Public/guid.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Solution/detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/TitleController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Solution/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/layout.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/SolutionController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Public/header.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Index/Find Results",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Admin/edit.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/SolutionController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/IndexController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Index/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Index/index-banner.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Public/header.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/LoginController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Product/detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Product/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Login/registration.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Conf/index_slider.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Data/Index.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Course/detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Course/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/assets/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/css/bootstrap-theme.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/css/bootstrap-theme.min.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/css/bootstrap.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Partner/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/assets/font-awesome/less/bootstrap.less",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/css/bootstrap-reset.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/assets/revolution_slider/css/rs-style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Login/login.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/_static/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Common/Conf/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Common/Conf/db.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Common/Conf/global.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/PortalController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Logic/MenuLogic.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Conf/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/AboutController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/CourseController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/FrontController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/PartnerController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Controller/ProductController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Data/Features.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Model/FeatureModel.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/Model/MenuModel.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/About/branch.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/About/company.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/About/culture.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/core/core.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/.htaccess",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Conf/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Conf/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/IndexController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/AdminController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/MyServiceController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Public/footer.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Admin/list.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Public/menu.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Common/function.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Common/Common/function.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/ServiceController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/ClubController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/AccountController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/HomeController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/layout.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css/style.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/Admin/SolutionAdminController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/layout.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/Admin/AdminController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Account/config.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/library/think/Library/Think/Session/Driver/Db.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Home/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Logic/MenuLogic.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/IndexController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/Account/login.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Common/Conf/client.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/AccountController.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/About/company.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/assets/revolution_slider/index-fullwidth.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/js/revulation-slide.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/About/contact.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Partner/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Index/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/Controller/ClubController.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/assets/bxslider/jquery.bxslider.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/js/common-scripts.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/ProductController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Product/detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Product/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/CourseController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Course/detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Course/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/AboutController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/About/branch.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/About/culture.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/PartnerController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/SolutionController.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Product/cases.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Solution/cases.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Model/ProductModel.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Solution/detail.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Data/Index.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Model/ServiceModel.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Model/CourseModel.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Solution/index.html",
+		"/Users/frank/Downloads/FlatLab_-_Bootstrap_3_Responsive_Admin_Template/Flatlab Main Files/frontend/template_content/services.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Data/Features.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Index/index-banner.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Index/Find Results",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css/bootstrap.css",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/index.page.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/page.manager.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/partner-detail.page.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/service-detail.page.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/framwork.page.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Controller/course-detail.page.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/assets/font-awesome/css/font-awesome.min.css",
+		"/Users/frank/Downloads/FlatLab_-_Bootstrap_3_Responsive_Admin_Template/Flatlab Main Files/frontend/template_content/index.html",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Service/MenuService.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Service/FrontService.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/Model/FeatureModel.class.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/js/hover-dropdown.js",
+		"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/font/solution/cases.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/assets",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/_static/css/style.css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Club/View/layout.html",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css/style.css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/assets",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/js",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/js",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/Index/index.html",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static/css",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong/apps",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View/_static",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Front/View",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong/core",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong/config",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong/apps",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong/apps",
+			"/Applications/XAMPP/xamppfiles/htdocs/nalong",
+			"/Applications/XAMPP/xamppfiles/htdocs/flat/Flatlab Main Files/frontend/template_content",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Public",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Admin/View",
+			"/Applications/XAMPP/xamppfiles/htdocs/myunge/apps"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"云格",
+			"btn",
+			"form-control",
+			"offsetx",
+			"lft",
+			"fullwidthbanner",
+			"fullwidthabnner",
+			"nav",
+			"dropdown-toggle",
+			"navbar-static-top",
+			".active",
+			"index",
+			"#41cac0",
+			"Front",
+			"t'o'p",
+			"></script>",
+			"<script src=",
+			"<link href=",
+			"icon-google-plus",
+			"lft",
+			"slide_title",
+			"revolutionul",
+			"parallax1",
+			"bxslider",
+			"item",
+			"bxslider",
+			"item",
+			"element",
+			"item",
+			"view-tenth",
+			"header-frontend",
+			"Solution",
+			"col-lg-3 ",
+			"#f77b6f",
+			".header-frontend ",
+			".header-frontend .nav li.active ul.dropdown-menu li.active a",
+			"active",
+			"dropdown-submenu",
+			"slide_subtitle",
+			"navbar-static-top",
+			"header-frontend",
+			"submenu",
+			"su'b",
+			"dropdown",
+			"hover",
+			"hove",
+			"dropdown-menu",
+			"dropdown-submenu",
+			"drop",
+			"<script src=",
+			"dropup",
+			"drop-right",
+			"dropright",
+			"dropup",
+			"drop",
+			"dropdown-submenu",
+			"hove",
+			"dropdown-submenu",
+			"dropdown-menu",
+			"dropdown_menu",
+			"menu",
+			"dropmenu",
+			"dropright",
+			"drop",
+			"dropdown-menu",
+			"icon",
+			"content",
+			"icon-desktop",
+			"icon-code",
+			"url",
+			"\"img/",
+			">\n",
+			"image/body-bg2.jpg",
+			"__THEME__",
+			"login.html",
+			"login",
+			"logo",
+			"media screen",
+			"media",
+			"dropdown-menu",
+			"width",
+			"google",
+			"topbar",
+			"toplogin",
+			"msie",
+			"www.fma",
+			"topbar_login",
+			"topbar_login_user",
+			"topbar-login",
+			"sample",
+			"seo",
+			"seo1",
+			"></script>",
+			"<script type =",
+			"__PUBLIC__/images",
+			"solution",
+			"方案",
+			"solution",
+			"a",
+			"id",
+			"parseConfig",
+			"url",
+			"></script>",
+			"<script src",
+			"<link",
+			"<script src",
+			"></script>",
+			"Menu.php",
+			"array",
+			"_static"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"全标",
+			"#065292",
+			"Portal",
+			" />",
+			"<js href=",
+			"<css href=",
+			"Course",
+			"Product",
+			"#f6752f",
+			"<js href=",
+			"\"__MODULE_STATIC__/img/",
+			" />",
+			"<js href =",
+			"__MODULE_STATIC__/images",
+			"product",
+			"产品",
+			"product",
+			"  />",
+			"<js href",
+			"<css",
+			"<js href",
+			"  />",
+			"/>"
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Solution/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 513,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/myunge/apps/Portal/View/Public/guid.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 554,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "PortalController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								238,
+								246
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "SolutionController.class.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 969,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								605,
+								605
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 253.0
+	},
+	"project": "chammar.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 276.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

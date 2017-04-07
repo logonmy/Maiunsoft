@@ -1,0 +1,40 @@
+<include file="Mobile:Public:TopGuid" />
+<style type="text/css">
+    .card{
+        border:1px solid #ddd;
+        background: #f9f9f9;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+    }
+
+    .card img{
+        width: 100%;
+    }
+
+    .card .card-block{
+        padding:10px;
+        width: 100%;
+        text-align: justify;
+    }
+
+    .card .card-block .card-title{
+        font-weight:800;
+    }
+</style>
+<div class="container">
+    <div class="package">
+        <h1>软件产品</h1>
+        <p>我们专注于研发和销售拥有自主独立知识产权的软件产品</p>
+    </div>
+    <foreach name="productList" item="product">
+        <div class="card">
+            <img class="card-img-top" src="{:UploadUrl('product')}{$product.id}/{$product.thumbnail}" alt="{$product.name}">
+            <div class="card-block">
+                <h4 class="card-title">{$product.name}</h4>
+                <p class="card-text">{$product.bref}</p>
+                <a href="__ROOT__/product/{$product.id}" class="form-control btn btn-danger">了解详情</a>
+            </div>
+        </div>
+    </foreach>
+</div>

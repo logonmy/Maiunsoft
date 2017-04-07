@@ -1,0 +1,1 @@
+$(document).ready(function(){var a=location.href.slice(location.href.lastIndexOf("/")+1),t=localStorage[a];console.log(t),void 0==t&&(t=0),$(".button-list2 > a").removeClass("btn-active").eq(t).addClass("btn-active");for(var o=1;o<10;o++){var e=".switch-tab-"+o;$(e).hide()}var e=".switch-tab-"+ ++t;$(e).show()});

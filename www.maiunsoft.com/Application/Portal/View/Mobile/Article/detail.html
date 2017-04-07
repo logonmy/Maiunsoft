@@ -1,0 +1,89 @@
+<include file="Mobile:Public:TopGuid" />
+<style type="text/css">
+	.opera{
+		height: 40px;
+		background: #eee;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.opera button{
+		margin-left: 5px;
+		float: left;
+		background: #c43c06;
+		color: #fff;
+		border: none;
+		height: 30px;
+		margin-top: 5px;
+	}
+</style>
+<div class="container">
+    <div class="detail">
+        <h1 class="title">{$article.title}</h1>
+        <img src="{:UploadUrl('article')}{$article.id}/{$article.thumbnail}" style="width:100%" />
+        <p class="bref">{$article.bref}</p>
+        <div class="opera">
+            <button class="fa fa-download subscriber">详细资料</button>
+            <button class="fa fa-qq ask">咨询顾问</button>
+            <button class="fa fa-headphones call">4009910560</button>
+        </div>
+        <p class="content">{$article.content|htmlspecialchars_decode}</p>
+    </div>
+</div>
+
+
+<!-- 新品编辑文章窗口 -->
+<div class="modal" id="subscriberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index:999999999">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="__ROOT__/subscribe/article" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title" id="editArticleModalTitle">获取详细资料</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>资料：</label>
+                            <input type="text" name="subscribe_article_name" class="form-control" readonly="true" value="{$article.title}" />
+                        </div>
+                        <div class="form-group">
+                            <label>称谓：</label>
+                            <input type="text" name="subscriber_name" class="form-control" maxlength="20" minlength="2" required="true" />
+                        </div>
+                        <div class="form-group">
+                            <label>手机：</label>
+                            <input type="number" name="subscriber_mobile" class="form-control" min="1300000000" maxlength="19999999999" minlength="11" maxlength="11" required="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-danger" name="subscribe_article" value="{$article.id}">获取</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+$(document).ready(function(){
+
+    $(".opera button.subscriber").click(function(){
+        $("#subscriberModal").modal();  
+    });
+
+    $(".opera button.ask").click(function(){
+        location.href = "http://wpa.qq.com/msgrd?v=3&uin=3323438118&site=qq&menu=yes";
+    });
+
+    $(".opera button.call").click(function(){
+        location.href = "tel://4009910560";
+    });
+});
+</script>

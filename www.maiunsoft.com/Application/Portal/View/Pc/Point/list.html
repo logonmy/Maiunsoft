@@ -1,0 +1,46 @@
+ <div class="banner-div banner-4">
+            <div class="banner-content-4 vertical-center">
+                    行业风向
+            </div>
+            <div class="banner-mask-4 vertical-center">
+
+            </div>
+        </div>
+
+        <div class="bg-color-3">
+            <div class="connection">
+                <span>联系电话： 400-9910-540</span>
+                <span>企业邮箱： service@maiunsoft.com</span>
+                <span>企业QQ： service@maiunsoft.com</span>
+            </div>
+        </div>
+
+        <div class="bg-color-5">
+            <div class="template-wrap">
+            	
+            	<div class="template-ceil">
+                    <b>{$articleInfo.title}</b>
+                    <img class="template-ceil-img" src="{:UploadUrl('article')}{$articleInfo.image}" alt="content-intro" >
+                    <p style="display:block; font-size:15px;line-height:30px;border-left:4px solid #ddd; padding-left:20px;margin-bottom:20px">{$articleInfo.bref}</p>
+                    <p style="display:block; line-height:30px">{$articleInfo.content}</p>
+                    <div style="clear:both;"></div>
+                </div>
+                
+                <h3>更多动态</h3>
+            	
+                <foreach name="articleList" item="article">
+                    <div class="template-card">
+                        <div class="template-card-img" >
+                            <span></span>
+                            <img src="{:UploadUrl('article')}{$article.image}" alt="">
+                        </div>
+                        <div class="template-card-article">
+                            <b>{$article.title}</b>
+                            <p>{$article.bref}
+                            </p>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+
+        </div>

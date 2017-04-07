@@ -1,0 +1,1 @@
+$(document).ready(function(){var a=location.href.slice(location.href.lastIndexOf("/")+1),c=localStorage[a];void 0==c&&(c=0),$(".tabswitch-btn").removeClass("switch-active").eq(c).addClass("switch-active");for(var t=1;t<10;t++){var e=".card-switch-"+t;$(e).hide()}var e=".card-switch-"+ ++c;$(e).show()});

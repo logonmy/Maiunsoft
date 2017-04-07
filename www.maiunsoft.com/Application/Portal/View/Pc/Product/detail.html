@@ -1,0 +1,147 @@
+<css href="__PC_STATIC__/css/product-detail.css" />
+<include file="Public:guid" />
+<div class="container">
+    <div class="bref" style="width:100%">
+        <div class="info">
+            <h1 class="name">{$currentProduct.name}-[{$currentProduct.short_name}]</h1>
+            <h2 class="title">{$currentProduct.title}</h2>
+            <p>{$currentProduct.bref}</p>
+        </div>
+        <php>$imageList = explode('|', $currentProduct['images']);</php>
+        <div class="images">
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+                <ol class="carousel-indicators">
+                    <foreach name="imageList" item="image">
+                        <php>$active = $key==0?'active':'';</php>
+                        <li data-target="#myCarousel" data-slide-to="{$key}" class="{$active}"></li>
+                    </foreach>
+                </ol>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <foreach name="imageList" item="image">
+                        <php>$active = $key==0?'active':'';</php>
+                        <div class="item {$active}">
+                            <img src="{:UploadUrl('product')}{$currentProduct.id}/{$image}" alt="" />
+                        </div>
+                    </foreach>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="margin-bottom: 50px;">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#description" role="tab" aria-controls="description">产品描述</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#params" role="tab" aria-controls="params">详细参数</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#versions" role="tab" aria-controls="versions">更新历史</a>
+        </li>
+        <div class="opera">
+            <button class="fa fa-download subscriber">&nbsp;了解更多</button>
+            <button class="fa fa-star buy">&nbsp;直接购买</button>
+            <button class="fa fa-qq ask">&nbsp;咨询顾问</button>
+            <button class="fa fa-headphones">&nbsp;400-9910-560</button>
+        </div>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="description" role="tabpanel">{$currentProduct['description']|htmlspecialchars_decode}</div>
+        <div class="tab-pane" id="params" role="tabpanel">
+            <table>
+                <tr>
+                    <th width="10%">编号</th>
+                    <th width="20%">参数名称</th>
+                    <th width="70%">参数值</th>
+                </tr>
+                <foreach name="paramList" item="param">
+                    <tr>
+                        <td>{$key}</td>
+                        <td>{$param.name}</td>
+                        <td>{$param.value}</td>
+                    </tr>
+                </foreach>
+            </table>
+        </div>
+        <div class="tab-pane" id="versions" role="tabpanel">
+            <div class="panel-group" id="accordion">
+                <foreach name="versionList" item="version">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" 
+          href="#version_{$key}">版本：{$version.version}</a> <i class="pull-right">更新时间：{$version.update_date}</i>
+                            </h4>
+                        </div>
+                        <div id="version_{$key}" class="panel-collapse collapse in">
+                            <div class="panel-body">{$version.content|htmlspecialchars_decode}</div>
+                        </div>
+                    </div>
+                </foreach>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 新品编辑文章窗口 -->
+<div class="modal" id="subscriberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index:999999999">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:600px;">
+            <form action="__ROOT__/subscribe/product" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title" id="editArticleModalTitle">获取详细资料并申请体验</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>产品：</label>
+                            <input type="text" name="subscribe_product_name" class="form-control" readonly="true" value="{$currentProduct.name}"/>
+                        </div>
+                        <div class="form-group">
+                            <label>称谓：</label>
+                            <input type="text" name="subscriber_name" class="form-control" maxlength="20" minlength="2" required="true" />
+                        </div>
+                        <div class="form-group">
+                            <label>手机：</label>
+                            <input type="number" name="subscriber_mobile" class="form-control" min="1300000000" maxlength="19999999999" minlength="11" maxlength="11" required="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-danger" name="subscribe_product" value="{$currentProduct.id}">获取</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+$(document).ready(function(){
+
+    $('#myCarousel').carousel({
+      interval: 4000
+    });
+
+    $(".opera button.subscriber").click(function(){
+        $("#subscriberModal").modal();  
+    });
+
+    $(".opera button.buy").click(function(){
+        location.href = "http://wpa.qq.com/msgrd?v=3&uin=3323438118&site=qq&menu=yes";
+    });
+
+    $(".opera button.ask").click(function(){
+        location.href = "http://wpa.qq.com/msgrd?v=3&uin=3323438118&site=qq&menu=yes";
+    });
+});
+</script>

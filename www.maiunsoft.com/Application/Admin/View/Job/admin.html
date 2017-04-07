@@ -1,0 +1,119 @@
+<style type="text/css">
+    .edui-editor{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+function delete_job(id) {
+    location.href = '__URL__/delete?id=' + id + '&type={$jobTypeId}';
+}
+
+function refresh_job(id) {
+    location.href = '__URL__/refresh?id=' + id + '&type={$jobTypeId}';
+}
+
+function edit_job (id) {
+    $.get(
+        "{:U('job/single')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(data==0){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                $("#editJobModal button[name='job_id']").val(data['id']);
+                $("#editJobModal input[name='job_name']").val(data['name']);
+                $("#editJobModal input[name='job_salaryscope']").val(data['salary_scope']);
+                $("#editJobModal textarea[name='job_requirements']").val(data['requirements']);
+                $("#editJobModal textarea[name='job_workcontent']").val(data['work_content']);
+                $("#editJobModal select[name='job_urgency']").find("option[value='"+data['urgency']+"']").attr('selected',true);
+                $("#editJobModal select[name='job_type']").find("option[value='"+data['type']+"']").attr('selected',true);
+                $("#editJobModal select[name='job_workcity']").find("option[value='"+data['work_city']+"']").attr('selected',true);
+                $("#editJobModal .modal-title").html('编辑岗位：'+data['name']);
+                $("#editJobModal").modal(); 
+            }
+        });
+}
+
+$(document).ready(function(){
+    // 选择不同的库，显示相应的库存信息
+    $("#groupSelector").change(function(){
+        var url = "{:U('job/admin')}?age={$jobAgeId}&type=" + $("#groupSelector").val();
+        window.location.href = url;
+    });
+
+    $("#addJobBtn").click(function(){
+        $("#editJobModal .modal-title").html('发布{$ageName}招聘-{$jobTypeName}新岗位');
+        $("#editJobModal").modal();  
+    });
+});
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <li>
+            <tagLib name="html" />
+            <html:select name="group" title="name" options="jobTypeList" selected="jobTypeId" id="groupSelector"/>
+        </li>
+        <a id="addJobBtn" class="pull-right fa fa-plus create-btn">&nbsp;发布新岗位</a>
+    </ul>
+    <html:grid datasource="jobList" key="true" pk="id" show="name:岗位名称,urgency:紧急等级,update_time:更新时间" style="table table-advance table-hover" action="true" actionList="edit_job:编辑,refresh_job:刷新,delete_job:删除" />
+</section>
+
+<!-- 新品编辑文章窗口 -->
+<div class="modal" id="editJobModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:1000px;">
+            <form action="{:U('job/save')}" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title">编辑岗位</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>岗位名称</label>
+                            <input type="text" name="job_name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>紧急程度</label>
+                            <html:select name="job_urgency" title="name" options="urgencyList" selected="jobTypeId" style="form-control" id="groupSelector"/>
+                        </div>
+                        <div class="form-group">
+                            <label>薪资待遇</label>
+                            <input type="text" name="job_salaryscope" class="form-control" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label>工作城市</label>
+                            <html:select name="job_workcity" title="name" options="cityList" selected="cityId" style="form-control" id="workCitySelector"/>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <label>工作内容</label>
+                            <textarea class="form-control" name="job_workcontent" class="form-control" style="height:100px"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>任职条件</label>
+                            <textarea class="form-control" name="job_requirements" class="form-control" style="height:115px"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <input type="hidden" name="job_workage" value="{$jobAgeId}" />
+                        <input type="hidden" name="job_type" value="{$jobTypeId}" />
+                        <button type="submit" class="btn btn-danger" name="job_id" value="">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,128 @@
+        <div class="swiper-container banner-div">
+            <div class="swiper-wrapper">
+                <foreach name="bigSliderList" item="slider">
+                    <div style="background-image:url({:UploadUrl('slider')}{$slider.image})" class="swiper-slide">
+                    </div>
+                </foreach>
+            </div>
+            <!-- <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div> -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="bg-color-1">
+            <div class="section-one">
+                <div>
+                    <b>最新动态</b>
+                </div>
+                <div class="section-one-content">
+                    <foreach name="newsList" item="news">
+                        <div class="section-one-article">
+                            <img src="{:UploadUrl('slider')}{$news.image}" alt="logo-img">
+                            <div>
+                                <b>{$news.title}</b>
+                                <p>
+                                    {$news.bref}
+                                </p>
+                                <a class="section-one-article-link">
+                                    <span>更多详情<img class="icon-right" src="__PC_STATIC__/imgs/right-black.png"/></span>
+                                </a>
+                            </div>
+                        </div>
+                    </foreach>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-color-2">
+            <div class="section-two">
+                <div>
+                    <b>业务洞察</b>
+                </div>
+                <div class="section-two-content">
+                    <foreach name="articleList" item="article">
+                        <div class="section-two-article">
+                            <img src="{:UploadUrl('slider')}{$article.image}" alt="logo-img"><br >
+                            <div>
+                                <b>{$article.title}</b>
+                                <p>{$article.bref}</p>
+                                <button onClick="location='./cooperation2'" class="section-two-article-btn">了解更多</button>
+                            </div>
+                        </div>
+                    </foreach>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-five">
+            <h3 id="sec-3">安全便捷的内容管理解决方案提供商</h3>
+        </div>
+
+        <div class="bg-color-6">
+            <div class="section-six">
+                <div class="section-six-bg section-six-bg-0">
+                    <div class="upblock-bg-0"></div>
+                    <div class="upblock-bg-cg hide"></div>
+                    <div class="upblock">
+                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-smile.png" alt="smile-icon"><br />
+                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
+                        <p class="upblock-title">
+                            系统咨询
+                        </p>
+                        <p class="upblock-content hide">
+                            外资企业网站系统开发系统开发<br />
+                            外资企业网站系统开发系统开发
+                        </p>
+                        <button class="upblock-btn hide">查看详情</button>
+                    </div>
+                </div><!--
+             --><div class="section-six-bg section-six-bg-1">
+                    <div class="upblock-bg-1"></div>
+                    <div class="upblock-bg-cg hide"></div>
+                    <div class="upblock">
+                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-global.png" alt="global-icon"><br />
+                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
+                        <p class="upblock-title">
+                            系统开发
+                        </p>
+                        <p class="upblock-content hide">
+                            外资企业网站系统开发系统开发<br />
+                            外资企业网站系统开发系统开发
+                        </p>
+                        <button class="upblock-btn hide">查看详情</button>
+                    </div>
+                </div><!--
+             --><div class="section-six-bg section-six-bg-2">
+                    <div class="upblock-bg-2"></div>
+                    <div class="upblock-bg-cg hide"></div>
+                    <div class="upblock">
+                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-setting.png" alt="setting-icon"><br />
+                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
+                        <p class="upblock-title">
+                            系统运维
+                        </p>
+                        <p class="upblock-content hide">
+                            外资企业网站系统开发系统开发<br />
+                            外资企业网站系统开发系统开发
+                        </p>
+                        <button class="upblock-btn hide">查看详情</button>
+                    </div>
+                </div><!--
+             --><div class="section-six-bg section-six-bg-3">
+                    <div class="upblock-bg-3"></div>
+                    <div class="upblock-bg-cg hide"></div>
+                    <div class="upblock">
+                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-member.png" alt="member-icon"><br />
+                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
+                        <p class="upblock-title">
+                            系统培训
+                        </p>
+                        <p class="upblock-content hide">
+                            外资企业网站系统开发系统开发<br />
+                            外资企业网站系统开发系统开发
+                        </p>
+                        <button class="upblock-btn hide" onClick="location='./intro'" >查看详情</button>
+                    </div>
+                </div>
+            </div>
+        </div>

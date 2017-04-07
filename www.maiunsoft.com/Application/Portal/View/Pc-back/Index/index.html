@@ -1,0 +1,147 @@
+<Css href="__PC_STATIC__/css/index.css" />
+<js href="http://static.maiunsoft.com/js/slider/unslider.js" />
+<div class="banner">
+    <ul>
+        <foreach name="bannerList" item="slider">
+            <li style="background-image:url('{:UploadUrl('slider')}{$slider.id}/{$slider.image}')" onclick='javascript:window.location.href="{$slider.url}"'></li>
+        </foreach>
+    </ul>
+</div>
+<script>
+$().ready(function() {
+    var groupId = $(".news-head select").val();
+    FindNewsList(groupId);
+
+    $('.banner').unslider({
+        speed: 500, //  The speed to animate each slide (in milliseconds)
+        delay: 5000, //  The delay between slide animations (in milliseconds)
+        complete: function() {}, //  A function that gets called after every slide animation
+        keys: true, //  Enable keyboard (left, right) arrow shortcuts
+        dots: true, //  Display dot navigation
+        fluid: true //  Support responsive design. May break non-responsive designs
+    });
+
+    $("#slide_news_list").find("li:first").nextAll().hide();
+
+    var myar = setInterval('AutoScroll("#slide_news_list")', 2500);
+
+    $("#slide_news_list").hover(function() {clearInterval(myar);},
+        function() {
+            myar = setInterval('AutoScroll("#slide_news_list")', 2500)
+        });
+
+    $(".news-nav .up").hover(function() {clearInterval(myar);},
+        function() {
+            myar = setInterval('AutoScroll("#slide_news_list")', 2500)
+    });
+    $(".news-nav .down").hover(function() {clearInterval(myar);},
+        function() {
+            myar = setInterval('AutoScroll("#slide_news_list")', 2500)
+    });
+
+    $('.news-nav .up').click(function(){
+        clearInterval(myar);
+        // var infoTmp = $(".index-news-item").filter(function(){return $(this).css('display')!='none';});  
+        AutoScroll("#slide_news_list");
+    });
+
+    $('.news-nav .down').click(function(){
+        clearInterval(myar);
+        ScrollDown("#slide_news_list");
+    });
+
+    $(".news-head select").change(function(){
+        $("#groupNewsList li").remove();
+        var groupId = $(this).val();
+        FindNewsList(groupId);
+    });
+
+});
+
+function FindNewsList(groupId) {
+    var news = "<li><a>内容正在加载中...</a></li>";
+    $("ul.news").append(news);
+    
+    $.get(
+        "__ROOT__/lastnews", {
+            'g': groupId
+        },
+        function(data) 
+        {
+            console.log(data);
+            $("ul.news li").remove();
+
+            if(data==0){
+                return;
+            }else{
+                $.each(data,function(index,newsData){
+                    var news = "<li><a href='__ROOT__/article/" + newsData['id'] + ".html' target='_blank'>"+newsData['title']+"</a></li>";
+                    $("ul.news").append(news);
+                })
+            }
+        });
+}
+
+function AutoScroll(obj) {
+    $(obj).find("ul:first").animate({
+        marginTop: "-20px"
+    }, 600, function() {
+        $(this).css({
+            marginTop: "50px"
+        }).find("li:first").appendTo(this);
+        $(this).find("li:first").nextAll().hide();
+        $(this).find("li:first").show();
+        $(obj).find("ul:first").animate({
+            marginTop: "15px"
+        }, 600, function() {});
+    });
+}
+function ScrollDown(obj) {
+    var infoTmp = $("#slide_news_list ul li").filter(function(){return $(this).css('display')!='none';}); 
+    $(obj).find("ul:first").animate({
+        marginTop: "50px"
+    }, 600, function() {
+        $(this).find("li:last").prevAll().hide();
+        $(this).css({
+            marginTop: "-20px"
+        }).find("li:last").prependTo(this);
+        $(this).find("li:first").show();
+        $(obj).find("ul:first").animate({
+            marginTop: "15px"
+        }, 600, function() {});
+    });
+}
+</script>
+<div class="container">
+    <div class="index-news">
+        <div class="news-head">
+            <select>
+                <foreach name="newsGroupList" item="group">
+                    <option value="{$group.id}">{$group.name}</option>
+                </foreach>
+            </select>
+        </div>
+        <div id="slide_news_list" class="news-list">
+            <ul class="list-unstyled news"></ul>
+        </div>
+        <div class="news-nav">
+            <div class="up"></div>
+            <div class="down"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="advs list-unstyled">
+            <foreach name="focusList" item="focus">
+                <div class="col-lg-4 adv">
+                    <div class="item">
+                        <img src="{:UploadUrl('slider')}{$focus.id}/{$focus.image}" />
+                        <a href="{$focus.url}">
+                            <h3 style="font-size:18px;">{$focus.name}</h3>
+                        </a>
+                        <p>{$focus.bref}</p>
+                    </div>
+                </div>
+            </foreach>
+        </div>
+    </div>
+</div>

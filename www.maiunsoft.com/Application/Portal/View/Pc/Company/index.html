@@ -1,0 +1,44 @@
+<include file="Public:guid" />
+<style type="text/css">
+    .card{
+        margin-bottom: 20px;
+        margin-top:10px;
+        border: 1px dotted #ddd;
+    }
+    .card-block{
+        height: 50px;
+        border-top: 1px solid #ddd;
+    }
+
+    .card-title{
+        margin-top:15px;
+        font-size: 15px;
+        text-align: center;
+        color: #666;
+        letter-spacing: 1px;
+    }
+</style>
+<div class="container">
+    <div class="page-bref" style="width:100%">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-title">典型客户</h1>
+                当前，脉云软件(Maiunsoft)正在为100多家企业和机构客户提供高品质软件系统和服务，很多客户优先选择我们的整套解决方案并购买长期服务，我们深感欣慰，这也是我们始终把客户需求、服务体验和产品创新放在首要位置的根本动力。未来3年，我们将继续加大投入，为超过10000家企业和机构客户提供更加优质的技术和服务，通过帮助客户提升业务能力，来体现脉云自身的价值。
+            </div>
+        </div>
+    </div>
+    <div class="row" style="overflow: auto;margin-bottom:20px">
+        <foreach name="clientList" item="client">
+            <div class="col-lg-2">
+                <div class="card">
+                    <img class="card-img-top" src="{:UploadUrl('company')}{$client.id}/{$client.logo}" style="width:90%;margin:5%;" alt="Card image cap">
+                    <div class="card-block">
+                        <a href="{$client.website}" target="_blank">
+                            <h4 class="card-title">{$client.name}</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </foreach>
+    </div>
+</div>

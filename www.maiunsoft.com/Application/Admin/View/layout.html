@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="" lang="zh-cn"><!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="unsafe-url"/>
+    <meta name="referrer" content="always"/>
+    <include file="_Public:header" />
+</head>
+
+<body>
+    <taglib name="html" />
+    <section id="container" class="">
+        <!--top start-->
+        <include file="_Public:top" />
+        <!--top end-->
+
+        <!--sidebar start-->
+        <include file="_Public:menu" />
+        <!--sidebar end-->
+
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper site-min-height">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <i class="fa fa-{$pageGuid.icon} fa-fw">&nbsp;</i>{$pageGuid.title}
+                        <a href="javascript:history.go(-1);" class="fa fa-reply pull-right" style="font-size:30px;"></a>
+                    </header>
+                    <div class="panel-body">
+                        <!-- page start-->
+                        {__CONTENT__}
+                        <!-- page end-->
+                    </div>
+                </section>
+            </section>
+        </section>
+        <!--main content end-->
+
+
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                2015-2020 &copy; 脉云软件(上海)有限公司
+                <a href="#" class="go-top">
+                    <i class="icon-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <!-- end container -->
+
+    <include file="_Public:footer" />
+
+</body>
+
+</html>

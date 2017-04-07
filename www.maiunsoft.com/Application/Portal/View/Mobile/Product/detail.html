@@ -1,0 +1,197 @@
+<include file="Mobile:Public:TopGuid" />
+<style type="text/css">
+.opera{
+    height: 40px;
+    margin-bottom: 10px;
+    background: #eee;
+    width: 100%;
+    overflow: hidden;
+}
+
+.opera button{
+    margin-left: 5px;
+    float: left;
+    background: #c43c06;
+    color: #fff;
+    border: none;
+    height: 30px;
+    margin-top: 5px;
+}
+
+table{
+    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+table tr{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr th{
+    background: #f9f9f9;
+}
+
+table tr th,
+table tr td{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding-left: 10px;
+    font-size: 14px;
+}
+</style>
+<div class="container">
+    <div class="detail">
+        <h1 class="title">{$currentProduct.name}</h1>
+        <php>$imageList = explode('|', $currentProduct['images']);</php>
+        <div id="myCarousel" class="carousel slide" style="width:100%;min-height:200px;">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <foreach name="imageList" item="image">
+                    <php>$active = $key==0?'active':'';</php>
+                    <li data-target="#myCarousel" data-slide-to="{$key}" class="{$active}"></li>
+                </foreach>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <foreach name="imageList" item="image">
+                    <php>$active = $key==0?'active':'';</php>
+                    <div class="item {$active}">
+                        <img src="{:UploadUrl('product')}{$currentProduct.id}/{$image}" alt="" />
+                    </div>
+                </foreach>
+            </div>
+        </div>
+        <p class="bref">{$currentProduct.bref}</p>
+    </div>
+    <div class="opera">
+        <button class="fa fa-download subscriber">了解更多</button>
+        <button class="fa fa-qq ask">咨询顾问</button>
+        <button class="fa fa-headphones call">4009910560</button>
+    </div>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" 
+          href="#p_description">产品描述</a>
+                </h4>
+            </div>
+            <div id="p_description" class="panel-collapse collapse in">
+                <div class="panel-body">{$currentProduct.description|htmlspecialchars_decode}</div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseTwo">产品参数</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <table>
+                        <tr>
+                            <th width="30%">参数名称</th>
+                            <th width="70%">参数值</th>
+                        </tr>
+                        <foreach name="paramList" item="param">
+                            <tr>
+                                <td>{$param.name}</td>
+                                <td>{$param.value}</td>
+                            </tr>
+                        </foreach>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" 
+          href="#collapseThree">版本历史</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <div class="panel-group" id="accordion">
+                        <foreach name="versionList" item="version">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#version_{$key}">版本：{$version.version}</a> <i class="pull-right">更新时间：{$version.update_date}</i>
+                                    </h4>
+                                </div>
+                                <div id="version_{$key}" class="panel-collapse collapse in">
+                                    <div class="panel-body">{$version.content|htmlspecialchars_decode}</div>
+                                </div>
+                            </div>
+                        </foreach>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 新品编辑文章窗口 -->
+<div class="modal" id="subscriberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="z-index:999999999">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="__ROOT__/subscribe/product" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title" id="editArticleModalTitle">获取详细资料并申请体验</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>产品：</label>
+                            <input type="text" name="subscribe_product_name" class="form-control" readonly="true" value="{$currentProduct.name}"/>
+                        </div>
+                        <div class="form-group">
+                            <label>称谓：</label>
+                            <input type="text" name="subscriber_name" class="form-control" maxlength="20" minlength="2" required="true" />
+                        </div>
+                        <div class="form-group">
+                            <label>手机：</label>
+                            <input type="number" name="subscriber_mobile" class="form-control" min="1300000000" maxlength="19999999999" minlength="11" maxlength="11" required="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <button type="submit" class="btn btn-danger" name="subscribe_product" value="{$currentProduct.id}">获取</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+$(document).ready(function(){
+
+    $('#myCarousel').carousel({
+      interval: 3000
+    });
+
+    $(".opera button.subscriber").click(function(){
+        $("#subscriberModal").modal();  
+    });
+
+    $(".opera button.ask").click(function(){
+        location.href = "http://wpa.qq.com/msgrd?v=3&uin=3323438118&site=qq&menu=yes";
+    });
+
+    $(".opera button.call").click(function(){
+        location.href = "tel://4009910560";
+    });
+});
+</script>

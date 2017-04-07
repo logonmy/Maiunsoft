@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie6" lang="zh-cn"><![endif]-->
+<!--[if IE 7 ]><html class="ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 8 ]><html class="ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="zh-cn"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="" lang="zh-cn"><!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="unsafe-url"/>
+    <meta name="referrer" content="always"/>
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>MAIUNSOFT WEBSITE CONTENT MANAGEMENT SYSTEM</title>
+    <!-- Bootstrap core CSS -->
+    <css href="http://static.maiunsoft.com/assets/bootstrap-3.3.5/css/bootstrap.min.css" />
+    <!-- Custom styles for this template -->
+    <link href="__MOD_STATIC__/css/style.css" rel="stylesheet">
+    <link href="__MOD_STATIC__/css/style-responsive.css" rel="stylesheet" />
+    <js href="http://static.maiunsoft.com/js/jquery/jquery-2.2.0.min.js" />
+</head>
+
+<body class="login-body">
+    <div class="container">
+        <form class="form-signin" action="{:U('login/login');}" method="post">
+            <h2 class="form-signin-heading">MAIUNSOFT WCM SYSTEM</h2>
+            <div class="login-wrap">
+                <input name="username" type="text" class="form-control" placeholder="username" autofocus>
+                <input name="password" type="password" class="form-control" placeholder="password">
+                <label class="checkbox" style="margin-left:20px;">
+                </label>
+                <button class="btn btn-lg btn-login btn-block" type="submit">Sign In</button>
+            </div>
+        </form>
+    </div>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <js src="http://static.maiunsoft.com/assets/bootstrap-3.3.5/js/bootstrap.min.js" />
+</body>
+
+</html>

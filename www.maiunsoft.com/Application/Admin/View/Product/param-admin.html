@@ -1,0 +1,71 @@
+<script>
+
+function del_param(id) {
+    location.href = '__URL__/delete_param?id=' + id;
+}
+
+$(document).ready(function(){
+    $("#productSelector").change(function(){
+        var url = "{:U('product/param_admin')}?id=" + $("#productSelector").val();
+        window.location.href = url;
+    });
+    $("#addParamBtn").click(function(){
+        $("#editParamModal").modal();  
+    });
+});
+
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <html:select name="product" title="name" options="productList" selected="productId" id="productSelector"/>
+        <a class="pull-right fa fa-plus create-btn" id="addParamBtn">&nbsp;添加参数</a>
+    </ul>
+    <html:grid datasource="paramList" pk="id" show="name:参数名称,value:参数值"
+    style="table table-advance table-hover" action="true" actionList="del_param:删除" />
+
+    <div class="page">{$page_show}</div>
+</section>
+
+<!-- 编辑产品信息窗口 -->
+<div class="modal" id="editParamModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:600px">
+            <form action="{:U('product/save_param')}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title fa fa-cube" id="myModalLabel">&nbsp;添加参数</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                参数图标 <i class="fa fa-star"></i>
+                            </label>
+                            <input type="text" name="param_icon" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                参数名称 <i class="fa fa-star"></i>
+                            </label>
+                            <input type="text" name="param_name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                参数值
+                                <i class="fa fa-star"></i>
+                            </label>
+                            <textarea class="form-control" name="param_value"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="param_product" value="{$productId}">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

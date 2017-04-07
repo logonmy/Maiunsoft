@@ -1,0 +1,47 @@
+<?php 
+
+namespace Portal\Controller;
+
+/**
+* 
+*/
+class CompanyController extends PortalController
+{
+	public function client()
+	{
+		$this->clientList = Service('Company')->FindAllCompanyList();
+
+		// 构造页面导航
+		//
+		$this->breadcrumbs = array(array('caption'=>'典型客户'));
+
+		$this->_PageHeader = array(
+			'title' => '经典客户',
+			'keywords' => '万利达、爱戈斯、戴福瑞、梅菲尔德',
+			'description' => '脉云已经为100多家客户提供高质量的服务'
+			);
+
+		$this->theme($this->_theme)->display('index');
+	}
+	
+	
+	//公司简介
+	public function about(){
+		$this->display('about');
+	}
+	
+	//服务网络
+	public function service(){
+		$this->display('service');
+	}
+	
+	//合作伙伴
+	public function cooperation(){
+		$this->display('cooperation');
+	}
+	
+	//企业文化
+	public function culture(){
+		$this->display('culture');
+	}
+}

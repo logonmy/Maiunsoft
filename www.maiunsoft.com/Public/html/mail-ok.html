@@ -1,0 +1,76 @@
+<html lang='zn-cn'>
+<head>
+	<title>脉云软件邮件确认</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			width:100%;
+			text-align:center;
+			background:#eef;
+		}
+
+		p{
+			text-indent: 2em;
+		}
+
+		.main {
+			width:80%;
+			margin:50px;
+			overflow: auto;
+		}
+
+		.row{
+			position: relative;
+		}
+
+		.logo img{
+		}
+
+		.explian{
+			margin: 20px;
+			font-size: 16px;
+			color: #666;
+			text-align:left;
+			line-height:180%;
+		}
+
+		.explian h2{
+			color: #ae2843;
+		}
+
+		.perform{
+			text-align: center;
+		}
+
+		.perform button{
+			height:45px;
+			width: 120px;
+			background:#ae2843;
+			border-style: none;
+			color: #fff;
+			font-size:18px;
+			cursor:pointer;
+		}
+
+
+
+	</style>
+
+</head>
+<body>
+	<div class="main">
+		<div class="row logo">
+			<img src="http://localhost/mainusoft/files/logo-cn.png">
+		</div>
+		<div class="row explian">
+			<h2>先生(女士)，您好!</h2>
+			<p>这是脉云服务中心确认邮件,您于###日在脉云官网(http://www.mainusoft.com)使用了注册服务号功能，为了确认您注册的邮箱确认无误，以便于有效保障您账户的安全性，以及接下来提供更好的服务</p>
+			<h3>请您点击下面的确认按钮</h3>
+			<form action="http://localhost/mainusoft/regist-second.html" class="row perform">
+				<button type="submit" name="perform" value="ok">确认注册</button>
+			</form>
+			<h3>如果按钮无效，请复制下方连接至浏览器地址栏，按回车键确认注册</h3>
+		</div>
+		
+	</div>
+</body>

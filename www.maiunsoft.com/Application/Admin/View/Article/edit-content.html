@@ -1,0 +1,23 @@
+
+<form role="form" action="{:U('article/save_content')}" method="post">
+    <section class="">
+        <textarea name="article_content" id="product_description" style="width:100%;height:500px">{$article.content|htmlspecialchars_decode}</textarea>
+    </section>
+    <div class="col-lg-12" style="text-align:center;margin-top:10px">
+        <input type="hidden" name="article_group" value="{$article.group_id}" />
+        <button type="submit" class="btn-danger btn" name="article_id" value="{$article.id}">保存内容</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#productSelector").change(function(){
+        var url = "{:U('product/description')}?id=" + $("#productSelector").val();
+        window.location.href = url;
+    });
+    var ue = UE.getEditor('product_description');
+});
+</script>
+<js href="__PUBLIC__/Static/ueditor/ueditor.config.js" />
+<js href="__PUBLIC__/Static/ueditor/ueditor.all.min.js" />

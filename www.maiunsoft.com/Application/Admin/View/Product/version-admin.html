@@ -1,0 +1,65 @@
+<script>
+
+function del_version(id) {
+    location.href = '__URL__/delete_version?id=' + id;
+}
+
+$(document).ready(function(){
+    $("#productSelector").change(function(){
+        var url = "{:U('product/version_admin')}?id=" + $("#productSelector").val();
+        window.location.href = url;
+    });
+    $("#addVersionBtn").click(function(){
+        $("#editVersionModal").modal();  
+    });
+});
+
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <html:select name="product" title="name" options="productList" selected="productId" id="productSelector"/>
+        <a class="pull-right fa fa-plus create-btn" id="addVersionBtn">&nbsp;添加版本</a>
+    </ul>
+    <html:grid datasource="versionList" pk="id" show="version:版本,update_date:更新日期"
+    style="table table-advance table-hover" action="true" actionList="del_version:删除" />
+
+    <div class="page">{$page_show}</div>
+</section>
+
+<!-- 编辑产品信息窗口 -->
+<div class="modal" id="editVersionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:600px">
+            <form action="{:U('product/save_version')}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title fa fa-cube" id="myModalLabel">&nbsp;添加版本</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>
+                                版本名称 <i class="fa fa-star"></i>
+                            </label>
+                            <input type="text" name="version_number" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                更新描述
+                                <i class="fa fa-star"></i>
+                            </label>
+                            <textarea class="form-control" name="version_content"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="version_product" value="{$productId}">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

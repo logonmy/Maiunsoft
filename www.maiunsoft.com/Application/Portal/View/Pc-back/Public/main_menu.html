@@ -1,0 +1,273 @@
+<div class="nav">
+    <div class="container list" id="navlist">
+        <ul id="navfouce" class="unstyled-list list-inline">
+            <!-- <li class="fwzd have-subs">
+                <a>服务直达</a>
+            </li> -->
+            <li class="have-subs fwzd">
+                <a>行业透视</a>
+            </li>
+            <li class="have-subs">
+                <a>解决方案</a>
+            </li>
+            <li class="have-subs">
+                <a>软件产品</a>
+            </li>
+            <li>
+                <a href="{:U('company/client')}">典型客户</a>
+            </li>
+            <li class="have-subs">
+                <a>服务支持</a>
+            </li>
+            <li class="have-subs">
+                <a>关于脉云</a>
+            </li>
+        </ul>
+        <form class="search-box pull-right" action="__ROOT__/query" method="get">
+            <input type="text" name="k" class="keywords" />
+            <input type="submit" class="submit" value="" />
+        </form>
+    </div>
+</div>
+<div class="nav-box" id="navbox">
+    <div class="container" style="overflow:auto;">
+        <!-- <div class="cont" style="display:none;">
+            <ul class="sublist clearfix list-unstyled">
+                <li class="col-lg-1">
+                    <img src="__PUBLIC__/server.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="{:U('solution/index')}">查找解决方案</a>
+                        </li>
+                        <li>
+                            <a href="{:U('product/index')}">查找软件系统</a>
+                        </li>
+                        <li>
+                            <a href="{:U('case/index')}">浏览成功案例</a>
+                        </li>
+                        <li>
+                            <a href="{:U('help/index')}">查找支持说明</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-lg-1">
+                    <img src="__PUBLIC__/cloud.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="{:U('report/index')}">了解云知识</a>
+                        </li>
+                        <li>
+                            <a href="http://demo.maiunsoft.com">体验云服务</a>
+                        </li>
+                        <li>
+                            <a href="http://support.maiunsoft.com">获取云支持</a>
+                        </li>
+                        <li>
+                            <a href="http://buy.maiunsoft.com">购买云服务</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="col-lg-1">
+                    <img src="__PUBLIC__/person.png" style="width:100%;" />
+                </li>
+                <li class="col-lg-3">
+                    <ul class="sub-sublist">
+                        <li>
+                            <a href="http://service.maiunsoft.com">反馈产品问题</a>
+                        </li>
+                        <li>
+                            <a href="http://service.maiunsoft.com">跟踪项目进度</a>
+                        </li>
+                        <li>
+                            <a href="http://partner.maiunsoft.com">成为合作伙伴</a>
+                        </li>
+                        <li>
+                            <a href="{:U('hire/index')}">加入脉云</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div> -->
+        <!-- 行业动态 -->
+        <div class="cont" style="display:none;">
+            <ul class="sublist row">
+                <foreach name="menuReportList" item="reportGroup">
+                    <li class="col-lg-3">
+                        <div class="">
+                            <a href="__ROOT__/report/{$reportGroup.id}.html" class="sub-title">{$reportGroup.name}</a>
+                            <ul class="sub-sublist">
+                                <foreach name="reportGroup.childs" item="report">
+                                    <li>
+                                        <a href="__ROOT__/article/{$report.id}.html">{$report.title}</a>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        <!-- 解决方案 -->
+        <div class="cont" style="display:none;">
+            <ul class="sublist row">
+                <foreach name="menuSolutionList" item="menuSolutionGroup">
+                    <li class="col-lg-3">
+                        <div class="">
+                            <a href="__ROOT__/solution/{$menuSolutionGroup.id}.html" class="sub-title">{$menuSolutionGroup.name}</a>
+                            <ul class="sub-sublist">
+                                <foreach name="menuSolutionGroup.childs" item="menuSolution">
+                                    <li class="sub-subitem">
+                                        <a href="__ROOT__/article/{$menuSolution.id}.html">{$menuSolution.title}</a>
+                                    </li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        <!-- 软件产品 -->
+        <div class="cont row" style="display:none;style:">
+            <ul class="sublist">
+                <volist name="menuProductList" id="product" offset="0" length='3'>
+                    <li class="col-lg-3">
+                        <div class="card">
+                            <a href="__ROOT__/product/{$product.id}.html">
+                                <img src="{:UploadUrl('product')}{$product.id}/{$product.thumbnail}" />
+                                <h3>{$product.name}-{$product.short_name}</h3>
+                                <p style="font-size:14px;line-height:25px;height:55px">{$product.title}</p>
+                            </a>
+                        </div>
+                    </li>
+                </volist>
+                <li class="col-lg-3">
+                    <a class="sub-title" href="__ROOT__/products">更多产品</a>
+                    <ul class="sub-sublist">
+                        <volist name="menuProductList" id="product" offset="3" length='10'>
+                            <li>
+                                <a href="__ROOT__/product/{$product.id}.html">{$product.name}-{$product.short_name}</a>
+                            </li>
+                        </volist>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 帮助文档 -->
+        <div class="cont" style="display:none;">
+            <ul class="sublist clearfix">
+                <foreach name="menuHelpList" item="pkg">
+                    <li class="col-lg-3">
+                        <a href="__ROOT__/help/{$pkg.id}.html" class="sub-title">{$pkg.name}</a>
+                        <ul class="sub-sublist">
+                            <foreach name="pkg.childs" item="help">
+                                <li>
+                                    <a href="__ROOT__/article/{$help.id}.html">{$help.title}</a>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        <!-- 联系我们 -->
+        <div class="cont row" style="display:none;">
+            <ul class="sublist clearfix">
+                <li class="col-lg-3">
+                    <img src="__PUBLIC__/location.jpg" style="width:100%" />
+                </li>
+                <li class="col-lg-5" style="border-right:1px solid #ddd;">
+                    <a class="sub-title">脉云软件(上海)有限公司</a>
+                    <p class="company">
+                        今天，以大数据、云计算、互联网+为代表的新一代信息技术已经成为拉动社会快速发展的牵引力量，新商业模式的蓬勃发展，给传统企业带来了巨大的挑战， 脉云软件聚焦行业难题，从业务和内容两个维度出发，形成了一系列网格化解决方案，帮助客户构建具有行业竞争力的业务系统和内容管理体系，帮助100多家企业和机构获得成功。
+                    </p>
+                    <a href="__ROOT__/about" class="company-more">了解更多...</a>
+                </li>
+                <li class="col-lg-4">
+                    <a class="sub-title">联系方式</a>
+                    <ul class="sub-sublist">
+                        <li>
+                            <a>上海市浦东新区崂山路526号江苏大厦</a>
+                        </li>
+                        <li>
+                            <a>邮箱：service@maiunsoft.com</a>
+                        </li>
+                        <li>
+                            <a>电话：400-9910-560</a>
+                        </li>
+                        <li>
+                            <img src="__PUBLIC__/qcode.jpg" alt="" style="height:100px" />
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+(function() {
+
+    var time = null;
+    var list = $(".have-subs");
+    var box = $("#navbox");
+    var lista = list.find("a");
+
+    for (var i = 0, j = lista.length; i < j; i++) {
+        if (lista[i].className == "now") {
+            var olda = i;
+        }
+    }
+
+    var box_show = function(hei) {
+        box.stop().animate({
+            height: hei,
+            opacity: 1
+        }, 400);
+    }
+
+    var box_hide = function() {
+        box.stop().animate({
+            height: 0,
+            opacity: 0
+        }, 400);
+    }
+
+    lista.hover(function() {
+        lista.removeClass("now");
+        $(this).addClass("now");
+        clearTimeout(time);
+        var index = list.find("a").index($(this));
+        box.find(".cont").hide().eq(index).show();
+        var _height = box.find(".cont").eq(index).height() + 54;
+        box_show(_height)
+    }, function() {
+        time = setTimeout(function() {
+            box.find(".cont").hide();
+            box_hide();
+        }, 50);
+        lista.removeClass("now");
+        lista.eq(olda).addClass("now");
+    });
+
+    box.find(".cont").hover(function() {
+        var _index = box.find(".cont").index($(this));
+        lista.removeClass("now");
+        lista.eq(_index).addClass("now");
+        clearTimeout(time);
+        $(this).show();
+        var _height = $(this).height() + 54;
+        box_show(_height);
+    }, function() {
+        time = setTimeout(function() {
+            $(this).hide();
+            box_hide();
+        }, 50);
+        lista.removeClass("now");
+        lista.eq(olda).addClass("now");
+    });
+
+})();
+</script>

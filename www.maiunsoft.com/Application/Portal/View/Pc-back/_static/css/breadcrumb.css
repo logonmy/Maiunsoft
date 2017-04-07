@@ -1,0 +1,70 @@
+.breadcrumb{
+    width: 100%;
+    background: #fff !important;
+    margin-bottom: 0px !important;
+    display: block;
+    height: 60px;
+}
+
+.breadcrumb ul{
+    width: 80%;
+    float: left;
+    margin-top: 12px;
+    margin-left: 0px;
+    padding-left: 0px;
+    display: block;
+}
+
+.breadcrumb ul li {
+    float: left;
+    list-style: none;
+    margin-left: 10px;
+}
+
+.breadcrumb ul li:first-child {
+    margin-left: 0px !important;
+}
+
+.breadcrumb ul li a {
+    font-size: 16px;
+    color: #777;
+}
+
+.breadcrumb ul li:first-child + li:before,
+.breadcrumb ul li:first-child + li + li:before,
+.breadcrumb ul li:first-child + li + li + li:before,
+.breadcrumb ul li:first-child + li + li + li + li:before,
+.breadcrumb ul li:first-child + li + li + li + li + li:before,
+.breadcrumb ul li:first-child + li + li + li + li + li + li:before {
+    content: url(../img/arrow-right.png) !important;
+    padding-right: 10px !important;
+}
+
+.more-menu{
+    margin-top:3px;
+    z-index:999;
+}
+
+.more-menu button{
+    font-size:16px;
+    width:100px;
+    background:#eee;
+    border:none;
+    height:40px;
+    letter-spacing: 2px;
+}
+
+.more-menu .dropdown-menu{
+    background: #eee;
+    overflow: auto;
+    width: 220px;
+}
+
+.more-menu .dropdown-menu .dropdown-item{
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 16px;
+    display: block;
+}

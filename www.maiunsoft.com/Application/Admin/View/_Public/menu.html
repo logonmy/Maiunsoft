@@ -1,0 +1,48 @@
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <div class="workspace-guid">
+            <h1>个人工作间</h1>
+            <a href="{:U('home/index')}" class="fa fa-windows"></a>
+        </div>
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <foreach name="menu_list" item="menu">
+                <li>
+                    <a href="" class="menu-item {$menu.status}"> <i class="fa fa-{$menu.icon}"></i>
+                        <span>{$menu.title}</span>
+                    </a>
+                    <ul class="sub">
+                        <foreach name="menu.sub_menu_list" item="sub_menu">
+                            <li class="sub-menu {$sub_menu.status}">
+                                <a href="{:U($sub_menu['name'])}" class="sub-menu">
+                                    <i class="fa fa-{$sub_menu.icon} fa-fw"></i> {$sub_menu.title}
+                                </a>
+                            </li>
+                        </foreach>
+                    </ul>
+                </li>
+            </foreach>
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+
+<script>
+$(document).ready(function(){
+
+    // 找到所有的列表
+    var subMenuList = $(".sub-menu");
+    var currentURL = window.location.href;
+    subMenuList.each(function(){
+        var subUrl = $(this).attr("href");
+        var pos = currentURL.indexOf(subUrl);
+        if(pos>0) {
+            // 标注
+            $(this).parent().attr('class','active');
+            return;
+        }
+    });
+});
+</script>

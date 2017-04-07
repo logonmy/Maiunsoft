@@ -1,0 +1,132 @@
+
+<script>
+function delete_activity(id) {
+    location.href = '__URL__/delete?id=' + id + '&type={$activityTypeId}';
+}
+
+function edit_activity (id) {
+    $.get(
+        "{:U('activity/single')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(data==0){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                $("#editJobModal button[name='activity_id']").val(data['id']);
+                $("#editJobModal input[name='activity_name']").val(data['name']);
+                $("#editJobModal input[name='activity_starttime']").val(data['start_time']);
+                $("#editJobModal input[name='activity_endtime']").val(data['end_time']);
+                $("#editJobModal input[name='activity_address']").val(data['address']);
+                $("#editJobModal input[name='activity_contactname']").val(data['contact_name']);
+                $("#editJobModal input[name='activity_contactnumber']").val(data['contact_number']);
+                $("#editJobModal textarea[name='activity_agenda']").val(data['agenda']);
+                $("#editJobModal select[name='activity_city']").find("option[value='"+data['city']+"']").attr('selected',true);
+                $("#editJobModal .modal-title").html('编辑活动：'+data['name']);
+                $("#editJobModal").modal(); 
+            }
+        });
+}
+
+function edit_content (id) {
+    location.href = '__URL__/edit_content/id/' + id;
+}
+
+$(document).ready(function(){
+    // 选择不同的库，显示相应的库存信息
+    $("#groupSelector").change(function(){
+        var url = "{:U('activity/admin')}?type=" + $("#groupSelector").val();
+        window.location.href = url;
+    });
+
+    $("#addJobBtn").click(function(){
+        $("#editJobModal .modal-title").html('发布新[{$activityTypeName}]活动');
+        $("#editJobModal").modal();  
+    });
+});
+</script>
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <li>
+            <tagLib name="html" />
+        </li>
+        <a id="addJobBtn" class="pull-right fa fa-plus create-btn">&nbsp;发布新活动</a>
+    </ul>
+    <html:grid datasource="activityList" key="true" pk="id" show="name:活动名称,start_time:开始时间,end_time:结束时间" style="table table-advance table-hover" action="true" actionList="edit_activity:编辑,delete_activity:删除" />
+</section>
+
+<!-- 新品编辑文章窗口 -->
+<div class="modal" id="editJobModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:1000px;">
+            <form action="{:U('activity/save')}" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title">编辑岗位</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>活动名称</label>
+                            <input type="text" name="activity_name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>联系人</label>
+                            <input type="text" name="activity_contactname" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>联系电话</label>
+                            <input type="text" name="activity_contactnumber" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>开始时间</label>
+                            <input name="activity_starttime" class="form-control" type="datetime" required="required"/>
+                        </div>
+                        <div class="form-group">
+                            <label>结束时间</label>
+                            <input type="datetime" name="activity_endtime" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>活动缩略图</label>
+                            <input type="file" name="activity_thumbnail" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>举办城市</label>
+                            <html:select name="activity_city" title="name" options="cityList" selected="cityId" style="form-control" id="workCitySelector"/>
+                        </div>
+                        <div class="form-group">
+                            <label>活动地址</label>
+                            <input type="text" name="activity_address" class="form-control" type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label>活动主图</label>
+                            <input type="text" name="activity_image" class="form-control" type="number" />
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>活动简介</label>
+                            <textarea class="form-control" name="activity_agenda" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-lg-12">
+                        <input type="hidden" name="activity_type" value="{$activityTypeId}" />
+                        <button type="submit" class="btn btn-danger" name="activity_id" value="">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

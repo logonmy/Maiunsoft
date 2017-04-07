@@ -1,0 +1,106 @@
+<script>
+function edit_product(id) {
+    $.post(
+        "{:U('product/product')}", {
+            'id': id
+        },
+        function(data) 
+        {
+            if(!data){
+                alert('没有找到您要修改的数据');
+                return;
+            }else{
+                $("#editProductModal button[name='product_id']").val(data['id']);
+                $("#editProductModal input[name='product_name']").val(data['name']);
+                $("#editProductModal input[name='product_shortname']").val(data['short_name']);
+                $("#editProductModal input[name='product_title']").val(data['title']);
+                $("#editProductModal input[name='product_url']").val(data['url']);
+                $("#editProductModal textarea[name='product_bref']").val(data['bref']);
+
+                $("#editProductModal .modal-title").html('修改目录信息');
+                $("#editProductModal").modal(); 
+            }
+        });
+}
+
+function delete_product(id) {
+    location.href = '__URL__/delete?id=' + id;
+}
+
+function edit_description(id) {
+    location.href = '__URL__/description?id=' + id;
+}
+
+$(document).ready(function(){
+
+    // 选择不同的分组，显示相应分组的商品信息
+    $("#groupSelector").change(function(){
+        var url = "{:U('goods/admin')}?gid=" + $("#groupSelector").val();
+        window.location.href = url;
+    });
+
+    $("#createProductBtn").click(function(){
+        $("#editProductModal .modal-title").html('创建新产品'); 
+        $("#editProductModal input").val(null);
+        $("#editProductModal textarea").val(null);
+        $("#editProductModal button").val(null);
+        $("#editProductModal").modal();  
+    });
+});
+</script>
+
+
+<section class="col-lg-12">
+    <ul class="panel-tab">
+        <a class="pull-right fa fa-plus create-btn" id="createProductBtn">&nbsp;添加新产品</a>
+    </ul>
+    <html:grid datasource="productList" pk="id" show="name:产品名称"
+    style="table table-advance table-hover" action="true" actionList="edit_product:编辑,edit_description:描述,delete_product:删除" />
+
+    <div class="page">{$pageShow}</div>
+</section>
+
+
+<!-- 编辑产品信息窗口 -->
+<div class="modal" id="editProductModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width:600px">
+            <form action="{:U('product/save')}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">关闭</span>
+                    </button>
+                    <h4 class="modal-title fa fa-cube" id="myModalLabel">&nbsp;添加新商品</h4>
+                </div>
+                <div class="modal-body" style="overflow:auto;">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>产品名称</label>
+                            <input type="text" name="product_name" class="form-control" tabindex=1 />
+                        </div>
+                        <div class="form-group">
+                            <label>产品简称</label>
+                            <input type="text" name="product_shortname" class="form-control" tabindex=2 />
+                        </div>
+                        <div class="form-group">
+                            <label>产品标题</label>
+                            <input type="text" name="product_title" class="form-control" tabindex=3 />
+                        </div>
+                        <div class="form-group">
+                            <label>产品网址</label>
+                            <input type="text" name="product_url" class="form-control" tabindex=4 />
+                        </div>
+                        <div class="form-group">
+                            <label>产品简介</label>
+                            <textarea class="form-control" name="product_bref"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger" name="product_id" value="">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

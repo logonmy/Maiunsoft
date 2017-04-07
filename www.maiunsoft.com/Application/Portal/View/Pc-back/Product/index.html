@@ -1,0 +1,59 @@
+<include file="Public:guid" />
+<style type="text/css">
+    .card{
+        border: 1px solid #eee;
+        margin-bottom: 20px;
+        margin-top:10px;
+    }
+    .card-block{
+        height: 170px;
+        padding: 10px;
+        background: #eee;
+        overflow: hidden;
+    }
+
+    .card-block .card-text{
+        height: 60px;
+        overflow: hidden;
+    }
+
+    .card-block .more{
+        background:#c43c06;
+        border-radius:0px;
+        height: 40px;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 5px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    .card-title{
+        font-size: 18px;
+        font-weight: 600;
+    }
+</style>
+<div class="container">
+    <div class="page-bref" style="width:100%">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-title">产品中心</h1>
+                脉云专注于面向机构和企业的业务，目前拥有8款软件产品，服务20多个行业的客户
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <foreach name="productList" item="product">
+            <div class="col-lg-4">
+                <div class="card">
+                    <img class="card-img-top" src="{:UploadUrl('product')}{$product.id}/{$product.thumbnail}" style="width:100%" alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">{$product.name}-{$product.short_name}</h4>
+                        <p class="card-text">{$product.title}</p>
+                        <a href="__ROOT__/product/{$product.id}.html" class="form-control more" style="">详细信息</a>
+                    </div>
+                </div>
+            </div>
+        </foreach>
+    </div>
+</div>
