@@ -1,0 +1,623 @@
+
+/* 最新动态 */
+
+/* 动态一楼 */
+.news .floor img{
+	display: block;
+	width: 100%;
+	height: 3.82rem;
+}
+.news .floor .article{
+	width: 5.94rem;
+	padding: 0.58rem 0.46rem 0 0.56rem;
+}
+.news .floor .article p{
+	padding: 0;
+}
+.floor .article h2{
+	height: 0.42rem;
+	font-size: 0.42rem;
+	text-align: center;
+	color: #3a3a3a;
+	line-height: 0.42rem;
+	margin-bottom: 0.5rem;
+	font-weight: normal;
+}
+.floor .article p{
+	font-size: 0.3rem;
+	line-height: 0.52rem;
+	color: #3a3a3a;
+	text-align: center;
+}
+.news .floor .more{
+	display: block;
+	font-size: 0.38rem;
+	width: 2.18rem;
+	height: 0.42rem;
+	margin: 0 auto;
+	color: #1784db;
+}
+.news .floor a.more{
+	margin-top: 1.04rem;
+}
+/* 聚焦世界 */
+.world{
+	width: 6.9rem;
+	background: #1a78b9;
+	padding: 0.7rem 0.3rem 1.4rem 0.3rem;
+}
+.world h1{
+	color: #FFF;
+	font-weight: normal;
+}
+.world .floor{
+	width: 100%;
+	height: 6.84rem;
+	background: #fff;
+	margin-bottom: 0.7rem;
+}
+.world .article{
+	height: 1.68rem;
+	width: 5.94rem;
+	padding: 0.58rem 0.46rem 0 0.56rem;
+}
+.world .floor img{
+	display: block;
+	width: 100%;
+	height: 3.16rem;
+}
+.world .article p{
+	font-size: 0.28rem;
+}
+.world .floor a{
+	display: block;
+	font-size: 0.34rem;
+	width: 2.54rem;
+	height: 0.74rem;
+	margin: 0 auto;
+	color: #1784db;
+	box-shadow: 2px 2px 10px #d3ebfb;
+	text-align: center;
+	line-height: 0.74rem;
+	margin-bottom: 0.56rem;
+}
+/* 脉云介绍 */
+#main .info{
+	width: 6.9rem;
+	height: 9.34rem;
+	background: #fff;
+	padding: 1.3rem 0.3rem 0.30rem 0.3rem;
+}
+.info h2{
+	width: 3rem;
+	height: 0.6rem;
+	font-size: 0.6rem;
+	line-height: 0.6rem;
+	margin: 0 auto;
+	font-weight: bold;
+	text-align: center;
+}
+.info .QRcode{
+	width: 3.23rem;
+	height: 3.23rem;
+	margin: 0 auto;
+	margin-top: 0.5rem;
+}
+.info .QRcode img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.about{
+	margin: 0 auto;
+	margin-top: 1.3rem;
+}
+.about h4{
+	font-size: 0.6rem;
+	line-height: 0.6rem;
+	text-align: center;
+	height: 0.6rem;
+	margin-bottom: 0.5rem;
+}
+.about p{
+	font-size: 0.3rem;
+	line-height: 0.6rem;
+	height: 0.6rem;
+	text-align: center;
+
+}
+/* 底部 */
+#footer{
+	width: 6.9rem;
+	height: 0.5rem;
+	background: #22252d;
+	font-size: 0.16rem;
+	color: #fff;
+	padding: 0.4rem 0.3rem 0 0.3rem;
+}
+.copyright{
+	width: 2.88rem;
+	height: 0.26rem;
+	float: left;
+	font-size: 0.16rem;
+	line-height: 0.26rem;
+}
+.number{
+	width: 1.66rem;
+	height: 0.26rem;
+	line-height: 0.26rem;
+	float: left;
+	margin-left:.4rem;
+}
+.share{
+	float:right;
+}
+.share a{
+	display: inline-block;
+	width:0.19rem;
+	height:0.18rem;
+	margin-left:0.3rem;
+}
+.share a img{
+	display: block;
+	/*width:100%;
+	height:100%;*/
+	width:0.24rem;
+	height:0.23rem;
+}
+
+
+.news .floor{
+	width: 100%;
+}
+.news .floor_content{
+	padding-top: .9rem;
+}
+.news .floor h3{
+	height: 0.38rem;
+	line-height: 0.38rem;
+	font-size: 0.4rem;
+	color: #2a80bb;
+	padding-left: 0.5rem;
+	margin-bottom: 0.7rem;
+}
+.news .floor p{
+	font-size: 0.3rem;
+	color: #666666;
+	padding: 0 0.48rem 0 0.5rem;
+	line-height: 0.56rem;
+}
+.floor .more{
+	display: block;
+	font-size: 0.38rem;
+	width: 2.18rem;
+	height: 0.42rem;
+	margin: 0 auto;
+	margin-top: 1.04rem;
+	color: #1784db;
+}
+/* 网络服务 */
+.wangluo .floor{
+	padding-top: 0.9rem;
+}
+.wangluo .floor .table{
+	width: 5.92rem;
+	height: 3.5rem;
+	margin-left: 0.5rem;
+}
+.wangluo .floor .table tr{
+	height: 0.3rem;
+}
+.wangluo .table .left{
+	border: 1px;
+	width:1.56rem;
+	font-size: 0.3rem;
+	vertical-align: top;
+	line-height: 0.56rem;
+}
+.wangluo .table .right{
+	width: 4.36rem;
+	font-size: 0.3rem;
+	vertical-align: top;
+	line-height: 0.56rem;
+}
+.wangluo.table td{
+	font-size: 0.3rem;
+	color: #666;
+	line-height: 0.3rem;
+
+}
+
+/* 选项卡 */
+.info_menu{
+	width: 100%;
+	height: 1.4rem;
+	margin-bottom: 0.9rem;
+	box-shadow: 2px 2px 26px #d5eaf9;
+}
+.info_menu a{
+	display: block;
+	width: 33.33%;
+	height: 100%;
+	background: #fbfbfb;
+	font-size: 0.3rem;
+	color: #373b41;
+	float: left;
+	line-height: 1.4rem;
+	text-align: center;
+}
+.info_menu .current{
+	background: #1784db;
+	color: #fff;
+}
+.floor img{
+	display: block;
+	width: 4.36rem;
+	height: 3.04rem;
+	margin: 0 auto;
+	/*margin-top: 0.68rem;*/
+}
+.information .floor img{
+	display: block;
+	width: 4.36rem;
+	height: 3.04rem;
+	margin: 0 auto;
+}
+
+
+ /* 主体 */
+#main{
+	background: #f8f8f9;
+}
+
+/* 合作伙伴 */
+.link{
+	width: 6.8rem;
+	height: 13.72rem;
+	margin: 0 auto;
+	background: #f8f8f9;
+}
+.link .bg{
+	width: 100%;
+	height: 0.9rem;
+	background: #1784db;
+}
+.link .link_up{
+	margin:0.7rem 0.92rem 0.39rem 0.92rem;
+}
+.link .link_up a{
+	display: block;
+	width: 2.1rem;
+	height: 2.1rem;
+	float: left;
+}
+.link .link_up a img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.link .link_down{
+	margin:0.39rem 0.92rem 0 0.92rem;
+}
+.link .link_down a{
+	display: block;
+	width: 2.1rem;
+	height: 2.1rem;
+	float: left;
+}
+.link .link_down a img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.link .more{
+	display: block;
+	font-size: 0.38rem;
+	width: 2.18rem;
+	height: 0.42rem;
+	margin: 0 auto;
+	margin-top: 0.06rem;
+	color: #1784db;
+}
+
+/* 企业文化 */
+.wenhua{
+	width: 6.8rem;
+	height: 13.72rem;
+	margin: 0 auto;
+	box-shadow: 5px 5px 26px #e5e5e5;
+	background: #f8f8f9;
+}
+.wenhua .bg{
+	width: 100%;
+	height: 0.9rem;
+	background: #1784db;
+}
+.wenhua .table{
+	width: 5.92rem;
+	height: 3.5rem;
+	margin-left: 0.5rem;
+	margin-top: 0.66rem;
+}
+.wenhua .table tr{
+	height: 0.3rem;
+}
+.wenhua .table .left{
+	border: 1px;
+	width:1.6rem;
+	font-size: 0.3rem;
+	vertical-align: top;
+	line-height: 0.56rem;
+	color: #1784db;
+}
+.wenhua .table .right{
+	width: 4.36rem;
+	font-size: 0.3rem;
+	vertical-align: top;
+	line-height: 0.56rem;
+}
+.wenhua.table td{
+	font-size: 0.3rem;
+	color: #666;
+	line-height: 0.3rem;
+	}
+.wenhua .more{
+	display: block;
+	font-size: 0.38rem;
+	width: 2.18rem;
+	height: 0.42rem;
+	margin: 0 auto;
+	margin-top: 0.06rem;
+	color: #1784db;
+	margin-top: 1rem;
+}
+
+/* 动态一楼 */
+.job h1{
+	
+	float: left;
+	width: 2.5rem;
+	font-weight: normal;
+}
+/* 弹框 */
+.news-top .news-top-right{
+	width: 1.5rem;
+	height: 0.58rem;
+	float: right;
+	line-height: 0.58rem;
+	font-size: 0.4rem;
+	text-align:right;
+}
+.news .news-top-right i{
+	display: inline-block;
+	width: 0.27rem;
+	height: 0.16rem;
+	background: url('../img/xiangxia.png') no-repeat;
+	background-size: cover;
+	margin-left: 0.16rem;
+	vertical-align:middle;
+}
+.news .cpmWrapper{
+	position:fixed;
+	left:0;
+	top:0;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.5);
+	width:100%;
+	height:16rem;
+	display: none;
+}
+.cpmWrapper .city{
+	width:6.9rem;
+	height:8rem;
+	background: #fff;
+	margin:0 auto;
+	margin-top:20%;
+}
+.city h3{
+	font-size:0.6rem;
+	text-align:center;
+	padding-top: 0.98rem;
+	font-weight: normal;
+	margin-bottom: 0.68rem;
+}
+.city ul{
+	width:100%;
+}
+.city ul li{
+	height:1.1rem;
+	text-align:center;
+	line-height: 1.1rem;
+	font-size:0.44rem;
+	cursor: pointer;
+}
+/* .city ul li:hover{
+	background: #1784db;
+
+} */
+.now{
+	color: #1784db;
+}
+.cpmWrapper span{
+	display: block;
+	width:1.33rem;
+	height:1.33rem;
+	font-size:0.4rem;
+	line-height: 1.33rem;
+	border-radius: 50%;
+	background: #fff;
+	margin:0 auto;
+	text-align:center;
+	margin-top: 0.3rem;
+}
+.job .floor{
+	
+	padding-top: 0.9rem;
+}
+
+.news .floor .table{
+	width: 5.92rem;
+	height: 3.5rem;
+	margin-left: 0.5rem;
+}
+.news .floor .table tr{
+	height: 0.3rem;
+}
+.floor .table .left{
+	border: 1px;
+	width:1.6rem;
+	font-size: 0.3rem;
+	vertical-align: top;
+	line-height: 0.56rem;
+}
+.floor .table .right{
+	width: 4.36rem;
+	font-size: 0.3rem;
+	vertical-align: top;
+	line-height: 0.56rem;
+}
+.floor.table td{
+	font-size: 0.3rem;
+	color: #666;
+	line-height: 0.3rem;
+
+}
+
+.content{
+	display: none;
+}
+/* 选项卡 */
+.cont_wrapper{
+	position: absolute;
+	width: 7.5rem;
+	left: 0;
+	right: 0;
+}
+.cont{
+	width: 6.9rem;
+	height: 1.4rem;
+}
+.cont_wrapper span{
+	display: block;
+	width: 0.3rem;
+	height: 1.4rem;
+	z-index: 5;
+	background: #fff;
+}
+.cont_wrapper span.left{
+	position: absolute;
+	left: 0;
+	top: 0;
+	float: left;
+	/* background: url(../img/left.jpg) no-repeat; */
+	/* background-size: cover; */
+    /* background: -webkit-linear-gradient(left, #1784db, #9ecaf3); */
+}
+.cont_wrapper span.right{
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	float: right;
+	/* background: url(../img/right.jpg) no-repeat; */
+	/* background-size: cover; */
+    /* background: -webkit-linear-gradient(right, #1784db, #9ecaf3); */
+
+}
+.info_menu{
+	width: 7.5rem;
+	
+	box-shadow: 2px 2px 26px #e5e5e5;
+}
+
+.info_menu .cont .info_menu{
+	width: 11.5rem;
+	height: 1.4rem;
+	display: flex;
+	overflow: hidden;
+}
+.info_menu a{
+	display: block;
+	width: 2.3rem;
+	
+	font-size: 0.3rem;
+	color: #373b41;
+	line-height: 1.4rem;
+	text-align: center;
+}
+.info_menu .current{
+	display: block;
+	background: #1784db;
+	
+	color: #fff;
+	width: 2.3rem;
+	height: 1.4rem;
+	line-height: 1.4rem;
+	text-align: center;
+}
+
+.news .floor h3 span{
+	vertical-align: middle;
+	margin-right: 4px;
+}
+.news .floor h3 img{
+	display: inline-block;
+	width: 0.3rem;
+	height: 0.3rem;
+	vertical-align: middle;
+}
+/* .news .floor h3:nth-child(2){
+	margin-right: 8px;
+} */
+/*.news .floor p{
+	font-size: 0.3rem;
+	color: #666666;
+	padding: 0 0.48rem 0 0.5rem;
+	line-height: 0.56rem;
+}*/
+.news .floor .table{
+	width: 6rem;
+	
+}
+
+.floor .table .right{
+	width: 4.38rem;
+	
+}
+
+/* 选项卡 */
+.info_menu{
+	width: 100%;
+	height: 1.4rem;
+	margin-bottom: 0.9rem;
+	
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+.information div.user{
+	position: relative;
+	box-shadow: 2px 2px 26px #d5eaf9;
+}
+.info_menu a{
+	display: block;
+	width: 33.33%;
+	height: 100%;
+	background: #fbfbfb;
+	font-size: 0.3rem;
+	color: #373b41;
+	float: left;
+	line-height: 1.4rem;
+	text-align: center;
+}
+.info_menu a.user,.info_menu a.job{
+	width: 20%;
+}
+
+.info_menu .current{
+	background: #1784db;
+	color: #fff;
+}
+.content{
+	display: none;
+}

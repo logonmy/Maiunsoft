@@ -1,82 +1,80 @@
-<div class="index-top">
-    <div class="logo">
-        <img src="__PUBLIC__/logo.png" />
-    </div>
-    <h1>聚焦数字世界,服务现代生活</h1>
-</div>
-<js href="http://static.maiunsoft.com/js/slider/unslider.js" />
-<div class="banner">
-    <ul>
-        <foreach name="bannerList" item="slider">
-            <php>$id = $subject['id'];</php>
-            <li style="background-image:url('{:UploadUrl('slider')}{$slider.id}/{$slider.image}')" onclick='javascript:window.location.href="{$slider.url}"'></li>
-        </foreach>
-    </ul>
-</div>
-<div class="index-menus">
 
-    <a href="__ROOT__/report">
-        <div class="menu"> <i class="fa fa-eye fa-border"></i>
-            <span>行业透视</span>
-        </div>
-    </a>
-    <a href="__ROOT__/solution">
-        <div class="menu"> <i class="fa fa-sliders fa-border"></i>
-            <span>解决方案</span>
-        </div>
-    </a>
-    <a href="__ROOT__/products">
-        <div class="menu">
-            <i class="fa fa-qrcode fa-border"></i>
-            <span>软件产品</span>
-        </div>
-    </a>
-    <a href="__ROOT__/client">
-        <div class="menu">
-            <i class="fa fa-users fa-border"></i>
-            <span>典型客户</span>
-        </div>
-    </a>
-    <a data-toggle="modal" data-target="#contact_modal">
-        <div class="menu" style="background:#c43c06;">
-            <i class="fa fa-headphones fa-border" style="color:#fff"></i>
-            <span style="color:#fff">联系我们</span>
-        </div>
-    </a>
-    <a href="__ROOT__/news">
-        <div class="menu">
-            <i class="fa fa-newspaper-o fa-border"></i>
-            <span>新闻中心</span>
-        </div>
-    </a>
-    <a href="__ROOT__/about">
-        <div class="menu">
-            <i class="fa fa-paw fa-border"></i>
-            <span>关于脉云</span>
-        </div>
-    </a>
-    <a href="__ROOT__/help">
-        <div class="menu">
-            <i class="fa fa-recycle fa-border"></i>
-            <span>服务支持</span>
-        </div>
-    </a>
-    <a href="__ROOT__/join">
-        <div class="menu">
-            <i class="fa fa-thumbs-o-up fa-border"></i>
-            <span>合作加盟</span>
-        </div>
-    </a>
-</div>
-<script>
-$().ready(function() {
+	<!-- 焦点图 -->
+	<div class="swiper-container banner">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="__MB_STATIC__/img/banner.jpg" alt="banner">
+			</div>
+			<div class="swiper-slide">
+				<img src="__MB_STATIC__/img/shezhao01.png" alt="banner">
+			</div>
+			<div class="swiper-slide">
+				<img src="__MB_STATIC__/img/md01.png" alt="banner">
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<!-- 最新动态 -->
+	<div class="news">
+		<h1>最新动态</h1>
+		<div class="floor">
+			<img src="__MB_STATIC__/img/img01.jpg" alt="news-img">
+			<div class="article">
+				<h2>业务洞察</h2>
+				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
+			</div>
+			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
+		</div>
+		<div class="floor">
+			<img src="__MB_STATIC__/img/img01.jpg" alt="news-img">
+			<div class="article">
+				<h2>业务洞察</h2>
+				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
+			</div>
+			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
+		</div>
+		<div class="floor">
+			<img src="__MB_STATIC__/img/img01.jpg" alt="news-img">
+			<div class="article">
+				<h2>业务洞察</h2>
+				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
+			</div>
+			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
+		</div>
 
-    $('.banner').unslider({
-        speed: 500, //  The speed to animate each slide (in milliseconds)
-        delay: 9000, //  The delay between slide animations (in milliseconds)
-        complete: function() {}, //  A function that gets called after every slide animation
-        fluid: true //  Support responsive design. May break non-responsive designs
-    });
-});
+	</div>
+	<!-- end 最新动态-->
+	<!-- 聚焦世界 -->
+	<div class="world">
+		<h1>业务洞察</h1>
+		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
+			<img src="__MB_STATIC__/img/img02.jpg" alt="news-img">
+			<div class="article">
+				<h2>业务洞察</h2>
+				<p>新的起点 新的征程 一直向前新的起点 </p>
+			</div>
+			<a href="##" class="more" data-cont="index-data_floor1">了解更多</a>
+		</div>
+		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
+			<img src="__MB_STATIC__/img/img02.jpg" alt="news-img">
+			<div class="article">
+				<h2>业务洞察</h2>
+				<p>新的起点 新的征程 一直向前新的起点 </p>
+			</div>
+			<a href="##" class="more">了解更多</a>
+		</div>
+		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
+			<img src="__MB_STATIC__/img/img02.jpg" alt="news-img">
+			<div class="article">
+				<h2>业务洞察</h2>
+				<p>新的起点 新的征程 一直向前新的起点 </p>
+			</div>
+			<a href="##" class="more" data-cont="index-data_floor1">了解更多</a>
+		</div>
+	</div>
+	<!-- end 聚焦世界-->
+	<!-- 脉云介绍 -->
+	
+<!-- end main-->
+<!-- 底部 -->
 
-</script>

@@ -17,11 +17,13 @@ return array(
 		'__IMG_SUBJECT_ROOT__' => __ROOT__ . substr(APP_PATH, 1) . 'UploadFiles/subject/image/',
 		'__PUBLIC_STATIC__' => __ROOT__ . '/Public/_static',
 		'__PC_STATIC__' => __ROOT__ . substr(APP_PATH, 1) . 'Portal/View/Pc/Static',
-		'__MB_STATIC__' => __ROOT__ . substr(APP_PATH, 1) . 'Portal/View/Mobile/_static',
+		'__MB_STATIC__' => __ROOT__ . substr(APP_PATH, 1) . 'Portal/View/Mobile/Static',
 		'__TB_STATIC__' => __ROOT__ . substr(APP_PATH, 1) . 'Portal/View/Tablet/_static',
 	),
-
+	
+	//路由开启
 	'URL_ROUTER_ON'   => true,
+	
 	'URL_MODEL' => 1,
 
 	'TMPL_ACTION_ERROR'     =>  'Public:dispatch_jump', // 默认错误跳转对应的模板文件

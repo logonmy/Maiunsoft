@@ -6,61 +6,145 @@
     <title>脉云软件 | {$_PageHeader.title}</title>
     <meta name="keyword" content="{$_PageHeader.keywords}">
     <meta name="description" content="{$_PageHeader.description}">
-    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <meta charset="utf-8">
-    <css href="http://static.maiunsoft.com/assets/bootstrap-3.3.5/css/bootstrap.min.css" />
-    <css href="__PUBLIC__/Static/Assets/font-awesome-4.4.0/css/font-awesome.min.css" />
-    <js href="http://static.maiunsoft.com/assets/jquery-2.2.0.min.js" />
-    <css href="__MB_STATIC__/css/style.css" />
+    <link rel="shortcut icon" href="__MB_STATIC__/img/favicon.png" >
+	<link rel="stylesheet" href="__MB_STATIC__/css/reset.css">
+	<link rel="stylesheet" href="__MB_STATIC__/css/swiper.min.css">
+	<link rel="stylesheet" href="__MB_STATIC__/css/common.css">
+	<link rel="stylesheet" type="text/css" href="__MB_STATIC__/css/main.css"/> 
+	<script src="__MB_STATIC__/js/zepto.min.js"></script>
+	<script src="__MB_STATIC__/js/iscroll.js"></script>
+	<script src="__MB_STATIC__/js/swiper.min.js"></script>
+	<script src="__MB_STATIC__/js/common.js"></script>
+	<script src="__MB_STATIC__/js/index.js"></script>
 </head>
 
 <body>
-    <div class="shows">{__CONTENT__}</div>
-    <div class="foot">
-        <span>MAIUNSOFT 2016-2018</span>
-    </div>
 
-    <div class="modal fade" id="contact_modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">通过以下方式与我们联系</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="list-group">
-                        <a class="list-group-item" href="#"> <i class="fa fa-home fa-fw"></i>
-                            &nbsp; 上海市浦东新区崂山路526号江苏大厦
-                        </a>
-                        <a class="list-group-item" href="tel://4009910560"> <i class="fa fa-headphones fa-fw"></i>
-                            &nbsp; 400-9910-560
-                        </a>
-                        <a class="list-group-item" href="http://wpa.qq.com/msgrd?v=3&uin=3323438118&site=qq&menu=yes">
-                            <i class="fa fa-qq fa-fw"></i>
-                            &nbsp; 3323438118
-                        </a>
-                        <a class="list-group-item" href="mailto:service@maiunsoft.com"> <i class="fa fa-envelope fa-fw"></i>
-                            &nbsp; service@maiunsoft.com
-                        </a>
-                        <a class="list-group-item" href="weixin://contacts/profile/mainuosft">
-                            <i class="fa fa-wechat fa-fw"></i>
-                            &nbsp; 脉云软件
-                        </a>
-                        <a class="list-group-item" href="#">
-                            <i class="fa fa-weibo fa-fw"></i>
-                            &nbsp; 脉云软件
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <js href="http://static.maiunsoft.com/assets/bootstrap-3.3.5/js/bootstrap.min.js" />
+<!--导航部分-->
+<header class="clear">
+	<a href="{:U(\'Index/index\')}" class="logo">Maiunsoft</a>
+	<nav class="clear">
+		<a href="##" class="user"></a>
+		<a href="##" class="menu"></a>
+			<div class="bg"></div>
+			<div class="menu_list" id="wrapper">
+				<div id="scroller">
+					<ul class="item">
+						<li>
+							<a href="{:U(\'Index/index\')}" class="shouye">首页</a>
+							<em></em>
+						</li>	
+					</ul>
+					<ul class="item">
+						<li>
+							<span>脉点<i></i></span>
+							<a href="{:U(\'Article/index\')}">合作动态</a>
+							<a href="{:U(\'Article/list\')}">行业风向</a>
+							<a href="{:U(\'Article/observe\')}">业务洞察</a>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+							<span>服务<i></i></span>
+							<a href="{:U(\'Service/consult\')}" class="has">咨询</a>
+							<div class="three">
+								<a href="zhuanyezixun">专业咨询</a>
+								<a href="zhuanyezixun">专业咨询</a>
+								<a href="zhuanyezixun">专业咨询</a>
+								<a href="zhuanyezixun">专业咨询</a>
+								<a href="zhuanyezixun">专业咨询</a>
+								<a href="zhuanyezixun">专业咨询</a>
+							</div>
+
+							<a href="{:U(\'Service/dev\')}" class="has">开发</a>
+							<div class="three">
+								<a href="ruanjiankaifa">软件开发</a>
+								<a href="ruanjiankaifa">软件开发</a>
+								<a href="ruanjiankaifa">软件开发</a>
+							</div>
+
+							<a href="{:U(\'Service/maintenance\')}" class="has">运维</a>
+							<div class="three">
+								<a href="zhuomianyunwei">桌面运维</a>
+								<a href="zhuomianyunwei">桌面运维</a>
+								<a href="zhuomianyunwei">桌面运维</a>
+							</div>
+
+							<a href="{:U(\'Service/train\')}" class="has">培训</a>
+							<div class="three">
+								<a href="peixun">IT培训</a>
+								<a href="peixun">IT培训</a>
+								<a href="peixun">IT培训</a>
+							</div>
+						</li>
+					</ul>
+					<ul class="item">
+						<li class="kai">
+							<span>客户<i></i></span>
+							<a href="{:U(\'Customer/finance\')}">金融</a>
+							<a href="{:U(\'Customer/edu\')}">教育</a>
+							<a href="{:U(\'Customer/consult\')}">咨询</a>
+							<a href="{:U(\'Customer/engineering\')}">工程</a>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+						<span>招聘<i></i></span>
+							<a href="{:U(\'Job/school\')}">校园招聘</a>
+							<a href="{:U(\'Job/social\')}">社会招聘</a>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+							<span>关于<i></i></span>
+							<a href="{:U(\'Company/about\')}">公司简介</a>
+							<a href="{:U(\'Company/service\')}">服务网络</a>
+							<a href="{:U(\'Company/cooperation\')}">合作伙伴</a>
+							<a href="{:U(\'Company/culture\')}">企业文化</a>
+							<a href="{:U(\'Company/sustainable\')}">可持续发展</a>
+						</li>
+					</ul>				
+				</div>
+			</div>
+	</nav>
+</header>	
+
+<!--模板渲染-->
+<div id="main">
+	{__CONTENT__}
+
+	<!-- 脉云介绍 -->
+<div class="info">
+	<div class="microblog">
+		<h2>脉云微博</h2>
+		<div class="QRcode">
+			<img src="__MB_STATIC__/img/QRcode.jpg" alt="QRcode">
+		</div>
+	</div>
+	<div class="about">
+		<h4>联系方式</h4>
+		<p>联系方式：400-9910-540</p>
+		<p>企业邮箱：service@maiunsoft.com</p>
+		<p>企业QQ：service@maiunsoft.com</p>
+	</div>
+</div>
+</div>
+
+<!--底部-->
+<footer id="footer" class="clear">
+	<div class="copyright">版权所有:脉云软件（上海）有限公司</div>
+	<div class="number">沪ICP备14051784号</div>
+	<div class="share">
+		<a href="##"><img src="__MB_STATIC__/img/img03.png" alt="share"></a>
+		<a href="##"><img src="__MB_STATIC__/img/img04.png" alt="share"></a>
+		<a href="##"><img src="__MB_STATIC__/img/img05.png" alt="share"></a>
+	</div>
+</footer>
 </body>
 
 </html>

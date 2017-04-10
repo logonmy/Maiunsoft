@@ -27,21 +27,26 @@ class CompanyController extends PortalController
 	
 	//公司简介
 	public function about(){
-		$this->display('about');
+		$this->theme($this->_theme)->display('about');
 	}
 	
 	//服务网络
 	public function service(){
-		$this->display('service');
+		$this->theme($this->_theme)->display('service');
 	}
 	
 	//合作伙伴
 	public function cooperation(){
-		$this->display('cooperation');
+		$this->theme($this->_theme)->display('cooperation');
 	}
 	
 	//企业文化
 	public function culture(){
-		$this->display('culture');
+		$this->theme($this->_theme)->display('culture');
+	}
+	
+	//可持续发展
+	public function sustainable(){
+		$this->theme($this->_theme)->display('sustainable');
 	}
 }

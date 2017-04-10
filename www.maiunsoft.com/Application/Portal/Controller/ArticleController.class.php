@@ -9,14 +9,14 @@ class ArticleController extends PortalController {
 	{
 		$this->articleList = M('article')->where('group_id=%d',$gid)->getField('id,title,bref,image');
 
-		$this->display('list');
+		$this->theme($this->_theme)->display('list');
 	}
 	
 	
 	//合作动态
 	public function detail($id=''){
 		$this->articleInfo = M('article')->where('id=%d',$id)->find();
-			$this->theme($this->_theme)->display('detail');
+		$this->theme($this->_theme)->display('detail');
 		
 		
 	}

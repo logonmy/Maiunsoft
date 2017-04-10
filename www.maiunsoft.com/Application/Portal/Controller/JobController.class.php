@@ -8,7 +8,7 @@ class JobController extends PortalController {
 	{
 		$this->jobList = M('job')->where('type=%d',$type)->select();
 
-		$this->jobTypeList = C('JOB_TYPES');
+		$this->jobTypeList = C('JOB_TYPES');//获取/Common/config.php下的配置信息
 		$this->jobType = $type;
 
 		$this->jobCityList = C('CITYS');
@@ -30,11 +30,11 @@ class JobController extends PortalController {
 	
 	//社会招聘
 	public function social(){
-		$this->display('social');
+		$this->theme($this->_theme)->display('social');
 	} 
 	
 	//校园招聘
 	public function school(){
-		$this->display('school');
+		$this->theme($this->_theme)->display('school');
 	} 
 }

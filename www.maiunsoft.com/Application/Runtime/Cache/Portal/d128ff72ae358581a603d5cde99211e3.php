@@ -29,10 +29,10 @@
 											<?php echo ($md["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>-->
 									
-									<li onClick="location='http://127.0.0.1/www.maiunsoft.com/Article/list'">行业风向<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='http://127.0.0.1/www.maiunsoft.com/Article/observe'">业务洞察<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='http://127.0.0.1/www.maiunsoft.com/Article/list'">技术前沿<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onClick="location='http://127.0.0.1/www.maiunsoft.com/Article/detail'">公司动态<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onClick="location='<?php echo U('Article/list');?>'">行业风向<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+                                    <li onClick="location='<?php echo U('Article/observe');?>'">业务洞察<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+                                    <li onClick="location='<?php echo U('Article/list');?>'">技术前沿<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onClick="location='<?php echo U('Article/detail');?>'">公司动态<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								
 								</ul>
 							</div>
@@ -66,10 +66,10 @@
 										</li><?php endforeach; endif; ?>
 								</ul>-->
 								<ul>
-                                    <li onClick="location='http://127.0.0.1/www.maiunsoft.com/Service/consult'">咨询<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='http://127.0.0.1/www.maiunsoft.com/Service/dev'">开发<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='http://127.0.0.1/www.maiunsoft.com/Service/maintenance'">运维<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='http://127.0.0.1/www.maiunsoft.com/Service/train'">培训<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+                                    <li onClick="location='<?php echo U('Service/consult');?>'">咨询<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+                                    <li onClick="location='<?php echo U('Service/dev');?>'">开发<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+                                    <li onClick="location='<?php echo U('Service/maintenance');?>'">运维<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+                                    <li onClick="location='<?php echo U('Service/train');?>'">培训<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                 </ul>
 							</div>
 							<div class="menu-right">
@@ -129,16 +129,16 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='http://127.0.0.1/www.maiunsoft.com/Job/school'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='http://127.0.0.1/www.maiunsoft.com/Job/social'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/school');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/social');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul menu-ul-2">
 									<ul class="hide">
-										<li data-href="http://127.0.0.1/www.maiunsoft.com/Job/detail">校园宣讲<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
-										<li data-href="http://127.0.0.1/www.maiunsoft.com/Job/school">实习生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
-										<li data-href="http://127.0.0.1/www.maiunsoft.com/Job/school">应届生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/detail');?>'">校园宣讲<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/school');?>'">实习生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/school');?>'">应届生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
 									</ul>
 									<ul class="hide">
 										<?php if(is_array($jobTypeList)): foreach($jobTypeList as $key=>$type): ?><li onClick="location='<?php echo U('job/social?type='.$key);?>'"><?php echo ($type); ?><img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
@@ -217,10 +217,10 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='http://127.0.0.1/www.maiunsoft.com/Company/about'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='http://127.0.0.1/www.maiunsoft.com/Company/service'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='http://127.0.0.1/www.maiunsoft.com/Company/cooperation'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='http://127.0.0.1/www.maiunsoft.com/Company/culture'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/about');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/service');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/cooperation');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/culture');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -349,7 +349,7 @@
                 <div class="template-card switch-tab-1">
                     <div class="template-card-img" >
                         <span></span>
-                        <img src="imgs/shanghai.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>服务网络之 --上海</b>
@@ -361,7 +361,7 @@
                 <div class="template-card switch-tab-1">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="imgs/guangzhou.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>广州</b>
@@ -373,7 +373,7 @@
                 <div class="template-card switch-tab-1">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="imgs/shenzhen.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shenzhen.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>深圳</b>
@@ -386,7 +386,7 @@
                 <div class="template-card switch-tab-2 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展 -- 何为可持续发展</b>
@@ -398,7 +398,7 @@
                 <div class="template-card switch-tab-2 hide">
                     <div class="template-card-img">
                         <span></span>
-                          <img src="./imgs/ceil-img-2.png" alt="">
+                          <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展三要素</b>
@@ -413,7 +413,7 @@
                 <div class="template-card switch-tab-2 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展的公司</b>
@@ -429,7 +429,7 @@
                 <div class="template-card switch-tab-3 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="imgs/shanghai.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>服务网络之 --上海</b>
@@ -441,7 +441,7 @@
                 <div class="template-card switch-tab-3 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="imgs/guangzhou.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>广州</b>
@@ -453,7 +453,7 @@
                 <div class="template-card switch-tab-3 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="imgs/guangzhou.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>深圳</b>
@@ -466,7 +466,7 @@
                 <div class="template-card switch-tab-4 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展 -- 何为可持续发展</b>
@@ -478,7 +478,7 @@
                 <div class="template-card switch-tab-4 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展三要素</b>
@@ -493,7 +493,7 @@
                 <div class="template-card switch-tab-4 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展的公司</b>
@@ -509,7 +509,7 @@
                 <div class="template-card switch-tab-5 hide">
                     <div class="template-card-img" >
                         <span></span>
-                        <img src="imgs/shanghai.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>服务网络之 --上海</b>
@@ -521,7 +521,7 @@
                 <div class="template-card switch-tab-5 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="imgs/guangzhou.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>广州</b>
@@ -533,7 +533,7 @@
                 <div class="template-card switch-tab-5 hide">
                     <div class="template-card-img">
                         <span></span>
-                      <img src="imgs/shenzhen.png" alt="">
+                      <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shenzhen.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>深圳</b>
@@ -546,7 +546,7 @@
                 <div class="template-card switch-tab-6 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展 -- 何为可持续发展</b>
@@ -558,7 +558,7 @@
                 <div class="template-card switch-tab-6 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展三要素</b>
@@ -573,7 +573,7 @@
                 <div class="template-card switch-tab-6 hide">
                     <div class="template-card-img">
                         <span></span>
-                        <img src="./imgs/ceil-img-2.png" alt="">
+                        <img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
                     </div>
                     <div class="template-card-article">
                         <b>可持续发展的公司</b>
