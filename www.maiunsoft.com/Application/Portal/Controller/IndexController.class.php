@@ -19,6 +19,11 @@ class IndexController extends PortalController {
 		$this->newsList = M('slider')->where('type=2')->order('id DESC')->select();
 
 		$this->articleList = M('slider')->where('type=3')->order('id DESC')->select();
+		
+		//服务内容展示
+		$serviceIcon = array('smile','global','setting','member');
+		$this->assign('serviceIcon',$serviceIcon);
+		$this->serviceList = C('SERVICE_TYPES');
 
 		$this->theme($this->_theme)->display('index');
 	}

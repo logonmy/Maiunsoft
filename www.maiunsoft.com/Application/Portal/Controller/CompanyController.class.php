@@ -7,27 +7,34 @@ namespace Portal\Controller;
 */
 class CompanyController extends PortalController
 {
-	public function client()
-	{
-		$this->clientList = Service('Company')->FindAllCompanyList();
-
-		// 构造页面导航
-		//
-		$this->breadcrumbs = array(array('caption'=>'典型客户'));
-
-		$this->_PageHeader = array(
-			'title' => '经典客户',
-			'keywords' => '万利达、爱戈斯、戴福瑞、梅菲尔德',
-			'description' => '脉云已经为100多家客户提供高质量的服务'
-			);
-
+		
+	public function index($type = 5,$id = 19){
+		//分组标题
+		$this->aboutGroupList = M('group')->where("type=%d and id=%d",$type,$id)->order('id')->select();
+		
+		//分组内容
+		$this->aboutContentList = M('article')->where('group_id=%d',$id)->getField('group_id,content,image');
+		$this->group_id = $id;
+		
+		
+		
+		
 		$this->theme($this->_theme)->display('index');
 	}
 	
 	
 	//公司简介
-	public function about(){
+	public function about($type = 5,$id = 19){
+		
+		//分组标题
+		$this->aboutGroupList = M('group')->where("type=%d and id=%d",$type,$id)->order('id')->select();
+		
+		//该组内容
+		$this->aboutContentList = M('article')->where('group_id=%d',$id)->getField('group_id,content,image');
+		$this->group_id = $id;
+		
 		$this->theme($this->_theme)->display('about');
+		
 	}
 	
 	//服务网络
@@ -45,7 +52,7 @@ class CompanyController extends PortalController
 		$this->theme($this->_theme)->display('culture');
 	}
 	
-	//可持续发展
+	//可持续发展--移动端
 	public function sustainable(){
 		$this->theme($this->_theme)->display('sustainable');
 	}

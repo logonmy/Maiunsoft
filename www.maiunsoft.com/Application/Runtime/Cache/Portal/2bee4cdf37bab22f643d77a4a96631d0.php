@@ -14,6 +14,7 @@
 	</head>
 
 	<body>
+		
 		<nav>
 			<img onClick="location='<?php echo U('index/index');?>'" class="vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/logo.png" alt="logo" />
 			<div class="nav-items">
@@ -28,8 +29,6 @@
 									<!--<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'">
 											<?php echo ($md["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>-->
-									
-									<li onClick="location='<?php echo U('Article/list');?>'">行业风向<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Article/observe');?>'">业务洞察<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Article/list');?>'">技术前沿<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									<li onClick="location='<?php echo U('Article/detail');?>'">公司动态<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
@@ -60,17 +59,17 @@
 						</div>
 						<div class="menu-mask hide">
 							<div class="menu-left">
-								<!--<ul>
+								<ul>
 									<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'" style="padding-left:20px !important"><?php echo ($group["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
 										</li><?php endforeach; endif; ?>
-								</ul>-->
-								<ul>
+								</ul>
+								<!--<ul>
                                     <li onClick="location='<?php echo U('Service/consult');?>'">咨询<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Service/dev');?>'">开发<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Service/maintenance');?>'">运维<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Service/train');?>'">培训<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                </ul>
+                                </ul>-->
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul vertical-center">
@@ -101,7 +100,8 @@
 							<div class="menu-left">
 								<ul>
 									<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'"><?php echo ($group["name"]); ?>
-											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
+										</li><?php endforeach; endif; ?>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -129,8 +129,8 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Job/school');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Job/social');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/school',array('type'=>0,'city'=>1),'');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/social',array('type'=>0,'city'=>1),'');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -221,6 +221,7 @@
 									<li onclick="location='<?php echo U('Company/service');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									<li onclick="location='<?php echo U('Company/cooperation');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									<li onclick="location='<?php echo U('Company/culture');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onClick="javascript:;">联系方式<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -236,7 +237,7 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./Company/about">更多</a>
+										<a href="<?php echo U('Company/about');?>">更多</a>
 									</div>
 									<div class="hide">
 										<b>脉云软件（上海）有限公司</b>
@@ -249,7 +250,7 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./about1">更多</a>
+										<a href="<?php echo U('Company/service');?>">更多</a>
 									</div>
 									<div class="hide">
 										<b>脉云软件（上海）有限公司</b>
@@ -262,7 +263,7 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./about2">更多</a>
+										<a href="<?php echo U('Company/cooperation');?>">更多</a>
 									</div>
 									<div class="hide">
 										<b>脉云软件（上海）有限公司</b>
@@ -275,7 +276,17 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./about3">更多</a>
+										<a href="<?php echo U('Company/culture');?>">更多</a>
+									</div>
+									<div class="hide">
+										
+										<span>
+											<b>联系方式</b><br /><br /><br />
+                                        	<p>联系电话： 400-9910-540</p>
+											<p>企业邮箱： service@maiunsoft.com</p>
+											<p>企业QQ： service@maiunsoft.com</p>
+											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p> 
+                                       </span>
 									</div>
 								</div>
 							</div>
@@ -308,19 +319,6 @@
 	</div>
 </div>
 
-<!-- <div class="template-big-card">
-            <img class="big-card-img" src="./imgs/ceil-img-1.png" >
-            <div class="big-card-content">
-                <h3>公司简介</h3>
-                <p>
-                    oogle 和 Uber 互掴了几个巴掌，或许会成为引发无人驾驶领域大战的火药桶。
-　　2 月 24 日，Google 母公司 Alphabet 旗下的自动驾驶技术公司 Waymo 指控 Uber 及其旗下的自动驾驶卡车公司 Otto 盗取了他们的自动驾驶技术。
-　　指控称其自动驾驶汽车部门软件工程师 Anthony Levandowski 在离开谷歌创立自动驾驶卡车公司 Otto 之前，秘密下载了 14000 份专有技术文件。
-　　Uber 的发言人则称 Waymo 的诉讼毫无根据，其目的只是想阻止竞争对手前进。3 月 1 日，Uber 去年收购无人车公司 Tyto 的交易被披露，这家公司为 Uebr 提供的一项自动驾驶技术专利或能反击 Google 窃密指控。但如果Waymo 可以证明 Levandowski 的盗窃行为，以及这种盗窃行为对 Waymo 造成了巨大的损失，那么 Uber 将会面临高额罚金。更为严重的是，此次诉讼很可能会挫败 Uber 开发无人驾驶汽车的计划，从而给 Uber 的未来蒙上一层阴影。
-　　诉讼的背后，则指向了无人驾驶技术领域的混战。
-                </p>
-            </div>
-        </div> -->
 <div class="bg-color-5">
 	<div class="template-wrap">
 
@@ -337,6 +335,8 @@
 	</div>
 </div>
 
+
+<!--
 <div class="button-list">
 	<a class="btn-active">服务网络</a>
 	<a>合作伙伴</a>
@@ -344,8 +344,7 @@
 	<a>可持续发展</a>
 </div>
 
-<!-- <div class="big-card-banner">
-        </div> -->
+
 
 <div style="padding-bottom: 110px;" class="bg-color-5">
 	<div class="template-wrap">
@@ -472,6 +471,8 @@
 	</div>
 
 </div>
+	-->
+
 		
 		<div class="bg-color-7" style="background:#fff;">
 			<div class="section-four">
@@ -501,6 +502,7 @@
 					<p>联系电话： 400-9910-540</p>
 					<p>企业邮箱： service@maiunsoft.com</p>
 					<p>企业QQ： service@maiunsoft.com</p>
+					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
 				</div>
 			</div>
 		</div>

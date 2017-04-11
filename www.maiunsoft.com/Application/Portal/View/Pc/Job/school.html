@@ -19,35 +19,24 @@
 <div class="bg-color-5">
 	<div class="template-wrap">
 		<div class="employ-tabswitch-1">
-			<button class="tabswitch-btn switch-active" type="button">校园宣讲</button>
-			<button class="tabswitch-btn" type="button">实习招聘</button>
-			<button class="tabswitch-btn" type="button">应届生招聘</button>
+		<foreach name="activityTypeList" item="activity">
+			<php>
+				$selected = $activityType == $key ? "switch-active" : "";
+			</php>
+			<button class="tabswitch-btn {$selected}">{$activity}</button>
+		</foreach>
 		</div>
 
 		<div class="drop-down">
-			<!-- <select>
-                        <option>
-                            上海
-                        </option>
-                        <option>
-                            兰州
-                        </option>
-                        <option>
-                            深圳
-                        </option>
-                    </select> -->
-			<div class="default-item">
-				上海
-			</div>
-			<div class="drop-down-item hide">
-				上海
-			</div>
-			<div class="drop-down-item hide">
-				兰州
-			</div>
-			<div class="drop-down-item hide">
-				深圳
-			</div>
+			<div class="default-item">{$jobCityList[$jobCity]}</div>
+			<foreach name="jobCityList" item="city">
+				<php>
+					$hide = jobCity != $key ? "hide" : "";
+			</php>
+				<div class="drop-down-item {$hide}">{$city}</div>
+			</foreach>
+
+			
 		</div>
 
 		<div class="template-card card-switch-1">

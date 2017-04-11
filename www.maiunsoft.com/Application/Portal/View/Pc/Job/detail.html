@@ -1,77 +1,64 @@
  <div class="banner-div banner-4">
-            <div class="banner-content-4 vertical-center">
-                    校园招聘
-            </div>
-            <div class="banner-mask-4 vertical-center">
+    <div class="banner-content-4 vertical-center">
+            校园宣讲
+    </div>
+    <div class="banner-mask-4 vertical-center">
 
-            </div>
-        </div>
+    </div>
+</div>
 
-        <div class="bg-color-3">
-            <div class="connection">
-                <span>联系电话： 400-9910-540</span>
-                <span>企业邮箱： service@maiunsoft.com</span>
-                <span>企业QQ： service@maiunsoft.com</span>
-            </div>
-        </div>
+<div class="bg-color-3">
+    <div class="connection">
+        <span>联系电话： 400-9910-540</span>
+        <span>企业邮箱： service@maiunsoft.com</span>
+        <span>企业QQ： service@maiunsoft.com</span>
+    </div>
+</div>
 
-        <div class="bg-color-5">
-            <div class="template-wrap">
-                <div class="template-ceil">
-                    <div class="template-ceil-head">岗位详情 -- Java实习生</div>
-                    <table class="employ-table">
-                        <tr>
-                            <td class="table-title">
-                                岗位职责：
-                            </td>
-                            <td class="table-content">
-                                1、参与设计、审核、优化公司IT系统以及各应用系统的体系架构；
-                                <br />
-                                2、全面负责公司运维项目的系统升级、扩容需求与资源落实，配合开发需求，测试、调整运维平台；
-                                <br />
-                                3、负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                任职要求：
-                            </td>
-                            <td class="table-content">
-                                1、精通Spring、Hibernate或MyBatis并有相关工作经验；<br />
-
-                                2、熟悉HTTP、RESTful、JSON等常用技术和数据结构；<br />
-
-                                3、熟悉Redis、Memcached或Ehcache等缓存技术；<br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                工作经验：
-                            </td>
-                            <td class="table-content">
-                                一年以上工作经验
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                公司地址：
-                            </td>
-                            <td class="table-content">
-                                上海宝山区梓坤科技园1号楼南区
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                薪资待遇：
-                            </td>
-                            <td class="table-content">
-                                5k-10k
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- <a class="template-ceil-alink" href="">期待您的加入</a> -->
-                </div>
-
-
-            </div>
-        </div>
+<foreach name="detailList" item="detail">
+	<div class="template-card card-switch-1">
+			<div class="template-card-img">
+				<span></span>
+				<img src="__PC_STATIC__/imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article-3">
+				<h3 class="job-title">{$detail.name}</h3>
+				<table>
+					<tr>
+						<td class="table-title">
+							宣讲主题：
+						</td>
+						<td class="table-content">
+							参与设计、审核、优化公司IT系统以及各应用系统的体系架构；
+						</td>
+					</tr>
+					<tr>
+						<td class="table-title">
+							宣讲时间：
+						</td>
+						<td class="table-content">
+							{$detail.start_time}
+						</td>
+					</tr>
+					<tr>
+						<td class="table-title">
+							宣讲嘉宾：
+						</td>
+						<td class="table-content">
+							{$detail.contact_name}
+						</td>
+					</tr>
+					<tr>
+						<td class="table-title">
+							宣讲地址：
+						</td>
+						<td class="table-content">
+							{$detail.address}
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+</foreach>
+      
+		

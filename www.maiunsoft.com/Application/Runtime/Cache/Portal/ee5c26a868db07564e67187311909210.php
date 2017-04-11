@@ -217,10 +217,10 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Company/about');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/service');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/cooperation');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/culture');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>19),'');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>20),'');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>21),'');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>22),'');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									<li onClick="javascript:;">联系方式<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
@@ -279,8 +279,9 @@
 										<a href="<?php echo U('Company/culture');?>">更多</a>
 									</div>
 									<div class="hide">
-										<b>联系方式</b>
+										
 										<span>
+											<b>联系方式</b><br /><br /><br />
                                         	<p>联系电话： 400-9910-540</p>
 											<p>企业邮箱： service@maiunsoft.com</p>
 											<p>企业QQ： service@maiunsoft.com</p>
@@ -301,9 +302,10 @@
 			</div>
 		</nav>
 
-		<div class="banner-div banner-4">
+		<script type="text/javascript">document.title='<?php echo ($aboutGroupList[0]["name"]); ?>'</script>
+<div class="banner-div banner-4" style="background-image: url(<?php echo UploadUrl('slider'); echo ($aboutGroupList[0]["image"]); ?>);">
 	<div class="banner-content-4 vertical-center">
-		业务咨询
+		<?php echo ($aboutGroupList[0]["name"]); ?>
 	</div>
 	<div class="banner-mask-4 vertical-center">
 
@@ -322,254 +324,20 @@
 	<div class="template-wrap">
 
 		<div class="template-ceil">
-			<b>业务咨询介绍</b>
+			<b><?php echo ($aboutGroupList[0]["name"]); ?></b>
 			<div class="template-ceil-img">
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-1.png" alt="content-intro">
+				<img src="<?php echo UploadUrl('slider'); echo ($aboutContentList[$group_id]["image"]); ?>" alt="图片未找到">
 			</div>
 			<p>
-				Google 和 Uber 互掴了几个巴掌，或许会成为引发无人驾驶领域大战的火药桶。 2 月 24 日，Google 母公司 Alphabet 旗下的自动驾驶技术公司 Waymo 指控 Uber 及其旗下的自动驾驶卡车公司 Otto 盗取了他们的自动驾驶技术。 指控称其自动驾驶汽车部门软件工程师 Anthony Levandowski 在离开谷歌创立自动驾驶卡车公司 Otto 之前，秘密下载了 14000 份专有技术文件。 Uber 的发言人则称 Waymo 的诉讼毫无根据，其目的只是想阻止竞争对手前进。3 月 1 日，Uber 去年收购无人车公司 Tyto 的交易被披露，这家公司为 Uebr 提供的一项自动驾驶技术专利或能反击 Google 窃密指控。但如果Waymo 可以证明 Levandowski 的盗窃行为，以及这种盗窃行为对 Waymo 造成了巨大的损失，那么 Uber 将会面临高额罚金。更为严重的是，此次诉讼很可能会挫败 Uber 开发无人驾驶汽车的计划，从而给 Uber 的未来蒙上一层阴影。 诉讼的背后，则指向了无人驾驶技术领域的混战。 商业应用尚未成熟 专利争夺大战已经打响 Google 算是无人驾驶领域的先行者， 其无人驾驶汽车项目开始于 2009 年，启动了一个数十亿美元的比赛作为孵化器，以完善无人驾驶技术。在此过程中，它帮助 Google 收集了成百上千项专利，涵盖自动化车辆的软件，硬件和道路行为等各个方面。 Google 从来没有透露自己在无人驾驶汽车上投入了多少，在 2012 年，Google 的无人车的自动驾驶套件成本就已经超过了 25 万美元，整车成本超 30 万美元，远超法拉利。 硬件成本如此之高，为了使量产成为可能，Google 在无人驾驶汽车的研发和人才的投入必须大手笔。据彭博社报道，Google 针对早期无人车团队员工制定过非常慷慨的薪酬制度。尽管没有透露具体数字，但是熟悉此事的员工说，这笔钱多到可以让他们想干嘛就干嘛。 此外无人车团队员工还能获得额外的期权和现金奖励， Google 按照项目价值为这些员工已获得的奖励设立一个倍数，两者相乘后发给员工。2015 年下半年 Google 还大幅提升奖金倍数，使得奖金数达到数百万美元。有员工被授予 16 倍奖金倍数。 2015 年第四季度，Google 运营费用增加 14% 达到 66 亿美元。首席财务官 Ruth Porat 称增长的原因是研发支出大增。尽管她没有具体指是什么项目，但 Google 内部人士表示说的正是汽车项目。 在与 Uber 的诉讼中，Waymo 也称为了将无人车引入大众市场，Waymo 已经投资了数百万美元和数万小时的工程时间来定制在业界中最先进的， 有效的激光雷达传感器，以期将整套系统出售给汽车制造商，而不是只解决自动驾驶解决方案中的一个环节。
+				<?php echo ($aboutContentList[$group_id]["content"]); ?>
+				
+				<!--Google 和 Uber 互掴了几个巴掌，或许会成为引发无人驾驶领域大战的火药桶。 2 月 24 日，Google 母公司 Alphabet 旗下的自动驾驶技术公司 Waymo 指控 Uber 及其旗下的自动驾驶卡车公司 Otto 盗取了他们的自动驾驶技术。 指控称其自动驾驶汽车部门软件工程师 Anthony Levandowski 在离开谷歌创立自动驾驶卡车公司 Otto 之前，秘密下载了 14000 份专有技术文件。 Uber 的发言人则称 Waymo 的诉讼毫无根据，其目的只是想阻止竞争对手前进。3 月 1 日，Uber 去年收购无人车公司 Tyto 的交易被披露，这家公司为 Uebr 提供的一项自动驾驶技术专利或能反击 Google 窃密指控。但如果Waymo 可以证明 Levandowski 的盗窃行为，以及这种盗窃行为对 Waymo 造成了巨大的损失，那么 Uber 将会面临高额罚金。更为严重的是，此次诉讼很可能会挫败 Uber 开发无人驾驶汽车的计划，从而给 Uber 的未来蒙上一层阴影。 诉讼的背后，则指向了无人驾驶技术领域的混战。 商业应用尚未成熟 专利争夺大战已经打响 Google 算是无人驾驶领域的先行者， 其无人驾驶汽车项目开始于 2009 年，启动了一个数十亿美元的比赛作为孵化器，以完善无人驾驶技术。在此过程中，它帮助 Google 收集了成百上千项专利，涵盖自动化车辆的软件，硬件和道路行为等各个方面。 Google 从来没有透露自己在无人驾驶汽车上投入了多少，在 2012 年，Google 的无人车的自动驾驶套件成本就已经超过了 25 万美元，整车成本超 30 万美元，远超法拉利。 硬件成本如此之高，为了使量产成为可能，Google 在无人驾驶汽车的研发和人才的投入必须大手笔。据彭博社报道，Google 针对早期无人车团队员工制定过非常慷慨的薪酬制度。尽管没有透露具体数字，但是熟悉此事的员工说，这笔钱多到可以让他们想干嘛就干嘛。 此外无人车团队员工还能获得额外的期权和现金奖励， Google 按照项目价值为这些员工已获得的奖励设立一个倍数，两者相乘后发给员工。2015 年下半年 Google 还大幅提升奖金倍数，使得奖金数达到数百万美元。有员工被授予 16 倍奖金倍数。 2015 年第四季度，Google 运营费用增加 14% 达到 66 亿美元。首席财务官 Ruth Porat 称增长的原因是研发支出大增。尽管她没有具体指是什么项目，但 Google 内部人士表示说的正是汽车项目。 在与 Uber 的诉讼中，Waymo 也称为了将无人车引入大众市场，Waymo 已经投资了数百万美元和数万小时的工程时间来定制在业界中最先进的， 有效的激光雷达传感器，以期将整套系统出售给汽车制造商，而不是只解决自动驾驶解决方案中的一个环节。-->
 			</p>
 			<div style="clear:both;"></div>
 		</div>
 	</div>
 </div>
 
-<div class="button-list2">
-	<a class="btn-active">内容管理系统</a>
-	<a>协同设计系统</a>
-	<a>项目文档系统</a>
-	<a>知识管理体系</a>
-	<a>信息安全体系</a>
-	<a>协同教学平台</a>
-</div>
-
-<div style="padding-bottom: 110px;" class="bg-color-5">
-	<div class="template-wrap">
-
-		<div class="template-card switch-tab-1">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>服务网络之 --上海</b>
-				<p>
-					是指一些在网络上运行的、面向服务的、基于分布式程序的软件模块，网络服务采用HTTP和XML（标准通用标记语言的子集）等互联网通用标准，使人们可以在不同的地方通过不同的终端设备访问WEB上的数据，如网上订票，查看订座情况。网络服务在电子商务、电子政务、公司业务流程电子化等应用领域有广泛的应用，被业内人士奉为互联网的下一个重点
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-1">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>广州</b>
-				<p>
-					DHCP的全名是“Dynamic Host Configuration Protocol”，即动态主机配置协议。在使用DHCP的网络里，用户的计算机可以从DHCP服务器那里获得上网的参数，几乎不需要做任何手工的配置就可以上网。 一般情况下，DHCP服务器会尽量保持每台计算机使用同一个IP地址上网。如果计算机长时间没有上网或配置为使用静态地址上网，DHCP服务器就会把这个地址分配给其他计算机。
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-1">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shenzhen.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>深圳</b>
-				<p>
-					根据协议，双方将在旅游投资项目库、乡村旅游扶贫、旅游投融资平台、旅游企业创新发展、区域旅游资源整合、互联网旅游新业态等方面开展合作。中信银行将充分利用中信集团资源优势，积极支持国家旅游局重点发展领域和重点建设项目，为旅游企业和旅游者提供全方位、便捷优惠的金融服务，全力支持旅游业发展。国家旅游局将推荐中信银行作为其重点发展领域和重点建设项目的合作伙伴。
-				</p>
-			</div>
-		</div>
-
-		<div class="template-card switch-tab-2 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展 -- 何为可持续发展</b>
-				<p>
-					中证网讯 可持续发展（英语：Sustainable Development，縮寫：SD），或永續發展，是指在保护环境的条件下既满足当代人的需求，又以不损害后代人的需求為前瞻的发展模式。“可持续发展”这个术语使用由布倫特蘭委員會创造已成为最经常被引用的可持续发展的定义：“既能满足我们现今的需求，又不损害子孙后代能满足他们的需求的发展模式。”
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-2 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展三要素</b>
-				<p>
-					環境要素（Environmental aspect） 指尽量减少对环境的损害（Environmental Impact）。尽管这一原则得到各方人士的认可，但是由于目前人类科学知识的局限性，对于许多具体问题就会产生截然相反的认识，例如核电站，支持人士认为它可以减少温室气体排放，是环保的，反对人士认为核废料有长期放射性污染，同时核电站存在安全隐患是不环保的。 社会要素（Social aspect） 经济要素（Economic aspect）
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-2 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展的公司</b>
-				<p>
-					不僅實現代際公正，更要實現代內公正，即當代一部份人的發展不應損害另一部份人的利益。 經濟與社會的發展要符合地球生態系統的動態平衡的法則和資源可持續利用的原則。 改變不合理的资源消耗式的消費模式。 解決全球的貧窮問題，窮人的生活質量有所提高。
-				</p>
-			</div>
-		</div>
-
-		<div class="template-card switch-tab-3 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>服务网络之 --上海</b>
-				<p>
-					是指一些在网络上运行的、面向服务的、基于分布式程序的软件模块，网络服务采用HTTP和XML（标准通用标记语言的子集）等互联网通用标准，使人们可以在不同的地方通过不同的终端设备访问WEB上的数据，如网上订票，查看订座情况。网络服务在电子商务、电子政务、公司业务流程电子化等应用领域有广泛的应用，被业内人士奉为互联网的下一个重点
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-3 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>广州</b>
-				<p>
-					DHCP的全名是“Dynamic Host Configuration Protocol”，即动态主机配置协议。在使用DHCP的网络里，用户的计算机可以从DHCP服务器那里获得上网的参数，几乎不需要做任何手工的配置就可以上网。 一般情况下，DHCP服务器会尽量保持每台计算机使用同一个IP地址上网。如果计算机长时间没有上网或配置为使用静态地址上网，DHCP服务器就会把这个地址分配给其他计算机。
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-3 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shenzhen.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>深圳</b>
-				<p>
-					根据协议，双方将在旅游投资项目库、乡村旅游扶贫、旅游投融资平台、旅游企业创新发展、区域旅游资源整合、互联网旅游新业态等方面开展合作。中信银行将充分利用中信集团资源优势，积极支持国家旅游局重点发展领域和重点建设项目，为旅游企业和旅游者提供全方位、便捷优惠的金融服务，全力支持旅游业发展。国家旅游局将推荐中信银行作为其重点发展领域和重点建设项目的合作伙伴。
-				</p>
-			</div>
-		</div>
-
-		<div class="template-card switch-tab-4 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展 -- 何为可持续发展</b>
-				<p>
-					中证网讯 可持续发展（英语：Sustainable Development，縮寫：SD），或永續發展，是指在保护环境的条件下既满足当代人的需求，又以不损害后代人的需求為前瞻的发展模式。“可持续发展”这个术语使用由布倫特蘭委員會创造已成为最经常被引用的可持续发展的定义：“既能满足我们现今的需求，又不损害子孙后代能满足他们的需求的发展模式。”
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-4 hide">
-			<div class="template-card-img" src="">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展三要素</b>
-				<p>
-					環境要素（Environmental aspect） 指尽量减少对环境的损害（Environmental Impact）。尽管这一原则得到各方人士的认可，但是由于目前人类科学知识的局限性，对于许多具体问题就会产生截然相反的认识，例如核电站，支持人士认为它可以减少温室气体排放，是环保的，反对人士认为核废料有长期放射性污染，同时核电站存在安全隐患是不环保的。 社会要素（Social aspect） 经济要素（Economic aspect）
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-4 hide">
-			<div class="template-card-img template-card-img-4">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展的公司</b>
-				<p>
-					不僅實現代際公正，更要實現代內公正，即當代一部份人的發展不應損害另一部份人的利益。 經濟與社會的發展要符合地球生態系統的動態平衡的法則和資源可持續利用的原則。 改變不合理的资源消耗式的消費模式。 解決全球的貧窮問題，窮人的生活質量有所提高。
-				</p>
-			</div>
-		</div>
-
-		<div class="template-card switch-tab-5 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>服务网络之 --上海</b>
-				<p>
-					是指一些在网络上运行的、面向服务的、基于分布式程序的软件模块，网络服务采用HTTP和XML（标准通用标记语言的子集）等互联网通用标准，使人们可以在不同的地方通过不同的终端设备访问WEB上的数据，如网上订票，查看订座情况。网络服务在电子商务、电子政务、公司业务流程电子化等应用领域有广泛的应用，被业内人士奉为互联网的下一个重点
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-5 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>广州</b>
-				<p>
-					DHCP的全名是“Dynamic Host Configuration Protocol”，即动态主机配置协议。在使用DHCP的网络里，用户的计算机可以从DHCP服务器那里获得上网的参数，几乎不需要做任何手工的配置就可以上网。 一般情况下，DHCP服务器会尽量保持每台计算机使用同一个IP地址上网。如果计算机长时间没有上网或配置为使用静态地址上网，DHCP服务器就会把这个地址分配给其他计算机。
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-5 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/guangzhou.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>深圳</b>
-				<p>
-					根据协议，双方将在旅游投资项目库、乡村旅游扶贫、旅游投融资平台、旅游企业创新发展、区域旅游资源整合、互联网旅游新业态等方面开展合作。中信银行将充分利用中信集团资源优势，积极支持国家旅游局重点发展领域和重点建设项目，为旅游企业和旅游者提供全方位、便捷优惠的金融服务，全力支持旅游业发展。国家旅游局将推荐中信银行作为其重点发展领域和重点建设项目的合作伙伴。
-				</p>
-			</div>
-		</div>
-
-		<div class="template-card switch-tab-6 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展 -- 何为可持续发展</b>
-				<p>
-					中证网讯 可持续发展（英语：Sustainable Development，縮寫：SD），或永續發展，是指在保护环境的条件下既满足当代人的需求，又以不损害后代人的需求為前瞻的发展模式。“可持续发展”这个术语使用由布倫特蘭委員會创造已成为最经常被引用的可持续发展的定义：“既能满足我们现今的需求，又不损害子孙后代能满足他们的需求的发展模式。”
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-6 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展三要素</b>
-				<p>
-					環境要素（Environmental aspect） 指尽量减少对环境的损害（Environmental Impact）。尽管这一原则得到各方人士的认可，但是由于目前人类科学知识的局限性，对于许多具体问题就会产生截然相反的认识，例如核电站，支持人士认为它可以减少温室气体排放，是环保的，反对人士认为核废料有长期放射性污染，同时核电站存在安全隐患是不环保的。 社会要素（Social aspect） 经济要素（Economic aspect）
-				</p>
-			</div>
-		</div>
-		<div class="template-card switch-tab-6 hide">
-			<div class="template-card-img">
-				<span></span>
-				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-2.png" alt="">
-			</div>
-			<div class="template-card-article">
-				<b>可持续发展的公司</b>
-				<p>
-					不僅實現代際公正，更要實現代內公正，即當代一部份人的發展不應損害另一部份人的利益。 經濟與社會的發展要符合地球生態系統的動態平衡的法則和資源可持續利用的原則。 改變不合理的资源消耗式的消費模式。 解決全球的貧窮問題，窮人的生活質量有所提高。
-				</p>
-			</div>
-		</div>
-	</div>
-
-</div>
 		
 		<div class="bg-color-7" style="background:#fff;">
 			<div class="section-four">

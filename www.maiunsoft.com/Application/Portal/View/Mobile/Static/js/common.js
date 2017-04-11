@@ -29,6 +29,7 @@ $(window).on("resize", setFontSize), setFontSize(), $(function() {
             backgroundSize: "cover"
         })
     }), $(".menu_list .item em").on("tap", function() {
+    	//关闭侧边栏
         t.refresh(), $(".menu_list").hide(), $(".bg").hide(), $(".menu_list").find("a:not(.shouye)").hide(), $(".menu_list").find("i").css({
             background: "url('/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/down.png') no-repeat",
             backgroundSize: "cover"
@@ -36,7 +37,8 @@ $(window).on("resize", setFontSize), setFontSize(), $(function() {
     });
     var o = 1;
     $(".menu_list .item span").on("tap", function() {
-        switch (t.refresh(), o) {
+
+            switch (t.refresh(), o) {
             case 1:
                 $(this).parent().find("a").css("display", "block"), $(this).parent().find("i").css({
                     background: "url('/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/up.png') no-repeat",
@@ -49,6 +51,7 @@ $(window).on("resize", setFontSize), setFontSize(), $(function() {
                     backgroundSize: "cover"
                 }), o = 1
         }
+                
     });
     var i = 1;
     $(".has").on("tap", function() {

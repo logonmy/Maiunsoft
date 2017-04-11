@@ -4,7 +4,7 @@ namespace Portal\Controller;
 
 class ArticleController extends PortalController {
 	
-	//行业风向
+	
 	public function index($gid=0)
 	{
 		$this->articleList = M('article')->where('group_id=%d',$gid)->getField('id,title,bref,image');

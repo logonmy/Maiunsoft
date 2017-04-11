@@ -14,6 +14,7 @@
 	</head>
 
 	<body>
+		
 		<nav>
 			<img onClick="location='<?php echo U('index/index');?>'" class="vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/logo.png" alt="logo" />
 			<div class="nav-items">
@@ -28,8 +29,6 @@
 									<!--<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'">
 											<?php echo ($md["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>-->
-									
-									<li onClick="location='<?php echo U('Article/list');?>'">行业风向<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Article/observe');?>'">业务洞察<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Article/list');?>'">技术前沿<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									<li onClick="location='<?php echo U('Article/detail');?>'">公司动态<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
@@ -60,17 +59,17 @@
 						</div>
 						<div class="menu-mask hide">
 							<div class="menu-left">
-								<!--<ul>
+								<ul>
 									<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'" style="padding-left:20px !important"><?php echo ($group["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
 										</li><?php endforeach; endif; ?>
-								</ul>-->
-								<ul>
+								</ul>
+								<!--<ul>
                                     <li onClick="location='<?php echo U('Service/consult');?>'">咨询<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Service/dev');?>'">开发<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Service/maintenance');?>'">运维<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Service/train');?>'">培训<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                </ul>
+                                </ul>-->
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul vertical-center">
@@ -101,7 +100,8 @@
 							<div class="menu-left">
 								<ul>
 									<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'"><?php echo ($group["name"]); ?>
-											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
+										</li><?php endforeach; endif; ?>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -129,8 +129,8 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Job/school');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Job/social');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/school',array('type'=>0,'city'=>1),'');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/social',array('type'=>0,'city'=>1),'');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -217,10 +217,11 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Company/about');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/service');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/cooperation');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/culture');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>19),'');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>20),'');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>21),'');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>22),'');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onClick="javascript:;">联系方式<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -236,7 +237,7 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./Company/about">更多</a>
+										<a href="<?php echo U('Company/about');?>">更多</a>
 									</div>
 									<div class="hide">
 										<b>脉云软件（上海）有限公司</b>
@@ -249,7 +250,7 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./about1">更多</a>
+										<a href="<?php echo U('Company/service');?>">更多</a>
 									</div>
 									<div class="hide">
 										<b>脉云软件（上海）有限公司</b>
@@ -262,7 +263,7 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./about2">更多</a>
+										<a href="<?php echo U('Company/cooperation');?>">更多</a>
 									</div>
 									<div class="hide">
 										<b>脉云软件（上海）有限公司</b>
@@ -275,7 +276,17 @@
                                             脉云软件作为一家各个方面
                                             脉云软件作为一家各个方面
                                         </span>
-										<a href="./about3">更多</a>
+										<a href="<?php echo U('Company/culture');?>">更多</a>
+									</div>
+									<div class="hide">
+										
+										<span>
+											<b>联系方式</b><br /><br /><br />
+                                        	<p>联系电话： 400-9910-540</p>
+											<p>企业邮箱： service@maiunsoft.com</p>
+											<p>企业QQ： service@maiunsoft.com</p>
+											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p> 
+                                       </span>
 									</div>
 								</div>
 							</div>
@@ -296,7 +307,7 @@
                 <?php if(is_array($bigSliderList)): foreach($bigSliderList as $key=>$slider): ?><div style="background-image:url(<?php echo UploadUrl('slider'); echo ($slider["image"]); ?>)" class="swiper-slide">
                     </div><?php endforeach; endif; ?>
             </div>
-            <!-- <div class="swiper-button-prev swiper-button-white"></div>
+             <!--<div class="swiper-button-prev swiper-button-white"></div>
             <div class="swiper-button-next swiper-button-white"></div> -->
             <div class="swiper-pagination"></div>
         </div>
@@ -315,7 +326,8 @@
                                     <?php echo ($news["bref"]); ?>
                                 </p>
                                 <a class="section-one-article-link">
-                                    <span>更多详情<img class="icon-right" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-black.png"/></span>
+                                	
+                                    <span onClick="location='<?php echo U('Index/index');?>'">更多详情<img class="icon-right" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-black.png"/></span>
                                 </a>
                             </div>
                         </div><?php endforeach; endif; ?>
@@ -334,7 +346,7 @@
                             <div>
                                 <b><?php echo ($article["title"]); ?></b>
                                 <p><?php echo ($article["bref"]); ?></p>
-                                <button onClick="location='./cooperation2'" class="section-two-article-btn">了解更多</button>
+                                <button onClick="location='<?php echo U('Index/index');?>'" class="section-two-article-btn">了解更多</button>
                             </div>
                         </div><?php endforeach; endif; ?>
                 </div>
@@ -347,7 +359,25 @@
 
         <div class="bg-color-6">
             <div class="section-six">
-                <div class="section-six-bg section-six-bg-0">
+            	
+            	<?php if(is_array($serviceList)): foreach($serviceList as $key=>$service_list): ?><div class="section-six-bg section-six-bg-<?php echo ($key); ?>">
+                    <div class="upblock-bg-<?php echo ($key); ?>"></div>
+                    <div class="upblock-bg-cg hide"></div>
+                    <div class="upblock">
+                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-<?php echo ($serviceIcon[$key]); ?>.png" alt="<?php echo ($serviceIcon[$key]); ?>-icon"><br />
+                        <img class="upblock-icon-2" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-line.png" alt="line">
+                        <p class="upblock-title">
+                            	<?php echo ($service_list["name"]); ?>
+                        </p>
+                        <p class="upblock-content hide">
+                            	外资企业网站系统开发系统开发<br />
+                            	外资企业网站系统开发系统开发
+                        </p>
+                        <button onClick="location='<?php echo U('Service/'.$service_list['title']);?>'" class="upblock-btn hide">查看详情</button>
+                    </div>
+                	</div><?php endforeach; endif; ?>
+            	
+                <!--<div class="section-six-bg section-six-bg-0">
                     <div class="upblock-bg-0"></div>
                     <div class="upblock-bg-cg hide"></div>
                     <div class="upblock">
@@ -362,8 +392,8 @@
                         </p>
                         <button class="upblock-btn hide">查看详情</button>
                     </div>
-                </div><!--
-             --><div class="section-six-bg section-six-bg-1">
+                </div>-->
+                <!--<div class="section-six-bg section-six-bg-1">
                     <div class="upblock-bg-1"></div>
                     <div class="upblock-bg-cg hide"></div>
                     <div class="upblock">
@@ -378,8 +408,8 @@
                         </p>
                         <button class="upblock-btn hide">查看详情</button>
                     </div>
-                </div><!--
-             --><div class="section-six-bg section-six-bg-2">
+                </div>
+             <div class="section-six-bg section-six-bg-2">
                     <div class="upblock-bg-2"></div>
                     <div class="upblock-bg-cg hide"></div>
                     <div class="upblock">
@@ -394,8 +424,8 @@
                         </p>
                         <button class="upblock-btn hide">查看详情</button>
                     </div>
-                </div><!--
-             --><div class="section-six-bg section-six-bg-3">
+                </div>
+             <div class="section-six-bg section-six-bg-3">
                     <div class="upblock-bg-3"></div>
                     <div class="upblock-bg-cg hide"></div>
                     <div class="upblock">
@@ -410,7 +440,7 @@
                         </p>
                         <button class="upblock-btn hide" onClick="location='./intro'" >查看详情</button>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
 
@@ -443,6 +473,7 @@
 					<p>联系电话： 400-9910-540</p>
 					<p>企业邮箱： service@maiunsoft.com</p>
 					<p>企业QQ： service@maiunsoft.com</p>
+					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
 				</div>
 			</div>
 		</div>

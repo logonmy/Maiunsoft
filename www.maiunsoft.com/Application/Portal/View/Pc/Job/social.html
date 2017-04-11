@@ -1,3 +1,4 @@
+<script type="text/javascript">document.title="社会招聘"</script>
 <div class="banner-div banner-4">
 	<div class="banner-content-4 vertical-center">
 		社会招聘
@@ -25,29 +26,18 @@
 				<button class="tabswitch-btn {$selected}" type="button">{$type}</button>
 			</foreach>
 		</div>
-
+		
+		
+		
 		<div class="drop-down">
 			
-			<!--<foreach name="jobCityList" item="city">
-                <php>$hide = $jobCity!=$key ? 'hide' : '';</php>
-                <div class="default-item {$hide}">
-                    {$city|trim}
-                </div>
-            </foreach>-->
-            
-            
-            <div class="default-item">
-				兰州
-			</div>
-			<div class="drop-down-item hide">
-				上海
-			</div>
-			<div class="drop-down-item hide">
-				兰州
-			</div>
-			<div class="drop-down-item hide">
-				深圳
-			</div>
+			<div class="default-item">{$jobCityList[$jobCity]}</div>
+			<foreach name="jobCityList" item="city">
+				<php>
+					$hide = jobCity != $key ? "hide" : "";
+			</php>
+				<div class="drop-down-item {$hide}">{$city}</div>
+			</foreach>
             
 		</div>
 
@@ -204,7 +194,9 @@
 				</div>
 			</div>
 		</div>
-
+		
+		
+		
 		<div class="template-card card-switch-2 hide">
 			<div class="template-card-article-2">
 				<h3 class="job-title">Java实习生</h3>
