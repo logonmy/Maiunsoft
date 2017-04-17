@@ -1,20 +1,21 @@
-<include file="Mobile:Public:TopGuid" />
-<div class="container">
-    <div class="package">
-        <h1>{$group.name}</h1>
-        <p>{$group.bref|htmlspecialchars_decode}</p>
-    </div>
-    <ul class="list-unstyled items">
-        <foreach name="articleList" item="article">
-            <li>
-                <a href="__ROOT__/article/{$article.id}">
-                    <img src="{:UploadUrl('article')}{$article.id}/{$article.thumbnail}" />
-                    <div class="bref">
-                        <h3>{$article.title}</h3>
-                        <p>{$article.bref}</p>
-                    </div>
-                </a>
-            </li>
-        </foreach>
-    </ul>
+<script type="text/javascript">
+	document.title="{$articleTitle[0].name}"
+</script>
+<!-- 焦点图 -->
+<div class="banner">
+	<img src="__MB_STATIC__/img/md01.png" alt="">
+	<div class="title">{$articleTitle[0].name}</div>
 </div>
+<!-- 合作动态 -->
+<div class="news">
+	
+	<foreach name="articleList" item="article">
+		<div onClick="location='{:U(\'article/detail\',array('id'=>$article['id']))}'" class="floor floor_content">
+			<h3>{$article.title}</h3>
+			<p>{$article.bref}</p>
+			<a href="{:U(\'article/detail\',array('id'=>$article['id']))}" class="more" data-cont="yewudongcha-data_floor1">更多详情&gt;&gt;</a>
+		</div>
+	</foreach>
+	
+</div>
+<!-- end 合作动态-->

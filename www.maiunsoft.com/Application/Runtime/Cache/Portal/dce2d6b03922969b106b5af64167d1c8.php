@@ -115,56 +115,113 @@
 				</div>
 			</div>
 	</nav>
-</header>
+</header>	
 
 <!--模板渲染-->
 <div id="main">
-	<!--  主体-->
-	<!-- 焦点图 -->
-		<div class="banner">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="">
-			<div class="title">软件开发</div>
-		</div>
-		<!-- 咨询详情 -->
-		<div class="news">
-			<h1>手机软件开发</h1>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-		</div>   <!-- end 咨询详情-->
+	<script type="text/javascript">document.title='脉云软件 | <?php echo ($aboutGroupList[0]["name"]); ?>'</script>
+<!--<div class="fixed-top">
+    <div class="top">
+        <div class="container">
+            <a href="<?php echo U('index/index');?>">
+                <img src="/www.maiunsoft.com/Public/logo.png" />
+            </a>
+            <h2 class="fa fa-bars"></h2>
+        </div>
+    </div>
+    <div class="topmenus" style="display: none;">
+        <ul>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/report">行业透视</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/solution">解决方案</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/products">软件产品</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/client">典型客户</a>
+            </li>
+            <li class="col-xs-4">
+                <a data-toggle="modal" data-target="#contact_modal" style="color:yellow">联系我们</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/news">新闻资讯</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/about">关于脉云</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/help">服务支持</a>
+            </li>
+            <li class="col-xs-4">
+                <a href="/www.maiunsoft.com/join">合作加盟</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="breadcrumb" style="width:100%;border-bottom: 1px solid #ddd;">
+        <ul class="container">
+            <li>
+                <a href="<?php echo U('Index/index');?>">首页</a>
+            </li>
+            <?php if(is_array($breadcrumbs)): foreach($breadcrumbs as $key=>$bread): ?><li>
+                    <a href="<?php echo ($bread["url"]); ?>"><?php echo ($bread["caption"]); ?></a>
+                </li><?php endforeach; endif; ?>
+            <?php if(!empty($directoryList)): ?><div class="directory-link fa fa-sort pull-right"></div><?php endif; ?>
+        </ul>
+    </div>
+    <div class="directory" style="display:none;">
+        <div class="container">
+            <ul class="list-unstyled">
+                <?php if(is_array($directoryList)): foreach($directoryList as $key=>$dir): ?><li>
+                        <a href="<?php echo ($dir["url"]); ?>"><?php echo ($dir["name"]); ?></a>
+                    </li><?php endforeach; endif; ?>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.top h2').click(
+        function() {
+            var show = $('.topmenus').css('display');
+            if (show == 'block') {
+                $('.topmenus').css('display', 'none');
+            } else {
+                $('.topmenus').css('display', 'block');
+            }
+        }
+    );
+
+    $('.directory-link').click(
+        function() {
+            var show = $('.directory').css('display');
+            if (show == 'block') {
+                $('.directory').css('display', 'none');
+            } else {
+                $('.directory').css('display', 'block');
+            }
+        }
+    );
+});
+</script>-->
+<!-- 焦点图 -->
+<div class="banner">
+	<img src="<?php echo UploadUrl('slider'); echo ($aboutGroupList[0]["image"]); ?>" alt="">
+	<div class="title"><?php echo ($aboutGroupList[0]["name"]); ?></div>
+</div>
+<!-- 公司简介 -->
+<div class="news">
+	<h1><?php echo ($aboutGroupList[0]["name"]); ?></h1>
+	<div class="floor" style="padding-top:0.9rem">
+		<h3><?php echo ($aboutGroupList[0]["name"]); ?></h3>
+		<p><?php echo ($aboutContentList[$group_id]["content"]); ?></p>
+		<!--<a href="##" class="more" data-cont="kechixu-data_floor1">更多详情&gt;&gt;</a>-->
+	</div>
+</div>
+<!-- end 公司简介-->
 
 
 	<!-- 脉云介绍 -->

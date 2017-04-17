@@ -31,28 +31,31 @@
 			<div class="default-item">{$jobCityList[$jobCity]}</div>
 			<foreach name="jobCityList" item="city">
 				<php>
-					$hide = jobCity != $key ? "hide" : "";
-			</php>
-				<div class="drop-down-item {$hide}">{$city}</div>
+					$hide = "hide";
+				</php>
+				<div class="drop-down-item {$hide}" data-city="{$key}">{$city}</div>
 			</foreach>
 
 			
 		</div>
-
-		<div class="template-card card-switch-1">
+		
+		<!--校园宣讲-->
+		<foreach name="schoolActivityList" item="scActivity">
+		<div class="template-city" data-city="{$scActivity.city}">
+			<div class="template-card card-switch-1">
 			<div class="template-card-img">
 				<span></span>
 				<img src="__PC_STATIC__/imgs/shanghai.png" alt="">
 			</div>
 			<div class="template-card-article-3">
-				<h3 class="job-title">上海大学</h3>
+				<h3 class="job-title">{$scActivity.name}</h3>
 				<table>
 					<tr>
 						<td class="table-title">
 							宣讲主题：
 						</td>
 						<td class="table-content">
-							参与设计、审核、优化公司IT系统以及各应用系统的体系架构；
+							{$scActivity.agenda}
 						</td>
 					</tr>
 					<tr>
@@ -60,7 +63,7 @@
 							宣讲时间：
 						</td>
 						<td class="table-content">
-							2017.12.23
+							{$scActivity.start_time}
 						</td>
 					</tr>
 					<tr>
@@ -68,7 +71,7 @@
 							宣讲嘉宾：
 						</td>
 						<td class="table-content">
-							黎明
+							{$scActivity.contact_name}
 						</td>
 					</tr>
 					<tr>
@@ -76,109 +79,30 @@
 							宣讲地址：
 						</td>
 						<td class="table-content">
-							上海宝山区梓坤科技园1号楼南区
+							{$scActivity.address}
 						</td>
 					</tr>
 				</table>
 			</div>
 		</div>
-		<div class="template-card card-switch-1">
-			<div class="template-card-img">
-				<span></span>
-				<img src="__PC_STATIC__/imgs/shanghai.png" alt="">
-			</div>
-			<div class="template-card-article-3">
-				<h3 class="job-title">兰州大学</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							宣讲主题：
-						</td>
-						<td class="table-content">
-							全面负责公司运维项目的系统升级、扩容需求与资源落实，配合开发需求，测试、调整运维平台；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							宣讲时间：
-						</td>
-						<td class="table-content">
-							2016.12.30
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							宣讲嘉宾：
-						</td>
-						<td class="table-content">
-							刘希
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							宣讲地址：
-						</td>
-						<td class="table-content">
-							上海宝山区梓坤科技园1号楼南区
-						</td>
-					</tr>
-				</table>
-			</div>
 		</div>
-		<div class="template-card card-switch-1">
-			<div class="template-card-img">
-				<span></span>
-				<img src="__PC_STATIC__/imgs/shanghai.png" alt="">
-			</div>
-			<div class="template-card-article-3">
-				<h3 class="job-title">西北师范大学</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							宣讲主题：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							宣讲时间：
-						</td>
-						<td class="table-content">
-							2017.4.6
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							宣讲嘉宾：
-						</td>
-						<td class="table-content">
-							雷利
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							宣讲地址：
-						</td>
-						<td class="table-content">
-							上海宝山区梓坤科技园1号楼南区
-						</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-		<div class="template-card card-switch-2 hide">
+		</foreach>
+		
+		
+		
+		<!--实习生-->
+		<foreach name="traineeList" item="trainee">
+			<div class="template-city" data-city="{$trainee.work_city}">
+			<div class="template-card card-switch-2 hide">
 			<div class="template-card-article-2">
-				<h3 class="job-title">Java实习生</h3>
+				<h3 class="job-title">{$trainee.name}</h3>
 				<table>
 					<tr>
 						<td class="table-title">
 							岗位职责：
 						</td>
 						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
+							{$trainee.work_content}
 						</td>
 					</tr>
 					<tr>
@@ -186,7 +110,7 @@
 							任职要求：
 						</td>
 						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
+							{$trainee.requirements}
 						</td>
 					</tr>
 					<tr>
@@ -202,7 +126,7 @@
 							公司地址：
 						</td>
 						<td class="table-content">
-							上海宝山梓坤科技园5018号
+							上海市沪太路5018弄梓坤科技园1号楼1509室
 						</td>
 					</tr>
 					<tr>
@@ -210,78 +134,45 @@
 							薪资待遇：
 						</td>
 						<td class="table-content">
-							5k-10k
+							{$trainee.salary_scope}
 						</td>
 					</tr>
 				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__//imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__//imgs/rush-2.png" alt="rush">
-				</div>
+				
+				<switch name='trainee.urgency'>
+					<case value="2">
+					<div class="template-card-imgbox">
+					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+					</div>
+					</case>
+					<case value="3">
+					<div class="template-card-imgbox">
+					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+					</div>
+					</case>
+					<default />
+				</switch>
+				
+				
 			</div>
 		</div>
-		<div class="template-card card-switch-2 hide">
-			<div class="template-card-article-2">
-				<h3 class="job-title">运维实习生</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__//imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__//imgs/rush-2.png" alt="rush">
-				</div>
-			</div>
 		</div>
+		</foreach>
 
-		<div class="template-card card-switch-3 hide">
-			<div class="template-card-article-2">
-				<h3 class="job-title">运维实习生3</h3>
+		<!--应届生-->
+		<foreach name="graduateList" item="graduate">
+		<div class="template-city" data-city="{$graduate.work_city}">
+			<div class="template-card card-switch-3 hide">
+			<div class="template-card-article-3">
+				<h3 class="job-title">{$graduate.name}</h3>
 				<table>
 					<tr>
 						<td class="table-title">
 							岗位职责：
 						</td>
 						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
+							{$graduate.work_content}
 						</td>
 					</tr>
 					<tr>
@@ -289,7 +180,7 @@
 							任职要求：
 						</td>
 						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
+							{$graduate.requirements}
 						</td>
 					</tr>
 					<tr>
@@ -305,7 +196,7 @@
 							公司地址：
 						</td>
 						<td class="table-content">
-							上海宝山梓坤科技园5018号
+							上海市沪太路5018弄梓坤科技园1号楼1509室
 						</td>
 					</tr>
 					<tr>
@@ -313,16 +204,31 @@
 							薪资待遇：
 						</td>
 						<td class="table-content">
-							5k-10k
+							{$graduate.salary_scope}
 						</td>
 					</tr>
 				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__//imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__//imgs/rush-2.png" alt="rush">
-				</div>
+				
+				<switch name='graduate.urgency'>
+					<case value="2">
+					<div class="template-card-imgbox">
+					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+					</div>
+					</case>
+					<case value="3">
+					<div class="template-card-imgbox">
+					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+					</div>
+					</case>
+					<default />
+				</switch>
+
 			</div>
 		</div>
+		</div>
+		</foreach>
+		
 
 	</div>
 </div>

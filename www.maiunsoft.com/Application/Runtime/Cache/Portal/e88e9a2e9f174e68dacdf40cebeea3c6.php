@@ -205,11 +205,11 @@
 		</nav>
 
 		<script type="text/javascript">
-	document.title = "社会招聘"
+	document.title="<?php echo ($articleTitle[0]["name"]); ?>"
 </script>
 <div class="banner-div banner-4">
 	<div class="banner-content-4 vertical-center">
-		社会招聘
+		<?php echo ($articleTitle[0]["name"]); ?>
 	</div>
 	<div class="banner-mask-4 vertical-center">
 
@@ -224,321 +224,23 @@
 	</div>
 </div>
 
-<div class="bg-color-5">
+<div style="padding-bottom: 110px;" class="bg-color-5">
 	<div class="template-wrap">
-		<div class="employ-tabswitch-2">
-			<?php if(is_array($socialList)): foreach($socialList as $key=>$type): $selected = $jobType == $key ? 'switch-active' : ''; ?>
-				<button class="tabswitch-btn <?php echo ($selected); ?>" type="button"><?php echo ($type); ?></button><?php endforeach; endif; ?>
-		</div>
-
-		<div class="drop-down">
-
-			<div class="default-item"><?php echo ($jobCityList[$jobCity]); ?></div>
-			<?php if(is_array($jobCityList)): foreach($jobCityList as $key=>$city): $hide = jobCity != $key ? "hide" : ""; ?>
-				<div class="drop-down-item <?php echo ($hide); ?>"  data-city="<?php echo ($key); ?>"><?php echo ($city); ?></div><?php endforeach; endif; ?>
-
-		</div>
-
-		<!--市场类-->
-		<?php if(is_array($bazzarList)): foreach($bazzarList as $key=>$bazzar): ?><div class="template-city" data-city="<?php echo ($bazzar["work_city"]); ?>">
-			<div class="template-card card-switch-1">
-				<div class="template-card-article-2">
-					<h3 class="job-title"><?php echo ($bazzar["name"]); ?></h3>
-					<table>
-						<tr>
-							<td class="table-title">
-								岗位职责：
-							</td>
-							<td class="table-content">
-								<?php echo ($bazzar["work_content"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								任职要求：
-							</td>
-							<td class="table-content">
-								<?php echo ($bazzar["requirements"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								工作经验：
-							</td>
-							<td class="table-content">
-								1-3年
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								公司地址：
-							</td>
-							<td class="table-content">
-								上海市沪太路5018弄梓坤科技园1号楼1509室
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								薪资待遇：
-							</td>
-							<td class="table-content">
-								<?php echo ($bazzar["salary_scope"]); ?>
-							</td>
-						</tr>
-					</table>
-					<?php switch($bazzar["urgency"]): case "2": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-							</div><?php break;?>
-						<?php case "3": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush-2.png" alt="rush">
-							</div><?php break;?>
-						<?php default: endswitch;?>
-
+		<?php if(is_array($articleList)): foreach($articleList as $key=>$article): ?><div class="template-card switch-tab-1" onClick="location='<?php echo U('article/detail',array('id'=>$article['id']));?>'">
+				<div class="template-card-img">
+					<span></span>
+					<!--<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">-->
+						<img src="<?php echo UploadUrl('article'); echo ($article['image']); ?>" alt="" />
 				</div>
-			</div>
-			</div><?php endforeach; endif; ?>
-
-		<!--研发类-->
-		<?php if(is_array($developmentList)): foreach($developmentList as $key=>$development): ?><div class="template-city" data-city="<?php echo ($development["work_city"]); ?>">
-			<div class="template-card card-switch-2 hide">
-				<div class="template-card-article-2">
-					<h3 class="job-title"><?php echo ($development["name"]); ?></h3>
-					<table>
-						<tr>
-							<td class="table-title">
-								岗位职责：
-							</td>
-							<td class="table-content">
-								<?php echo ($development["work_content"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								任职要求：
-							</td>
-							<td class="table-content">
-								<?php echo ($development["requirements"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								工作经验：
-							</td>
-							<td class="table-content">
-								1-3年
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								公司地址：
-							</td>
-							<td class="table-content">
-								上海市沪太路5018弄梓坤科技园1号楼1509室
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								薪资待遇：
-							</td>
-							<td class="table-content">
-								<?php echo ($development["salary_scope"]); ?>
-							</td>
-						</tr>
-					</table>
-					<?php switch($development["urgency"]): case "2": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-							</div><?php break;?>
-						<?php case "3": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush-2.png" alt="rush">
-							</div><?php break;?>
-						<?php default: endswitch;?>
-
+				<div class="template-card-article">
+					<b onClick="location='<?php echo U('article/detail',array('id'=>$article['id']));?>'"><?php echo ($article["title"]); ?></b>
+					<p>
+						<?php echo ($article["bref"]); ?>
+					</p>
 				</div>
-			</div>
-			</div><?php endforeach; endif; ?>
-
-		<!--业务类-->
-		<?php if(is_array($operationList)): foreach($operationList as $key=>$operation): ?><div class="template-city" data-city="<?php echo ($operation["work_city"]); ?>">
-			<div class="template-card card-switch-3 hide">
-				<div class="template-card-article-2">
-					<h3 class="job-title"><?php echo ($operation["name"]); ?></h3>
-					<table>
-						<tr>
-							<td class="table-title">
-								岗位职责：
-							</td>
-							<td class="table-content">
-								<?php echo ($operation["work_content"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								任职要求：
-							</td>
-							<td class="table-content">
-								<?php echo ($operation["requirements"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								工作经验：
-							</td>
-							<td class="table-content">
-								1-3年
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								公司地址：
-							</td>
-							<td class="table-content">
-								上海市沪太路5018弄梓坤科技园1号楼1509室
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								薪资待遇：
-							</td>
-							<td class="table-content">
-								<?php echo ($operation["salary_scope"]); ?>
-							</td>
-						</tr>
-					</table>
-					<?php switch($operation["urgency"]): case "2": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-							</div><?php break;?>
-						<?php case "3": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush-2.png" alt="rush">
-							</div><?php break;?>
-						<?php default: endswitch;?>
-
-				</div>
-			</div>
-			</div><?php endforeach; endif; ?>
-
-		<!--职能类-->
-		<?php if(is_array($functionList)): foreach($functionList as $key=>$function): ?><div class="template-city" data-city="<?php echo ($function["work_city"]); ?>">
-			<div class="template-card card-switch-4 hide">
-				<div class="template-card-article-2">
-					<h3 class="job-title"><?php echo ($function["name"]); ?></h3>
-					<table>
-						<tr>
-							<td class="table-title">
-								岗位职责：
-							</td>
-							<td class="table-content">
-								<?php echo ($function["work_content"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								任职要求：
-							</td>
-							<td class="table-content">
-								<?php echo ($function["requirements"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								工作经验：
-							</td>
-							<td class="table-content">
-								1-3年
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								公司地址：
-							</td>
-							<td class="table-content">
-								上海市沪太路5018弄梓坤科技园1号楼1509室
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								薪资待遇：
-							</td>
-							<td class="table-content">
-								<?php echo ($function["salary_scope"]); ?>
-							</td>
-						</tr>
-					</table>
-					<?php switch($function["urgency"]): case "2": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-							</div><?php break;?>
-						<?php case "3": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush-2.png" alt="rush">
-							</div><?php break;?>
-						<?php default: endswitch;?>
-
-				</div>
-			</div>
-			</div><?php endforeach; endif; ?>
-
-		<!--管理类-->
-		<?php if(is_array($manageList)): foreach($manageList as $key=>$manage): ?><div class="template-city" data-city="<?php echo ($manage["work_city"]); ?>">
-			<div class="template-card card-switch-5 hide">
-				<div class="template-card-article-2">
-					<h3 class="job-title"><?php echo ($manage["name"]); ?></h3>
-					<table>
-						<tr>
-							<td class="table-title">
-								岗位职责：
-							</td>
-							<td class="table-content">
-								<?php echo ($manage["work_content"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								任职要求：
-							</td>
-							<td class="table-content">
-								<?php echo ($manage["requirements"]); ?>
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								工作经验：
-							</td>
-							<td class="table-content">
-								1-3年
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								公司地址：
-							</td>
-							<td class="table-content">
-								上海市沪太路5018弄梓坤科技园1号楼1509室
-							</td>
-						</tr>
-						<tr>
-							<td class="table-title">
-								薪资待遇：
-							</td>
-							<td class="table-content">
-								<?php echo ($manage["salary_scope"]); ?>
-							</td>
-						</tr>
-					</table>
-					<?php switch($manage["urgency"]): case "2": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-							</div><?php break;?>
-						<?php case "3": ?><div class="template-card-imgbox">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush.png" alt="rush">
-								<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/rush-2.png" alt="rush">
-							</div><?php break;?>
-						<?php default: endswitch;?>
-
-				</div>
-			</div>
 			</div><?php endforeach; endif; ?>
 	</div>
+
 </div>
 
 		<div class="bg-color-7" style="background:#fff;">

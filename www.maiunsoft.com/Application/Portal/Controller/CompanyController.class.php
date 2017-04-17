@@ -37,6 +37,11 @@ class CompanyController extends PortalController
 		
 	}
 	
+	
+	public function contact(){
+		$this->theme($this->_theme)->display('contact');
+	}
+	
 	//服务网络
 	public function service(){
 		$this->theme($this->_theme)->display('service');

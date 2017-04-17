@@ -58,17 +58,20 @@
         <div class="section-five">
             <h3 id="sec-3">安全便捷的内容管理解决方案提供商</h3>
         </div>
-
+		
+		
         <div class="bg-color-6">
             <div class="section-six">
-            	
-            	<foreach name="serviceList" item="service_list">
-            		
-            		<div class="section-six-bg section-six-bg-{$key}">
-                    <div class="upblock-bg-{$key}"></div>
+            	<php>
+            		$arr = array(0,1,2,3);
+            	</php>
+            	<foreach name="serviceGroupList" item="service_list">
+            		<div class="section-six-bg section-six-bg-{$newServiceIcon[$key][0]}">
+            			
+                    <div class="upblock-bg-{$newServiceIcon[$key][0]}"></div>
                     <div class="upblock-bg-cg hide"></div>
                     <div class="upblock">
-                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-{$serviceIcon[$key]}.png" alt="{$serviceIcon[$key]}-icon"><br />
+                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-{$newServiceIcon[$key][1]}.png" alt="{$newServiceIcon[$key][1]}-icon"><br />
                         <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
                         <p class="upblock-title">
                             	{$service_list.name}
@@ -77,7 +80,7 @@
                             	外资企业网站系统开发系统开发<br />
                             	外资企业网站系统开发系统开发
                         </p>
-                        <button onClick="location='{:U(\'Service/\'.$service_list['title'])}'" class="upblock-btn hide">查看详情</button>
+                        <button onClick="location='{:U(\'Article/index?gid=\'.$key)}'" class="upblock-btn hide">查看详情</button>
                     </div>
                 	</div>
             	</foreach>

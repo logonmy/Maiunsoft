@@ -2,75 +2,50 @@
 	<!-- 焦点图 -->
 	<div class="swiper-container banner">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="__MB_STATIC__/img/banner.jpg" alt="banner">
-			</div>
-			<div class="swiper-slide">
-				<img src="__MB_STATIC__/img/shezhao01.png" alt="banner">
-			</div>
-			<div class="swiper-slide">
-				<img src="__MB_STATIC__/img/md01.png" alt="banner">
-			</div>
+			<foreach name="bigSliderList" item="slider">
+                <div class="swiper-slide">
+                	<img src="{:UploadUrl('slider')}{$slider.image}" alt="banner" />
+                </div>
+            </foreach>
+			
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
 	<!-- 最新动态 -->
 	<div class="news">
 		<h1>最新动态</h1>
-		<div class="floor">
-			<img onClick="javascript:;" src="__MB_STATIC__/img/img01.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
-		</div>
-		<div class="floor">
-			<img onClick="javascript:;" src="__MB_STATIC__/img/img01.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
-		</div>
-		<div class="floor">
-			<img onClick="javascript:;" src="__MB_STATIC__/img/img01.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
-		</div>
-
+		
+		<foreach name="newsList" item="news">
+            <div class="floor">
+            	<img onClick="javascript:;" src="{:UploadUrl('slider')}{$news.image}" alt="news-img">
+                <div class="article">
+                	<h2>{$news.title}</h2>
+                    <p>{$news.bref}</p>
+                    <a href="{:U(\'Index/index\')}" class="more" data-cont="index-data_floor1">
+                    	<span>更多详情&gt;&gt;</span>
+                    </a>
+                </div>
+            </div>
+        </foreach>
+		
 	</div>
 	<!-- end 最新动态-->
 	<!-- 聚焦世界 -->
 	<div class="world">
 		<h1>业务洞察</h1>
-		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
-			<img onClick="javascript:;" src="__MB_STATIC__/img/img02.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点 新的征程 一直向前新的起点 </p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">了解更多</a>
-		</div>
-		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
-			<img onClick="javascript:;" src="__MB_STATIC__/img/img02.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点 新的征程 一直向前新的起点 </p>
-			</div>
-			<a href="##" class="more">了解更多</a>
-		</div>
-		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
-			<img onClick="javascript:;" src="__MB_STATIC__/img/img02.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点 新的征程 一直向前新的起点 </p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">了解更多</a>
-		</div>
+		
+		<foreach name="articleList" item="article">
+            <div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
+                <img onClick="javascript:;" src="{:UploadUrl('slider')}{$article.image}" alt="news-img">
+                <div class="article">
+                    <h2>{$article.title}</h2>
+                    <p class="text-clip">{$article.bref|subtext=46}</p>
+                    <a href="{:U(\'Index/index\')}" class="more" data-cont="index-data_floor1">了解更多</a>
+                </div>
+            </div>
+        </foreach>
+		
+		
 	</div>
 	<!-- end 聚焦世界-->
 	<!-- 脉云介绍 -->

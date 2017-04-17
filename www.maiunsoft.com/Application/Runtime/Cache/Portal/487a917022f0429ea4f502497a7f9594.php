@@ -115,57 +115,29 @@
 				</div>
 			</div>
 	</nav>
-</header>
+</header>	
 
 <!--模板渲染-->
 <div id="main">
-	<!--  主体-->
-	<!-- 焦点图 -->
-		<div class="banner">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="">
-			<div class="title">软件开发</div>
-		</div>
-		<!-- 咨询详情 -->
-		<div class="news">
-			<h1>手机软件开发</h1>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>内容管理系统规划</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="ruanjiankaifa-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-		</div>   <!-- end 咨询详情-->
-
+	<script type="text/javascript">
+	document.title="<?php echo ($articleTitle[0]["name"]); ?>"
+</script>
+<!-- 焦点图 -->
+<div class="banner">
+	<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="">
+	<div class="title"><?php echo ($articleTitle[0]["name"]); ?></div>
+</div>
+<!-- 合作动态 -->
+<div class="news">
+	
+	<?php if(is_array($articleList)): foreach($articleList as $key=>$article): ?><div onClick="location='<?php echo U('article/detail',array('id'=>$article['id']));?>'" class="floor floor_content">
+			<h3><?php echo ($article["title"]); ?></h3>
+			<p><?php echo ($article["bref"]); ?></p>
+			<a href="<?php echo U('article/detail',array('id'=>$article['id']));?>" class="more" data-cont="yewudongcha-data_floor1">更多详情&gt;&gt;</a>
+		</div><?php endforeach; endif; ?>
+	
+</div>
+<!-- end 合作动态-->
 
 	<!-- 脉云介绍 -->
 <div class="info">

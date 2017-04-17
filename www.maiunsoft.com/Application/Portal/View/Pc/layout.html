@@ -8,13 +8,13 @@
                                      initial-scale=1.0,
                                      maximum-scale=1.0,
                                      user-scalable=no">
-			<title>脉云首页</title>
+			<title>脉云软件 | {$_PageHeader.title}</title>
+			<link rel="shortcut icon" href="__PC_STATIC__/imgs/favicon.png" >
 			<link rel="stylesheet" href="__PC_STATIC__/css/swiper.min.css">
 			<link rel="stylesheet" href="__PC_STATIC__/css/demo.css">
 	</head>
 
 	<body>
-		
 		<nav>
 			<img onClick="location='{:U(\'index/index\')}'" class="vertical-center" src="__PC_STATIC__/imgs/logo.png" alt="logo" />
 			<div class="nav-items">
@@ -26,15 +26,12 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<!--<foreach name="mdGroupList" item="md">
+									<foreach name="mdGroupList" item="md">
 										<li onClick="location='{:U(\'article/index?gid=\'.$key)}'">
 											{$md.name}
 											<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									</foreach>-->
-                                    <li onClick="location='{:U(\'Article/observe\')}'">业务洞察<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='{:U(\'Article/list\')}'">技术前沿<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onClick="location='{:U(\'Article/detail\')}'">公司动态<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-								
+									</foreach>
+
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -70,12 +67,7 @@
 										</li>
 									</foreach>
 								</ul>
-								<!--<ul>
-                                    <li onClick="location='{:U(\'Service/consult\')}'">咨询<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='{:U(\'Service/dev\')}'">开发<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='{:U(\'Service/maintenance\')}'">运维<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='{:U(\'Service/train\')}'">培训<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-                                </ul>-->
+
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul vertical-center">
@@ -138,8 +130,8 @@
 							</div>
 						</div>
 					</li>
-					<!--
-                 -->
+
+					<!--招聘-->
 					<li>
 						<div class="pointer">
 							<span>招聘</span>
@@ -147,89 +139,52 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='{:U(\'Job/school',array('type'=>0,'city'=>1),'')}'">校园招聘<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='{:U(\'Job/social',array('type'=>0,'city'=>1),'')}'">社会招聘<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='{:U(\'Job/school',array('type'=>0),'')}'">校园招聘<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='{:U(\'Job/social',array('type'=>1),'')}'">社会招聘<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul menu-ul-2">
 									<ul class="hide">
-										<li onclick="location='{:U(\'Job/detail\')}'">校园宣讲<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
-										<li onclick="location='{:U(\'Job/school\')}'">实习生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
-										<li onclick="location='{:U(\'Job/school\')}'">应届生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='{:U(\'Job/school\',array('type'=>0),'')}'">校园宣讲<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='{:U(\'Job/school\',array('type'=>1),'')}'">实习生招聘<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='{:U(\'Job/school\',array('type'=>2),'')}'">应届生招聘<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
 									</ul>
 									<ul class="hide">
 										<foreach name="jobTypeList" item="type">
-											<li onClick="location='{:U(\'job/social?type=\'.$key)}'">{$type}<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+											<li onClick="location='{:U(\'job/social?type=\'.$key,'','')}'">{$type}<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
 										</foreach>
 									</ul>
 								</div>
 								<div class="nav-4-empty-block hide"></div>
 								<div class="menu-content vertical-center">
 									<div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												0-0 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												0-1 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												0-2 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
+
+										<foreach name="schoolNeed" item="scNeed">
+											<div class="hide">
+												<b>{$scNeed.name}</b><br />
+												<p>
+													{$scNeed.requirements}
+												</p>
+											</div>
+										</foreach>
+
 									</div>
 									<div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-0 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-1 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-2 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-3 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>与犀云签订战略合作协议 3-1-2</b><br />
-											<p>
-												1-4 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
+										<foreach name="socialNeed" item="soNeed">
+											<div class="hide">
+												<b>{$soNeed.name}</b>
+												<p>
+													{$soNeed.requirements}
+												</p>
+											</div>
+										</foreach>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
+					<!--关于-->
 					<li>
 						<div class="pointer">
 							<span>关于</span>
@@ -237,69 +192,23 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='{:U(\'Company/index\',array('type'=>5,'id'=>19),'')}'">公司简介<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='{:U(\'Company/index\',array('type'=>5,'id'=>20),'')}'">服务网络<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='{:U(\'Company/index\',array('type'=>5,'id'=>21),'')}'">合作伙伴<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='{:U(\'Company/index\',array('type'=>5,'id'=>22),'')}'">企业文化<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onClick="javascript:;">联系方式<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+									<foreach name="_aboutGroupList" item="ab">
+										<li onclick="location='{:U(\'Company/index\',array('id'=>$ab['id']))}'">{$ab.name}<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
+									</foreach>
+									<li onClick="location='{:U(\'Company/contact\')}'">联系方式<img class="hide vertical-center" src="__PC_STATIC__/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-about vertical-center">
+									<foreach name="_aboutGroupList" item="abArticle">
+										<div class="hide">
+											<b>{$abArticle.lastArticle.title}</b>
+											<span>{$abArticle.lastArticle.bref}</span>
+											<a href="{:U(\'Company/index\',array('id'=>$abArticle['id']),'')}">更多</a>
+										</div>
+									</foreach>
+
 									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="{:U(\'Company/about\')}">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="{:U(\'Company/service\')}">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="{:U(\'Company/cooperation\')}">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="{:U(\'Company/culture\')}">更多</a>
-									</div>
-									<div class="hide">
-										
 										<span>
 											<b>联系方式</b><br /><br /><br />
                                         	<p>联系电话： 400-9910-540</p>
@@ -318,31 +227,31 @@
 			<div class="nav-menu vertical-center">
 				<input class="search-input" type="text" placeholder="搜索" />
 				<button class="search-btn"></button>
-				<a class="search-a" href="#"><img class="icon-menu" src="__PC_STATIC__/imgs/menu.png" alt="menu" /></a>
+				<!--登录接口-->
+				<!--<a class="search-a" href="#"><img class="icon-menu" src="__PC_STATIC__/imgs/menu.png" alt="menu" /></a>-->
 			</div>
 		</nav>
 
 		{__CONTENT__}
-		
+
 		<div class="bg-color-7" style="background:#fff;">
 			<div class="section-four">
 				<div class="link-part link-about">
 					<b>关于</b>
-					<p>公司简介</p>
-					<p>服务网络</p>
-					<p>合作伙伴</p>
-					<p>企业文化</p>
+					<foreach name="_aboutGroupList" item="group">
+						<p onClick="location='{:U(\'Company/index/?id=\'.$group['id'])}'">{$group.name}</p>
+					</foreach>
 				</div>
 				<div class="link-part link-cooperation">
 					<b>服务</b>
 					<foreach name="serviceGroupList" item="group">
-						<p>{$group.name}</p>
+						<p onClick="location='{:U(\'article/index?gid=\'.$group['id'])}'">{$group.name}</p>
 					</foreach>
 				</div>
 				<div class="link-part link-news">
-					<b>合作</b>
-					<foreach name="partnerGroupList" item="group">
-						<p>{$group.name}</p>
+					<b>脉点</b>
+					<foreach name="mdGroupList" item="group">
+						<p onClick="location='{:U(\'article/index?gid=\'.$group['id'])}'">{$group.name}</p>
 					</foreach>
 				</div>
 				<div class="link-part link-mobile">
@@ -371,10 +280,29 @@
 				</p>
 				<a><img src="__PC_STATIC__/imgs/icon-email.png" alt="email-icon"></a>
 				<a><img src="__PC_STATIC__/imgs/icon-qq.png" alt="qq-icon"></a>
-				<a><img src="__PC_STATIC__/imgs/icon-weibo.png" alt="weibo-icon"></a>
+				<a href="mailto:service@maiunsoft.com"><img src="__PC_STATIC__/imgs/icon-weibo.png" alt="weibo-icon"></a>
 			</div>
 		</footer>
-
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var banner_4 = document.getElementsByClassName("banner-4")[0];
+				var menu_mask = document.getElementsByClassName("menu-mask");
+				
+				if(banner_4){
+					//menu_mask.style.height =
+					var height = banner_4.offsetHeight;
+					for(var i = 0;i<5;i++){
+						
+						menu_mask[i].style.height = height+"px";
+					}
+					
+					
+				}
+			}
+		</script>
+		
+		
 		<script src="__PC_STATIC__/js/jquery-3.1.1.min.js"></script>
 		<script src="__PC_STATIC__/js/swiper.min.js"></script>
 		<script src="__PC_STATIC__/js/main.js"></script>

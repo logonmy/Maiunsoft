@@ -206,69 +206,103 @@
 			</div>
 		</nav>
 
-		 <div class="banner-div banner-4">
-            <div class="banner-content-4 vertical-center">
-                    行业风向
-            </div>
-            <div class="banner-mask-4 vertical-center">
+		<div class="banner-div banner-4">
+	<div class="banner-content-4 vertical-center">
+		咨询客户
+	</div>
+	<div class="banner-mask-4 vertical-center">
 
-            </div>
-        </div>
+	</div>
+</div>
 
-        <div class="bg-color-3">
-            <div class="connection">
-                <span>联系电话： 400-9910-540</span>
-                <span>企业邮箱： service@maiunsoft.com</span>
-                <span>企业QQ： service@maiunsoft.com</span>
-            </div>
-        </div>
+<div class="bg-color-3">
+	<div class="connection">
+		<span>联系电话： 400-9910-540</span>
+		<span>企业邮箱： service@maiunsoft.com</span>
+		<span>企业QQ： service@maiunsoft.com</span>
+	</div>
+</div>
 
-        <div class="bg-color-5">
-            <div class="template-wrap">
-            	
-            	<!--
-                	作者：offline
-                	时间：2017-04-06
-                	描述：行业风向整体介绍
-                -->
-                <div class="template-ceil">
-                    <b>行业风向</b>
-                    <img class="template-ceil-img" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/ceil-img-1.png" alt="content-intro" >
-                    <p>
-                        Google 和 Uber 互掴了几个巴掌，或许会成为引发无人驾驶领域大战的火药桶。
-　　2 月 24 日，Google 母公司 Alphabet 旗下的自动驾驶技术公司 Waymo 指控 Uber 及其旗下的自动驾驶卡车公司 Otto 盗取了他们的自动驾驶技术。
-　　指控称其自动驾驶汽车部门软件工程师 Anthony Levandowski 在离开谷歌创立自动驾驶卡车公司 Otto 之前，秘密下载了 14000 份专有技术文件。
-　　Uber 的发言人则称 Waymo 的诉讼毫无根据，其目的只是想阻止竞争对手前进。3 月 1 日，Uber 去年收购无人车公司 Tyto 的交易被披露，这家公司为 Uebr 提供的一项自动驾驶技术专利或能反击 Google 窃密指控。但如果Waymo 可以证明 Levandowski 的盗窃行为，以及这种盗窃行为对 Waymo 造成了巨大的损失，那么 Uber 将会面临高额罚金。更为严重的是，此次诉讼很可能会挫败 Uber 开发无人驾驶汽车的计划，从而给 Uber 的未来蒙上一层阴影。
-　　诉讼的背后，则指向了无人驾驶技术领域的混战。
-　　商业应用尚未成熟 专利争夺大战已经打响
-　　Google 算是无人驾驶领域的先行者， 其无人驾驶汽车项目开始于 2009 年，启动了一个数十亿美元的比赛作为孵化器，以完善无人驾驶技术。在此过程中，它帮助 Google 收集了成百上千项专利，涵盖自动化车辆的软件，硬件和道路行为等各个方面。
-　　Google 从来没有透露自己在无人驾驶汽车上投入了多少，在 2012 年，Google 的无人车的自动驾驶套件成本就已经超过了 25 万美元，整车成本超 30 万美元，远超法拉利。
-硬件成本如此之高，为了使量产成为可能，Google 在无人驾驶汽车的研发和人才的投入必须大手笔。据彭博社报道，Google 针对早期无人车团队员工制定过非常慷慨的薪酬制度。尽管没有透露具体数字，但是熟悉此事的员工说，这笔钱多到可以让他们想干嘛就干嘛。
-　　此外无人车团队员工还能获得额外的期权和现金奖励， Google 按照项目价值为这些员工已获得的奖励设立一个倍数，两者相乘后发给员工。2015 年下半年 Google 还大幅提升奖金倍数，使得奖金数达到数百万美元。有员工被授予 16 倍奖金倍数。
-　　2015 年第四季度，Google 运营费用增加 14% 达到 66 亿美元。首席财务官 Ruth Porat 称增长的原因是研发支出大增。尽管她没有具体指是什么项目，但 Google 内部人士表示说的正是汽车项目。
-在与 Uber 的诉讼中，Waymo 也称为了将无人车引入大众市场，Waymo 已经投资了数百万美元和数万小时的工程时间来定制在业界中最先进的， 有效的激光雷达传感器，以期将整套系统出售给汽车制造商，而不是只解决自动驾驶解决方案中的一个环节。
-                    </p>
-                    <div style="clear:both;"></div>
-                </div>
+<div class="bg-color-5">
+	<div class="template-wrap">
+		<div class="template-ceil">
+			<b><?php echo ($exampleArticle_new["title"]); ?></b>
+			<img class="template-ceil-img" src="<?php echo UploadUrl('group'); echo ($exampleArticle_new["image"]); ?>" alt="content-intro">
+			<p>
+				<?php echo ($exampleArticle_new["content"]); ?>
+			</p>
+			<div style="clear:both;"></div>
+		</div>
+		
+		<?php $exampleLen = count($exampleArticleList); ?>
+		
+		<?php if($exampleLen > 1): ?><h3>更多咨询</h3><?php endif; ?>
+		
 
-                <h3>更多动态</h3>
-                
-            	<!--行业风向整体介绍 end-->
-            	
-                <?php if(is_array($articleList)): foreach($articleList as $key=>$art): ?><div class="template-card" onClick="location='<?php echo U('article/detail?id='.$key);?>'">
-                        <div class="template-card-img" >
-                            <span></span>
-                            <img src="<?php echo UploadUrl('article'); echo ($art["image"]); ?>" alt="">
-                        </div>
-                        <div class="template-card-article">
-                            <b><?php echo ($art["title"]); ?></b>
-                            <p><?php echo ($art["bref"]); ?>
-                            </p>
-                        </div>
-                    </div><?php endforeach; endif; ?>
-            </div>
+		<div class="template-card">
+			<div class="template-card-img">
+				<span></span>
+				<img src="imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article">
+				<b>协同设计系统规划</b>
+				<p>
+					国脉通信规划设计有限公司是国家建设部和发改委批准的甲级通信行业勘察设计单位，高新技术企业。具有无线通信设计甲级资质、有线通信设计甲级资质和工程咨询甲级资质。作为一家以通信设计服务为主的高新技术企业，公司一直致力于通信设计主业，采取公司化管理，流程规范有序，质量要求严格，通过ISO9001质量认证，主营业务涵盖国内各大通信运营商以及地方政府等领域。
+				</p>
+			</div>
+		</div>
+		<div class="template-card">
+			<div class="template-card-img">
+				<span></span>
+				<img src="imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article">
+				<b>项目系统规划</b>
+				<p>
+					国脉通信规划设计有限公司是国家建设部和发改委批准的甲级通信行业勘察设计单位，高新技术企业。具有无线通信设计甲级资质、有线通信设计甲级资质和工程咨询甲级资质。作为一家以通信设计服务为主的高新技术企业，公司一直致力于通信设计主业，采取公司化管理，流程规范有序，质量要求严格，通过ISO9001质量认证，主营业务涵盖国内各大通信运营商以及地方政府等领域。
+				</p>
+			</div>
+		</div>
+		<div class="template-card">
+			<div class="template-card-img">
+				<span></span>
+				<img src="imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article">
+				<b>知识管理体系规划</b>
+				<p>
+					国脉通信规划设计有限公司是国家建设部和发改委批准的甲级通信行业勘察设计单位，高新技术企业。具有无线通信设计甲级资质、有线通信设计甲级资质和工程咨询甲级资质。作为一家以通信设计服务为主的高新技术企业，公司一直致力于通信设计主业，采取公司化管理，流程规范有序，质量要求严格，通过ISO9001质量认证，主营业务涵盖国内各大通信运营商以及地方政府等领域。
+				</p>
+			</div>
+		</div>
+		<div class="template-card">
+			<div class="template-card-img">
+				<span></span>
+				<img src="imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article">
+				<b>信息安全体系规划</b>
+				<p>
+					国脉通信规划设计有限公司是国家建设部和发改委批准的甲级通信行业勘察设计单位，高新技术企业。具有无线通信设计甲级资质、有线通信设计甲级资质和工程咨询甲级资质。作为一家以通信设计服务为主的高新技术企业，公司一直致力于通信设计主业，采取公司化管理，流程规范有序，质量要求严格，通过ISO9001质量认证，主营业务涵盖国内各大通信运营商以及地方政府等领域。
+				</p>
+			</div>
+		</div>
+		<div class="template-card">
+			<div class="template-card-img">
+				<span></span>
+				<img src="imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article">
+				<b>协同教学平台规划</b>
+				<p>
+					国脉通信规划设计有限公司是国家建设部和发改委批准的甲级通信行业勘察设计单位，高新技术企业。具有无线通信设计甲级资质、有线通信设计甲级资质和工程咨询甲级资质。作为一家以通信设计服务为主的高新技术企业，公司一直致力于通信设计主业，采取公司化管理，流程规范有序，质量要求严格，通过ISO9001质量认证，主营业务涵盖国内各大通信运营商以及地方政府等领域。
+				</p>
+			</div>
+		</div>
 
-        </div>
+	</div>
+
+</div>
 		
 		<div class="bg-color-7" style="background:#fff;">
 			<div class="section-four">

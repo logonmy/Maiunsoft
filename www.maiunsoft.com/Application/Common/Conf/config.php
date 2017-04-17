@@ -23,11 +23,7 @@ return array(
 		1 => '应届生',
 		2 => '社会',
 		),
-	'JOB_SCHOOL' => array(
-		0 => '校园宣讲',
-		1 => '实习招聘',
-		2 => '应届生招聘'
-	),
+	
 	'CITYS' => array(
 		1 => '上海',
 		2 => '北京',
@@ -53,19 +49,14 @@ return array(
 		3 => '业务洞察',
 		),
 	
-	'SERVICE_TYPES' => array(
-		0 => array('name' => '企业内容管理','title' => 'consult'),
-		1 => array('name' => '业务流程管理','title' => 'dev'),
-		2 => array('name' => '系统定制开发','title' => 'maintenance'),
-		3 => array('name' => '培训顾问服务','title' => 'train')
+	//服务背景图片
+	'SERVICE_ICON' => array(
+		0 => array(0,'smile'),
+		1 => array(1,'global'),
+		2 => array(2,'setting'),
+		3 => array(3,'member'),
 	),
-	'ABOUT_TYPES' => array(
-		0 => '公司简介',
-		1 => '服务网络',
-		2 => '合作伙伴',
-		3 => '企业文化'
-	),
-
+	
 	//---------------------------------------------------
 	// 模块设置
 	//

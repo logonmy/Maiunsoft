@@ -33,8 +33,10 @@ return array(
 		'articles/[:g]' => 'Article/index',
 		'article/:id' => 'Article/detail',
 
-		'query' => 'Query/search'
-
+		'query' => 'Query/search',
+		
+		
+		
 	),
 
 );

@@ -43,6 +43,9 @@
 					<ul class="item">
 						<li>
 							<span>脉点<i></i></span>
+							<a href="<?php echo U('Article/index');?>"><?php echo ($test); ?></a>
+							
+							
 							<a href="<?php echo U('Article/index');?>">合作动态</a>
 							<a href="<?php echo U('Article/list');?>">行业风向</a>
 							<a href="<?php echo U('Article/observe');?>">业务洞察</a>
@@ -128,7 +131,7 @@
 			<h1>可持续发展</h1>
 			<div class="floor" style="padding-top:0.9rem">
 				<h3>可持续发展</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
+				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
 				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
 				<a href="##" class="more" data-cont="kechixu-data_floor1">更多详情&gt;&gt;</a>
 			</div>
@@ -153,7 +156,7 @@
 	<div class="microblog">
 		<h2>脉云微博</h2>
 		<div class="QRcode">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
+			<img onClick="javascript:;" src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
 		</div>
 	</div>
 	<div class="about">

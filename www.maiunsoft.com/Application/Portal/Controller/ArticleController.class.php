@@ -7,15 +7,22 @@ class ArticleController extends PortalController {
 	
 	public function index($gid=0)
 	{
+		//标题
+		$this->articleTitle = M('group')->where('id=%d',$gid)->select();
+		
 		$this->articleList = M('article')->where('group_id=%d',$gid)->getField('id,title,bref,image');
-
-		$this->theme($this->_theme)->display('list');
+		
+		$this->theme($this->_theme)->display('index');
+		
+		
+		
 	}
 	
 	
 	//合作动态
 	public function detail($id=''){
-		$this->articleInfo = M('article')->where('id=%d',$id)->find();
+		$this->articleInfo = M('article')->where("id=%d",$id)->find();
+		
 		$this->theme($this->_theme)->display('detail');
 		
 		

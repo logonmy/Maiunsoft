@@ -43,6 +43,9 @@
 					<ul class="item">
 						<li>
 							<span>脉点<i></i></span>
+							<a href="<?php echo U('Article/index');?>"><?php echo ($test); ?></a>
+							
+							
 							<a href="<?php echo U('Article/index');?>">合作动态</a>
 							<a href="<?php echo U('Article/list');?>">行业风向</a>
 							<a href="<?php echo U('Article/observe');?>">业务洞察</a>
@@ -95,8 +98,8 @@
 					<ul class="item">
 						<li>
 						<span>招聘<i></i></span>
-							<a href="<?php echo U('Job/school');?>">校园招聘</a>
-							<a href="<?php echo U('Job/social');?>">社会招聘</a>
+							<a href="<?php echo U('Job/school',array('type'=>0),'');?>">校园招聘</a>
+							<a href="<?php echo U('Job/social',array('type'=>1),'');?>">社会招聘</a>
 						</li>
 					</ul>
 					<ul class="item">
@@ -120,75 +123,44 @@
 	<!-- 焦点图 -->
 	<div class="swiper-container banner">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/banner.jpg" alt="banner">
-			</div>
-			<div class="swiper-slide">
-				<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/shezhao01.png" alt="banner">
-			</div>
-			<div class="swiper-slide">
-				<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="banner">
-			</div>
+			<?php if(is_array($bigSliderList)): foreach($bigSliderList as $key=>$slider): ?><div class="swiper-slide">
+                	<img src="<?php echo UploadUrl('slider'); echo ($slider["image"]); ?>" alt="banner" />
+                </div><?php endforeach; endif; ?>
+			
 		</div>
 		<div class="swiper-pagination"></div>
 	</div>
 	<!-- 最新动态 -->
 	<div class="news">
 		<h1>最新动态</h1>
-		<div class="floor">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img01.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
-		</div>
-		<div class="floor">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img01.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
-		</div>
-		<div class="floor">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img01.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点,新的征程,谷歌服务器下的科技公司新的起点,新的征程,谷歌服务器下的科技公司</p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">更多详情&gt;&gt;</a>
-		</div>
-
+		
+		<?php if(is_array($newsList)): foreach($newsList as $key=>$news): ?><div class="floor">
+            	<img onClick="javascript:;" src="<?php echo UploadUrl('slider'); echo ($news["image"]); ?>" alt="news-img">
+                <div class="article">
+                	<h2><?php echo ($news["title"]); ?></h2>
+                    <p><?php echo ($news["bref"]); ?></p>
+                    <a href="<?php echo U('Index/index');?>" class="more" data-cont="index-data_floor1">
+                    	<span>更多详情&gt;&gt;</span>
+                    </a>
+                </div>
+            </div><?php endforeach; endif; ?>
+		
 	</div>
 	<!-- end 最新动态-->
 	<!-- 聚焦世界 -->
 	<div class="world">
 		<h1>业务洞察</h1>
-		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img02.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点 新的征程 一直向前新的起点 </p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">了解更多</a>
-		</div>
-		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img02.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点 新的征程 一直向前新的起点 </p>
-			</div>
-			<a href="##" class="more">了解更多</a>
-		</div>
-		<div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img02.jpg" alt="news-img">
-			<div class="article">
-				<h2>业务洞察</h2>
-				<p>新的起点 新的征程 一直向前新的起点 </p>
-			</div>
-			<a href="##" class="more" data-cont="index-data_floor1">了解更多</a>
-		</div>
+		
+		<?php if(is_array($articleList)): foreach($articleList as $key=>$article): ?><div class="floor" style="box-shadow: 5px 5px 26px #10476d;">
+                <img onClick="javascript:;" src="<?php echo UploadUrl('slider'); echo ($article["image"]); ?>" alt="news-img">
+                <div class="article">
+                    <h2><?php echo ($article["title"]); ?></h2>
+                    <p class="text-clip"><?php echo (subtext($article["bref"],46)); ?></p>
+                    <a href="<?php echo U('Index/index');?>" class="more" data-cont="index-data_floor1">了解更多</a>
+                </div>
+            </div><?php endforeach; endif; ?>
+		
+		
 	</div>
 	<!-- end 聚焦世界-->
 	<!-- 脉云介绍 -->
@@ -203,7 +175,7 @@
 	<div class="microblog">
 		<h2>脉云微博</h2>
 		<div class="QRcode">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
+			<img onClick="javascript:;" src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
 		</div>
 	</div>
 	<div class="about">

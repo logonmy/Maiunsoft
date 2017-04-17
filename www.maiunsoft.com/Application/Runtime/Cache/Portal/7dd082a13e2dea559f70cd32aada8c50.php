@@ -8,13 +8,13 @@
                                      initial-scale=1.0,
                                      maximum-scale=1.0,
                                      user-scalable=no">
-			<title>脉云首页</title>
+			<title>脉云软件 | <?php echo ($_PageHeader["title"]); ?></title>
+			<link rel="shortcut icon" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/favicon.png" >
 			<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/css/swiper.min.css">
 			<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/css/demo.css">
 	</head>
 
 	<body>
-		
 		<nav>
 			<img onClick="location='<?php echo U('index/index');?>'" class="vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/logo.png" alt="logo" />
 			<div class="nav-items">
@@ -26,13 +26,10 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<!--<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'">
+									<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'">
 											<?php echo ($md["name"]); ?>
-											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>-->
-                                    <li onClick="location='<?php echo U('Article/observe');?>'">业务洞察<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Article/list');?>'">技术前沿<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onClick="location='<?php echo U('Article/detail');?>'">公司动态<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-								
+											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -64,12 +61,7 @@
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
 										</li><?php endforeach; endif; ?>
 								</ul>
-								<!--<ul>
-                                    <li onClick="location='<?php echo U('Service/consult');?>'">咨询<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Service/dev');?>'">开发<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Service/maintenance');?>'">运维<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Service/train');?>'">培训<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                </ul>-->
+
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul vertical-center">
@@ -120,8 +112,8 @@
 							</div>
 						</div>
 					</li>
-					<!--
-                 -->
+
+					<!--招聘-->
 					<li>
 						<div class="pointer">
 							<span>招聘</span>
@@ -129,87 +121,46 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Job/school',array('type'=>0,'city'=>1),'');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Job/social',array('type'=>0,'city'=>1),'');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/school',array('type'=>0),'');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/social',array('type'=>1),'');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul menu-ul-2">
 									<ul class="hide">
-										<li onclick="location='<?php echo U('Job/detail');?>'">校园宣讲<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
-										<li onclick="location='<?php echo U('Job/school');?>'">实习生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
-										<li onclick="location='<?php echo U('Job/school');?>'">应届生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/school',array('type'=>0),'');?>'">校园宣讲<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/school',array('type'=>1),'');?>'">实习生招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/school',array('type'=>2),'');?>'">应届生招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									</ul>
 									<ul class="hide">
-										<?php if(is_array($jobTypeList)): foreach($jobTypeList as $key=>$type): ?><li onClick="location='<?php echo U('job/social?type='.$key);?>'"><?php echo ($type); ?><img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+										<?php if(is_array($jobTypeList)): foreach($jobTypeList as $key=>$type): ?><li onClick="location='<?php echo U('job/social?type='.$key,'','');?>'"><?php echo ($type); ?><img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
 									</ul>
 								</div>
 								<div class="nav-4-empty-block hide"></div>
 								<div class="menu-content vertical-center">
 									<div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												0-0 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												0-1 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												0-2 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
+
+										<?php if(is_array($schoolNeed)): foreach($schoolNeed as $key=>$scNeed): ?><div class="hide">
+												<b><?php echo ($scNeed["name"]); ?></b><br />
+												<p>
+													<?php echo ($scNeed["requirements"]); ?>
+												</p>
+											</div><?php endforeach; endif; ?>
+
 									</div>
 									<div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-0 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-1 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-2 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>任职要求</b><br />
-											<p>
-												1-3 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
-										<div class="hide">
-											<b>与犀云签订战略合作协议 3-1-2</b><br />
-											<p>
-												1-4 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言 html5，c语言，html5，c语言
-											</p>
-											<!-- <a href="#">更多</a> -->
-										</div>
+										<?php if(is_array($socialNeed)): foreach($socialNeed as $key=>$soNeed): ?><div class="hide">
+												<b><?php echo ($soNeed["name"]); ?></b>
+												<p>
+													<?php echo ($soNeed["requirements"]); ?>
+												</p>
+											</div><?php endforeach; endif; ?>
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
+					<!--关于-->
 					<li>
 						<div class="pointer">
 							<span>关于</span>
@@ -217,69 +168,19 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>19),'');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>20),'');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>21),'');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/index',array('type'=>5,'id'=>22),'');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onClick="javascript:;">联系方式<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$ab): ?><li onclick="location='<?php echo U('Company/index',array('id'=>$ab['id']));?>'"><?php echo ($ab["name"]); ?><img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+									<li onClick="location='<?php echo U('Company/contact');?>'">联系方式<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-about vertical-center">
+									<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$abArticle): ?><div class="hide">
+											<b><?php echo ($abArticle["lastArticle"]["title"]); ?></b>
+											<span><?php echo ($abArticle["lastArticle"]["bref"]); ?></span>
+											<a href="<?php echo U('Company/index',array('id'=>$abArticle['id']),'');?>">更多</a>
+										</div><?php endforeach; endif; ?>
+
 									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="<?php echo U('Company/about');?>">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="<?php echo U('Company/service');?>">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="<?php echo U('Company/cooperation');?>">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="<?php echo U('Company/culture');?>">更多</a>
-									</div>
-									<div class="hide">
-										
 										<span>
 											<b>联系方式</b><br /><br /><br />
                                         	<p>联系电话： 400-9910-540</p>
@@ -298,7 +199,8 @@
 			<div class="nav-menu vertical-center">
 				<input class="search-input" type="text" placeholder="搜索" />
 				<button class="search-btn"></button>
-				<a class="search-a" href="#"><img class="icon-menu" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/menu.png" alt="menu" /></a>
+				<!--登录接口-->
+				<!--<a class="search-a" href="#"><img class="icon-menu" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/menu.png" alt="menu" /></a>-->
 			</div>
 		</nav>
 
@@ -356,15 +258,17 @@
         <div class="section-five">
             <h3 id="sec-3">安全便捷的内容管理解决方案提供商</h3>
         </div>
-
+		
+		
         <div class="bg-color-6">
             <div class="section-six">
-            	
-            	<?php if(is_array($serviceList)): foreach($serviceList as $key=>$service_list): ?><div class="section-six-bg section-six-bg-<?php echo ($key); ?>">
-                    <div class="upblock-bg-<?php echo ($key); ?>"></div>
+            	<?php $arr = array(0,1,2,3); ?>
+            	<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$service_list): ?><div class="section-six-bg section-six-bg-<?php echo ($newServiceIcon[$key][0]); ?>">
+            			
+                    <div class="upblock-bg-<?php echo ($newServiceIcon[$key][0]); ?>"></div>
                     <div class="upblock-bg-cg hide"></div>
                     <div class="upblock">
-                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-<?php echo ($serviceIcon[$key]); ?>.png" alt="<?php echo ($serviceIcon[$key]); ?>-icon"><br />
+                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-<?php echo ($newServiceIcon[$key][1]); ?>.png" alt="<?php echo ($newServiceIcon[$key][1]); ?>-icon"><br />
                         <img class="upblock-icon-2" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-line.png" alt="line">
                         <p class="upblock-title">
                             	<?php echo ($service_list["name"]); ?>
@@ -373,7 +277,7 @@
                             	外资企业网站系统开发系统开发<br />
                             	外资企业网站系统开发系统开发
                         </p>
-                        <button onClick="location='<?php echo U('Service/'.$service_list['title']);?>'" class="upblock-btn hide">查看详情</button>
+                        <button onClick="location='<?php echo U('Article/index?gid='.$key);?>'" class="upblock-btn hide">查看详情</button>
                     </div>
                 	</div><?php endforeach; endif; ?>
             	
@@ -444,23 +348,20 @@
             </div>
         </div>
 
-		
+
 		<div class="bg-color-7" style="background:#fff;">
 			<div class="section-four">
 				<div class="link-part link-about">
 					<b>关于</b>
-					<p>公司简介</p>
-					<p>服务网络</p>
-					<p>合作伙伴</p>
-					<p>企业文化</p>
+					<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$group): ?><p onClick="location='<?php echo U('Company/index/?id='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
 				</div>
 				<div class="link-part link-cooperation">
 					<b>服务</b>
-					<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><p><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
+					<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><p onClick="location='<?php echo U('article/index?gid='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
 				</div>
 				<div class="link-part link-news">
-					<b>合作</b>
-					<?php if(is_array($partnerGroupList)): foreach($partnerGroupList as $key=>$group): ?><p><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
+					<b>脉点</b>
+					<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$group): ?><p onClick="location='<?php echo U('article/index?gid='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
 				</div>
 				<div class="link-part link-mobile">
 					<b>移动脉云</b>
@@ -488,10 +389,29 @@
 				</p>
 				<a><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-email.png" alt="email-icon"></a>
 				<a><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-qq.png" alt="qq-icon"></a>
-				<a><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-weibo.png" alt="weibo-icon"></a>
+				<a href="mailto:service@maiunsoft.com"><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-weibo.png" alt="weibo-icon"></a>
 			</div>
 		</footer>
-
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var banner_4 = document.getElementsByClassName("banner-4")[0];
+				var menu_mask = document.getElementsByClassName("menu-mask");
+				
+				if(banner_4){
+					//menu_mask.style.height =
+					var height = banner_4.offsetHeight;
+					for(var i = 0;i<5;i++){
+						
+						menu_mask[i].style.height = height+"px";
+					}
+					
+					
+				}
+			}
+		</script>
+		
+		
 		<script src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/js/jquery-3.1.1.min.js"></script>
 		<script src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/js/swiper.min.js"></script>
 		<script src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/js/main.js"></script>

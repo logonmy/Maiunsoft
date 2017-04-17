@@ -10,7 +10,7 @@ class PublicController extends Controller {
     public function header(){
 
         $this->menu_list = \Home\Model\MenuModel::getMenuList();
-        $this->display('header');
+        $this->theme($this->_theme)->display('header');
     }
     
     public function menu(){

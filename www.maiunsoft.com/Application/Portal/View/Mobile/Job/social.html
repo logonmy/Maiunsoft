@@ -1,9 +1,11 @@
 <script src="__MB_STATIC__/js/shehuizhaopin.js"></script>
-
+<script>
+	document.title = "脉云软件 | 社会招聘"
+</script>
 <!--  主体-->
 
-	<!-- 焦点图 -->
-	<div class="swiper-container banner">
+<!-- 焦点图 -->
+<!--<div class="swiper-container banner">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<img src="__MB_STATIC__/img/banner.jpg" alt="">
@@ -16,572 +18,319 @@
 			</div>
 		</div>
 		<div class="swiper-pagination"></div>
-	</div>
-	<!-- 招聘岗位 -->
-	<div class="news job">
-		<div class="news-top clear">
-			<h1>招聘简介</h1>
-			<span class="news-top-right">上海<i></i></span>
-			<div class="cpmWrapper">
-				<div class="city">
-					<h3>请选择应聘的城市</h3>
-					<ul>
-						<li class="now">上海</li>
-						<li>兰州</li>
-						<li>杭州</li>
-						<li>深圳</li>
-					</ul>
-				</div>
-				<span>取消</span>
+	</div>-->
+
+<div class="banner">
+	<img src="__MB_STATIC__/img/banner03.png" alt="">
+	<div class="title">社会招聘</div>
+</div>
+
+<!-- 招聘岗位 -->
+<div class="news job">
+	<div class="news-top clear">
+		<h1>招聘详情</h1>
+		<span class="news-top-right">{$jobCityList[$jobCity]}<i></i></span>
+		<div class="cpmWrapper">
+			<div class="city">
+				<h3>请选择应聘的城市</h3>
+				<ul>
+					<foreach name="jobCityList" item="city">
+						<php>
+							$hide = "hide";
+						</php>
+						<li class="{$hide}" data-city="{$key}">{$city}</li>
+					</foreach>
+				</ul>
 			</div>
+			<span>取消</span>
 		</div>
-		<div class="floor">
+	</div>
+	<!--<div class="floor">
 			<h3>业务</h3>
 			<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
 			<p>订战略合作协议与悉云科技签订战略合作协云科技签shehuizhaopin订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
 
-		</div>
-		<div class="information">
-			<div class="cont_wrapper">
-				<div class="swiper-container cont">
-					<div class="info_menu swiper-wrapper">
-						<a href="##" class="swiper-slide job">业务招聘</a>
-						<a href="##" class="swiper-slide job current">技术招聘</a>
-						<a href="##" class="swiper-slide job">职能招聘</a>
-						<a href="##" class="swiper-slide job">管理招聘</a>
-						<a href="##" class="swiper-slide job">市场招聘</a>
-					</div>
-				</div>
-				<span class="left"></span>
-				<span class="right"></span>
-			</div>
-			<div style="height:2rem"></div>
-			<div class="all-content">
-				<div class="content">
-					<div class="floor">
-						<h3>业务</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
+		</div>-->
+	<div class="information">
+		<div class="cont_wrapper">
+			<div class="swiper-container cont">
+				<div class="info_menu swiper-wrapper">
 
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
+					<foreach name="socialList" item="type">
+						<php>
+							$selected = $jobType == $key ? 'current' : '';
+						</php>
+						<a href="javascript:;" class="swiper-slide job {$selected}">{$type}</a>
+					</foreach>
 
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-				</div>
-				<div class="content" style="display: block;">
-					<div class="floor">
-						<h3>技术</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>管理</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>市场</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-				</div>
-				<div class="content">
-					<div class="floor">
-						<h3>职能</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>管理</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>管理</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>市场</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-				</div>
-				<div class="content">
-					<div class="floor">
-						<h3>管理</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>职能</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>管理</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>市场</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-				</div>
-				<div class="content">
-					<div class="floor">
-						<h3>市场</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>职能</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>管理</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
-					<div class="floor">
-						<h3>市场</h3>
-						<table class="table">
-							<tr>
-								<td class="left" rowspan="2">岗位职责：</td>
-								<td class="right" rowspan="2">签订战略合作协议,与悉云科技签协议,与悉云科技签订战略。</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left" rowspan="2">任职要求：</td>
-								<td class="right" rowspan="2">Html5，C语言，Html5，C，Html5，C语言Html5</td>
-							</tr>
-							<tr>
-
-							</tr>
-							<tr>
-								<td class="left">工作经验：</td>
-								<td class="right">上海宝山梓坤科技园1号楼南区</td>
-							</tr>
-							<tr>
-								<td class="left">公司地址：</td>
-								<td class="right">151888888888</td>
-							</tr>
-							<tr>
-								<td class="left">薪资待遇：</td>
-								<td class="right">151888888888</td>
-							</tr>
-						</table>
-						<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
-					</div>
 				</div>
 			</div>
+			<span class="left"></span>
+			<span class="right"></span>
 		</div>
-		<a class="totop" href="#main"></a>
-	</div><!-- end 招聘岗位-->
 
-	
+		<div style="height:2rem"></div>
+
+		<div class="all-content">
+
+			<div class="content" style="display: block;">
+				<foreach name="bazzarList" item="bazzar">
+					<div class="template-city" data-city="{$bazzar.work_city}">
+						<div class="floor">
+							<h3>
+							<span>{$bazzar.name}</span>
+						<switch name='bazzar.urgency'>
+							<case value="2">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							</case>
+							<case value="3">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							</case>
+							<default />
+						</switch>
+						</h3>
+							<table class="table">
+								<tr>
+									<td class="left" rowspan="2">岗位职责：</td>
+									<td class="right" rowspan="2">{$bazzar.work_content}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left" rowspan="2">任职要求：</td>
+									<td class="right" rowspan="2">{$bazzar.requirements}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left">工作经验：</td>
+									<td class="right">1-3年</td>
+								</tr>
+								<tr>
+									<td class="left">公司地址：</td>
+									<td class="right">上海市沪太路5018弄梓坤科技园1号楼1509室</td>
+								</tr>
+								<tr>
+									<td class="left">薪资待遇：</td>
+									<td class="right">{$bazzar.salary_scope}</td>
+								</tr>
+							</table>
+							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+						</div>
+					</div>
+				</foreach>
+			</div>
+			<!--市场类 end-->
+			<div class="content">
+				<foreach name="developmentList" item="development">
+					<div class="template-city" data-city="{$development.work_city}">
+						<div class="floor">
+							<h3>
+						<span>{$development.name}</span>
+						<switch name='development.urgency'>
+							<case value="2">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							</case>
+							<case value="3">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							</case>
+							<default />
+						</switch>
+						</h3>
+							<table class="table">
+								<tr>
+									<td class="left" rowspan="2">岗位职责：</td>
+									<td class="right" rowspan="2">{$development.work_content}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left" rowspan="2">任职要求：</td>
+									<td class="right" rowspan="2">{$development.requirements}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left">工作经验：</td>
+									<td class="right">1-3年</td>
+								</tr>
+								<tr>
+									<td class="left">公司地址：</td>
+									<td class="right">上海市沪太路5018弄梓坤科技园1号楼1509室</td>
+								</tr>
+								<tr>
+									<td class="left">薪资待遇：</td>
+									<td class="right">{$development.salary_scope}</td>
+								</tr>
+							</table>
+							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+						</div>
+					</div>
+				</foreach>
+			</div>
+			<!-- 研发类 end-->
+			<div class="content">
+				<foreach name="operationList" item="operation">
+					<div class="template-city" data-city="{$operation.work_city}">
+						<div class="floor">
+							<h3>
+						<span>{$operation.name}</span>
+						<switch name='operation.urgency'>
+							<case value="2">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							</case>
+							<case value="3">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							</case>
+							<default />
+						</switch>
+						</h3>
+							<table class="table">
+								<tr>
+									<td class="left" rowspan="2">岗位职责：</td>
+									<td class="right" rowspan="2">{$operation.work_content}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left" rowspan="2">任职要求：</td>
+									<td class="right" rowspan="2">{$operation.requirements}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left">工作经验：</td>
+									<td class="right">1-3年</td>
+								</tr>
+								<tr>
+									<td class="left">公司地址：</td>
+									<td class="right">上海市沪太路5018弄梓坤科技园1号楼1509室</td>
+								</tr>
+								<tr>
+									<td class="left">薪资待遇：</td>
+									<td class="right">{$operation.salary_scope}</td>
+								</tr>
+							</table>
+							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+						</div>
+					</div>
+				</foreach>
+			</div>
+			<!--业务类 end-->
+			<div class="content">
+				<foreach name="functionList" item="function">
+					<div class="template-city" data-city="{$function.work_city}">
+						<div class="floor">
+							<h3>
+						<span>{$function.name}</span>
+						<switch name='function.urgency'>
+							<case value="2">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							</case>
+							<case value="3">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							</case>
+							<default />
+						</switch>
+						</h3>
+							<table class="table">
+								<tr>
+									<td class="left" rowspan="2">岗位职责：</td>
+									<td class="right" rowspan="2">{$function.work_content}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left" rowspan="2">任职要求：</td>
+									<td class="right" rowspan="2">{$function.requirements}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left">工作经验：</td>
+									<td class="right">1-3年</td>
+								</tr>
+								<tr>
+									<td class="left">公司地址：</td>
+									<td class="right">上海市沪太路5018弄梓坤科技园1号楼1509室</td>
+								</tr>
+								<tr>
+									<td class="left">薪资待遇：</td>
+									<td class="right">{$function.salary_scope}</td>
+								</tr>
+							</table>
+							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+						</div>
+					</div>
+				</foreach>
+			</div>
+			<!--职能类 end-->
+			<div class="content">
+				<foreach name="manageList" item="manage">
+					<div class="template-city" data-city="{$manage.work_city}">
+						<div class="floor">
+							<h3>
+						<span>{$manage.name}</span>
+						<switch name='manage.urgency'>
+							<case value="2">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							</case>
+							<case value="3">
+							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							</case>
+							<default />
+						</switch>
+						</h3>
+							<table class="table">
+								<tr>
+									<td class="left" rowspan="2">岗位职责：</td>
+									<td class="right" rowspan="2">{$manage.work_content}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left" rowspan="2">任职要求：</td>
+									<td class="right" rowspan="2">{$manage.requirements}</td>
+								</tr>
+								<tr>
+
+								</tr>
+								<tr>
+									<td class="left">工作经验：</td>
+									<td class="right">1-3年</td>
+								</tr>
+								<tr>
+									<td class="left">公司地址：</td>
+									<td class="right">上海市沪太路5018弄梓坤科技园1号楼1509室</td>
+								</tr>
+								<tr>
+									<td class="left">薪资待遇：</td>
+									<td class="right">{$manage.salary_scope}</td>
+								</tr>
+							</table>
+							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+						</div>
+					</div>
+				</foreach>
+
+			</div>
+			<!--管理类 end-->
+		</div>
+	</div>
+	<a class="totop" href="#main"></a>
+</div>
+<!-- end 招聘岗位-->

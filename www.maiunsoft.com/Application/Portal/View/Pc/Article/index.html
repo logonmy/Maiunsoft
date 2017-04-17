@@ -1,35 +1,40 @@
-<css href="__PC_STATIC__/css/news.css" />
-<include file="Public:guid" />
-<div class="container">
-    <div class="page-bref" style="width:100%">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-title">{$group.name}</h1>
-                {$group.bref}
-            </div>
-        </div>
-    </div>
-    <ul class="h-items">
-        <foreach name="articleList" item="article">
-            <li class="h-item">
-                <img src="{:UploadUrl('article')}{$article.id}/{$article.thumbnail}" />
-                <div class="info">
-                    <h3>
-                        {$article.title}
-                        <a href="__ROOT__/article/{$article.id}.html" class="btn btn-danger pull-right more">详情</a>
-                    </h3>
-                    <notempty name="article.reference">
-                        <span>{$article.reference}</span>
-                    </notempty>
-                    <span>{$article.create_time}</span>
-                    <p class="bref" style="line-height:35px;font-size: 16px;margin-top:10px;">{$article.bref}</p>
-                </div>
+<script type="text/javascript">
+	document.title="{$articleTitle[0].name}"
+</script>
+<div class="banner-div banner-4">
+	<div class="banner-content-4 vertical-center">
+		{$articleTitle[0].name}
+	</div>
+	<div class="banner-mask-4 vertical-center">
 
-            </li>
-        </foreach>
-    </ul>
-    <div class="pages">{$page}</div>
+	</div>
 </div>
-<br />
-<br />
-<br />
+
+<div class="bg-color-3">
+	<div class="connection">
+		<span>联系电话： 400-9910-540</span>
+		<span>企业邮箱： service@maiunsoft.com</span>
+		<span>企业QQ： service@maiunsoft.com</span>
+	</div>
+</div>
+
+<div style="padding-bottom: 110px;" class="bg-color-5">
+	<div class="template-wrap">
+		<foreach name="articleList" item="article">
+			<div class="template-card switch-tab-1" onClick="location='{:U(\'article/detail\',array('id'=>$article['id']))}'">
+				<div class="template-card-img">
+					<span></span>
+					<!--<img src="__PC_STATIC__/imgs/shanghai.png" alt="">-->
+						<img src="{:UploadUrl('article')}{$article['image']}" alt="" />
+				</div>
+				<div class="template-card-article">
+					<b onClick="location='{:U(\'article/detail\',array('id'=>$article['id']))}'">{$article.title}</b>
+					<p>
+						{$article.bref}
+					</p>
+				</div>
+			</div>
+		</foreach>
+	</div>
+
+</div>

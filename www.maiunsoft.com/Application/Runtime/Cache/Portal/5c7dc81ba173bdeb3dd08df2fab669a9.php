@@ -24,9 +24,10 @@
 </head>
 
 <body>
-	
+
+<!--导航部分-->
 <header class="clear">
-	<a href="##" class="logo">Maiunsoft</a>
+	<a href="<?php echo U('Index/index');?>" class="logo">Maiunsoft</a>
 	<nav class="clear">
 		<a href="##" class="user"></a>
 		<a href="##" class="menu"></a>
@@ -35,22 +36,25 @@
 				<div id="scroller">
 					<ul class="item">
 						<li>
-							<a href="index" class="shouye">首页</a>
+							<a href="<?php echo U('Index/index');?>" class="shouye">首页</a>
 							<em></em>
 						</li>	
 					</ul>
 					<ul class="item">
 						<li>
 							<span>脉点<i></i></span>
-							<a href="maidian">合作动态</a>
-							<a href="hangyefengxiang">行业风向</a>
-							<a href="yewudongcha">业务洞察</a>
+							<a href="<?php echo U('Article/index');?>"><?php echo ($test); ?></a>
+							
+							
+							<a href="<?php echo U('Article/index');?>">合作动态</a>
+							<a href="<?php echo U('Article/list');?>">行业风向</a>
+							<a href="<?php echo U('Article/observe');?>">业务洞察</a>
 						</li>
 					</ul>
 					<ul class="item">
 						<li>
 							<span>服务<i></i></span>
-							<a href="##" class="has">咨询</a>
+							<a href="<?php echo U('Service/consult');?>" class="has">咨询</a>
 							<div class="three">
 								<a href="zhuanyezixun">专业咨询</a>
 								<a href="zhuanyezixun">专业咨询</a>
@@ -60,21 +64,21 @@
 								<a href="zhuanyezixun">专业咨询</a>
 							</div>
 
-							<a href="##" class="has">开发</a>
+							<a href="<?php echo U('Service/dev');?>" class="has">开发</a>
 							<div class="three">
 								<a href="ruanjiankaifa">软件开发</a>
 								<a href="ruanjiankaifa">软件开发</a>
 								<a href="ruanjiankaifa">软件开发</a>
 							</div>
 
-							<a href="##" class="has">运维</a>
+							<a href="<?php echo U('Service/maintenance');?>" class="has">运维</a>
 							<div class="three">
 								<a href="zhuomianyunwei">桌面运维</a>
 								<a href="zhuomianyunwei">桌面运维</a>
 								<a href="zhuomianyunwei">桌面运维</a>
 							</div>
 
-							<a href="##" class="has">培训</a>
+							<a href="<?php echo U('Service/train');?>" class="has">培训</a>
 							<div class="three">
 								<a href="peixun">IT培训</a>
 								<a href="peixun">IT培训</a>
@@ -85,27 +89,27 @@
 					<ul class="item">
 						<li class="kai">
 							<span>客户<i></i></span>
-							<a href="jinrong">金融</a>
-							<a href="jiaoyu">教育</a>
-							<a href="zixun">咨询</a>
-							<a href="gongcheng">工程</a>
+							<a href="<?php echo U('Customer/finance');?>">金融</a>
+							<a href="<?php echo U('Customer/edu');?>">教育</a>
+							<a href="<?php echo U('Customer/consult');?>">咨询</a>
+							<a href="<?php echo U('Customer/engineering');?>">工程</a>
 						</li>
 					</ul>
 					<ul class="item">
 						<li>
 						<span>招聘<i></i></span>
-							<a href="xiaoyuanzhaopin">校园招聘</a>
-							<a href="shehuizhaopin">社会招聘</a>
+							<a href="<?php echo U('Job/school');?>">校园招聘</a>
+							<a href="<?php echo U('Job/social');?>">社会招聘</a>
 						</li>
 					</ul>
 					<ul class="item">
 						<li>
 							<span>关于<i></i></span>
-							<a href="gongsijianjie">公司简介</a>
-							<a href="fuwuwangluo">服务网络</a>
-							<a href="hezuohuoban">合作伙伴</a>
-							<a href="qiyewenhua">企业文化</a>
-							<a href="kechixu">可持续发展</a>
+							<a href="<?php echo U('Company/about');?>">公司简介</a>
+							<a href="<?php echo U('Company/service');?>">服务网络</a>
+							<a href="<?php echo U('Company/cooperation');?>">合作伙伴</a>
+							<a href="<?php echo U('Company/culture');?>">企业文化</a>
+							<a href="<?php echo U('Company/sustainable');?>">可持续发展</a>
 						</li>
 					</ul>				
 				</div>
@@ -114,39 +118,54 @@
 </header>	
 
 <!--模板渲染-->
-<!--  主体-->
-	<div id="main">
+<div id="main">
+	<!--  主体-->
+<script type="text/javascript">
+	document.title="<?php echo ($articleInfo["title"]); ?>"
+</script>
 	<!-- 焦点图 -->
 		<div class="banner">
 			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="">
-			<div class="title">合作动态</div>
+			<div class="title"><?php echo ($articleInfo["title"]); ?></div>
 		</div>
-		<!-- 合作动态 -->
+		<!-- 动态 -->
 		<div class="news">
-			<h1>行业风向</h1>
 			<div class="floor floor_content">
-				<h3>与悉云科技签订战略合作协议</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="hezuodongtai-data_floor1">更多详情&gt;&gt;</a>
+				<h3><?php echo ($articleInfo["title"]); ?></h3>
+				<p><?php echo ($articleInfo["content"]); ?></p>
 			</div>
-			<div class="floor floor_content">
-				<h3>与悉云科技签订战略合作协议</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="hezuodongtai-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-			<div class="floor floor_content">
-				<h3>与悉云科技签订战略合作协议</h3>
-				<p>与悉云科技签订战略合作协议与悉云科技签合作协议,与悉云科技签订战略与悉云科技签合作协议与悉云科技签。</p>
-				<p>订战略合作协议与悉云科技签订战略合作协云科技签订战略与悉云科技签订战略合作协云科技签订战略合作协.与悉云科技签订战略略与悉云科技签订战略合作协议。</p>
-				<a href="##" class="more" data-cont="hezuodongtai-data_floor1">更多详情&gt;&gt;</a>
-			</div>
-		</div>   <!-- end 合作动态-->
-	</div>
+			
+		</div>   <!-- end 动态-->
+
 		
 
+	<!-- 脉云介绍 -->
+<div class="info">
+	<div class="microblog">
+		<h2>脉云微博</h2>
+		<div class="QRcode">
+			<img onClick="javascript:;" src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
+		</div>
+	</div>
+	<div class="about">
+		<h4>联系方式</h4>
+		<p>联系方式：400-9910-540</p>
+		<p>企业邮箱：service@maiunsoft.com</p>
+		<p>企业QQ：service@maiunsoft.com</p>
+	</div>
+</div>
+</div>
 
+<!--底部-->
+<footer id="footer" class="clear">
+	<div class="copyright">版权所有:脉云软件（上海）有限公司</div>
+	<div class="number">沪ICP备14051784号</div>
+	<div class="share">
+		<a href="##"><img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img03.png" alt="share"></a>
+		<a href="##"><img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img04.png" alt="share"></a>
+		<a href="##"><img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img05.png" alt="share"></a>
+	</div>
+</footer>
 </body>
 
 </html>

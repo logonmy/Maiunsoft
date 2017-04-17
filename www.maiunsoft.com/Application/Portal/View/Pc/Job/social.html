@@ -1,4 +1,6 @@
-<script type="text/javascript">document.title="社会招聘"</script>
+<script type="text/javascript">
+	document.title = "社会招聘"
+</script>
 <div class="banner-div banner-4">
 	<div class="banner-content-4 vertical-center">
 		社会招聘
@@ -19,387 +21,364 @@
 <div class="bg-color-5">
 	<div class="template-wrap">
 		<div class="employ-tabswitch-2">
-			<foreach name="jobTypeList" item="type">
+			<foreach name="socialList" item="type">
 				<php>
-					$selected = $jobType==$key ? 'switch-active' : '';
+					$selected = $jobType == $key ? 'switch-active' : '';
 				</php>
 				<button class="tabswitch-btn {$selected}" type="button">{$type}</button>
 			</foreach>
 		</div>
-		
-		
-		
+
 		<div class="drop-down">
-			
+
 			<div class="default-item">{$jobCityList[$jobCity]}</div>
 			<foreach name="jobCityList" item="city">
 				<php>
 					$hide = jobCity != $key ? "hide" : "";
-			</php>
-				<div class="drop-down-item {$hide}">{$city}</div>
+				</php>
+				<div class="drop-down-item {$hide}"  data-city="{$key}">{$city}</div>
 			</foreach>
-            
+
 		</div>
 
-		<div class="template-card card-switch-1">
-			<div class="template-card-article-2">
-				<h3 class="job-title">上海大学</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+		<!--市场类-->
+		<foreach name="bazzarList" item="bazzar">
+			<div class="template-city" data-city="{$bazzar.work_city}">
+			<div class="template-card card-switch-1">
+				<div class="template-card-article-2">
+					<h3 class="job-title">{$bazzar.name}</h3>
+					<table>
+						<tr>
+							<td class="table-title">
+								岗位职责：
+							</td>
+							<td class="table-content">
+								{$bazzar.work_content}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								任职要求：
+							</td>
+							<td class="table-content">
+								{$bazzar.requirements}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								工作经验：
+							</td>
+							<td class="table-content">
+								1-3年
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								公司地址：
+							</td>
+							<td class="table-content">
+								上海市沪太路5018弄梓坤科技园1号楼1509室
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								薪资待遇：
+							</td>
+							<td class="table-content">
+								{$bazzar.salary_scope}
+							</td>
+						</tr>
+					</table>
+					<switch name="bazzar.urgency">
+						<case value="2">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+							</div>
+						</case>
+						<case value="3">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+								<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+							</div>
+						</case>
+						<default />
+					</switch>
+
 				</div>
 			</div>
-		</div>
-		<div class="template-card card-switch-1">
-			<div class="template-card-article-2">
-				<h3 class="job-title">兰州大学</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+			</div>
+		</foreach>
+
+		<!--研发类-->
+		<foreach name="developmentList" item="development">
+			<div class="template-city" data-city="{$development.work_city}">
+			<div class="template-card card-switch-2 hide">
+				<div class="template-card-article-2">
+					<h3 class="job-title">{$development.name}</h3>
+					<table>
+						<tr>
+							<td class="table-title">
+								岗位职责：
+							</td>
+							<td class="table-content">
+								{$development.work_content}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								任职要求：
+							</td>
+							<td class="table-content">
+								{$development.requirements}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								工作经验：
+							</td>
+							<td class="table-content">
+								1-3年
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								公司地址：
+							</td>
+							<td class="table-content">
+								上海市沪太路5018弄梓坤科技园1号楼1509室
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								薪资待遇：
+							</td>
+							<td class="table-content">
+								{$development.salary_scope}
+							</td>
+						</tr>
+					</table>
+					<switch name="development.urgency">
+						<case value="2">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+							</div>
+						</case>
+						<case value="3">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+								<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+							</div>
+						</case>
+						<default />
+					</switch>
+
 				</div>
 			</div>
-		</div>
-		<div class="template-card card-switch-1">
-			<div class="template-card-article-2">
-				<h3 class="job-title">北京大学</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+			</div>
+		</foreach>
+
+		<!--业务类-->
+		<foreach name="operationList" item="operation">
+			<div class="template-city" data-city="{$operation.work_city}">
+			<div class="template-card card-switch-3 hide">
+				<div class="template-card-article-2">
+					<h3 class="job-title">{$operation.name}</h3>
+					<table>
+						<tr>
+							<td class="table-title">
+								岗位职责：
+							</td>
+							<td class="table-content">
+								{$operation.work_content}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								任职要求：
+							</td>
+							<td class="table-content">
+								{$operation.requirements}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								工作经验：
+							</td>
+							<td class="table-content">
+								1-3年
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								公司地址：
+							</td>
+							<td class="table-content">
+								上海市沪太路5018弄梓坤科技园1号楼1509室
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								薪资待遇：
+							</td>
+							<td class="table-content">
+								{$operation.salary_scope}
+							</td>
+						</tr>
+					</table>
+					<switch name="operation.urgency">
+						<case value="2">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+							</div>
+						</case>
+						<case value="3">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+								<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+							</div>
+						</case>
+						<default />
+					</switch>
+
 				</div>
 			</div>
-		</div>
-		
-		
-		
-		<div class="template-card card-switch-2 hide">
-			<div class="template-card-article-2">
-				<h3 class="job-title">Java实习生</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+			</div>
+		</foreach>
+
+		<!--职能类-->
+		<foreach name="functionList" item="function">
+			<div class="template-city" data-city="{$function.work_city}">
+			<div class="template-card card-switch-4 hide">
+				<div class="template-card-article-2">
+					<h3 class="job-title">{$function.name}</h3>
+					<table>
+						<tr>
+							<td class="table-title">
+								岗位职责：
+							</td>
+							<td class="table-content">
+								{$function.work_content}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								任职要求：
+							</td>
+							<td class="table-content">
+								{$function.requirements}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								工作经验：
+							</td>
+							<td class="table-content">
+								1-3年
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								公司地址：
+							</td>
+							<td class="table-content">
+								上海市沪太路5018弄梓坤科技园1号楼1509室
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								薪资待遇：
+							</td>
+							<td class="table-content">
+								{$function.salary_scope}
+							</td>
+						</tr>
+					</table>
+					<switch name="function.urgency">
+						<case value="2">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+							</div>
+						</case>
+						<case value="3">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+								<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+							</div>
+						</case>
+						<default />
+					</switch>
+
 				</div>
 			</div>
-		</div>
-		<div class="template-card card-switch-2 hide">
-			<div class="template-card-article-2">
-				<h3 class="job-title">.Net实习生</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+			</div>
+		</foreach>
+
+		<!--管理类-->
+		<foreach name="manageList" item="manage">
+			<div class="template-city" data-city="{$manage.work_city}">
+			<div class="template-card card-switch-5 hide">
+				<div class="template-card-article-2">
+					<h3 class="job-title">{$manage.name}</h3>
+					<table>
+						<tr>
+							<td class="table-title">
+								岗位职责：
+							</td>
+							<td class="table-content">
+								{$manage.work_content}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								任职要求：
+							</td>
+							<td class="table-content">
+								{$manage.requirements}
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								工作经验：
+							</td>
+							<td class="table-content">
+								1-3年
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								公司地址：
+							</td>
+							<td class="table-content">
+								上海市沪太路5018弄梓坤科技园1号楼1509室
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								薪资待遇：
+							</td>
+							<td class="table-content">
+								{$manage.salary_scope}
+							</td>
+						</tr>
+					</table>
+					<switch name="manage.urgency">
+						<case value="2">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+							</div>
+						</case>
+						<case value="3">
+							<div class="template-card-imgbox">
+								<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
+								<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
+							</div>
+						</case>
+						<default />
+					</switch>
+
 				</div>
 			</div>
-		</div>
-		<div class="template-card card-switch-2 hide">
-			<div class="template-card-article-2">
-				<h3 class="job-title">FrontEnd实习生</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
-				</div>
 			</div>
-		</div>
-		<div class="template-card card-switch-2 hide">
-			<div class="template-card-article-2">
-				<h3 class="job-title">运维实习生</h3>
-				<table>
-					<tr>
-						<td class="table-title">
-							岗位职责：
-						</td>
-						<td class="table-content">
-							负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							任职要求：
-						</td>
-						<td class="table-content">
-							HTML5，C语言，C，Html5，C语言，Html
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							工作经验：
-						</td>
-						<td class="table-content">
-							一年以下
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							公司地址：
-						</td>
-						<td class="table-content">
-							上海宝山梓坤科技园5018号
-						</td>
-					</tr>
-					<tr>
-						<td class="table-title">
-							薪资待遇：
-						</td>
-						<td class="table-content">
-							5k-10k
-						</td>
-					</tr>
-				</table>
-				<div class="template-card-imgbox">
-					<img src="__PC_STATIC__/imgs/rush.png" alt="rush">
-					<img src="__PC_STATIC__/imgs/rush-2.png" alt="rush">
-				</div>
-			</div>
-		</div>
+		</foreach>
 	</div>
 </div>

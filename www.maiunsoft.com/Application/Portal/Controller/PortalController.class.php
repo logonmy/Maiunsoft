@@ -12,6 +12,7 @@ class PortalController extends \Common\Controller\CommonController {
 		Vendor('MobileDetect.Mobile_Detect');
 		$MD = new \Mobile_Detect();
 		if($MD->isMobile()){
+			
 			$this->_theme = 'Mobile';
 		}else if($MD->isTablet()){
 			$this->_theme = 'Mobile';
@@ -24,25 +25,31 @@ class PortalController extends \Common\Controller\CommonController {
 	}
 
 	public function _BuildMenu() {
-
 		// 构造顶部菜单
 		//
 		$groupService = Service('Group');
 
 		$this->mdGroupList = M('group')->where('type=1')->order('id')->getField('id,name,type');
-		
 		$this->mdArticleList = M('article')->group('group_id')->order('group_id,create_time DESC')->getField('id,title,image,bref');
 
 
 		// 服务菜单
 		$serviceGroupList = M('group')->where('type=2')->order('id')->getField('id,name,type');
+		
+		//服务模块Icon的展示
+		$serviceIcon = C("SERVICE_ICON");
+		$newServiceIcon = array();
+		
 		foreach ($serviceGroupList as $key => $group) {
 			
 			$serviceArticleList = M('article')->where('group_id=%d',$key)->order('create_time DESC')->limit(5)->getField('id,title,bref,image');
-
+			
+			$newServiceIcon[$key] = current($serviceIcon);
+			next($serviceIcon);
+			
 			$serviceGroupList[$key]['articleList'] = $serviceArticleList;
 		}
-
+		$this->assign('newServiceIcon',$newServiceIcon);
 		$this->serviceGroupList = $serviceGroupList;
 
 
@@ -53,9 +60,40 @@ class PortalController extends \Common\Controller\CommonController {
 			$caseGroupList[$key]['lastArticle'] = $article;
 		}
 		$this->caseGroupList = $caseGroupList;
-
-		$this->jobTypeList = C('JOB_TYPES');
-
+		
+		
+		//-------------------招聘菜单----------------------//
+		$jobTypeList = C('JOB_TYPES');
+		$this->assign('jobTypeList',$jobTypeList);
+		
 		$this->partnerGroupList = M('group')->where('type=4')->order('id')->getField('id,name,type');
+		
+		//校园招聘任职要求
+		$schoolNeed_speech = M('activity')->where('type=0')->order('create_time DESC')->find();
+		$schoolNeed_speech['requirements'] = $schoolNeed_speech['agenda'];
+		//校园招聘实习要求
+		$schoolNeed_zero = M('job')->where('work_age=0')->order('update_time DESC')->find();
+		//校园招聘应届生要求
+		$schoolNeed_one = M('job')->where('work_age=1')->order('update_time DESC')->find();
+		$this->schoolNeed = array($schoolNeed_speech,$schoolNeed_zero,$schoolNeed_one);
+		
+		//社会招聘任职要求
+		$socialNeed = array();
+		foreach($jobTypeList as $key=>$value){
+			$socialNeed[] = M('job')->where('type=%d',$key)->order('update_time DESC')->find();
+		}
+		$this->assign('socialNeed',$socialNeed);
+		
+		
+		//关于菜单
+		$_aboutGroupList = M('group')->where('type=5')->order('id')->getField('id,name,type');
+		foreach($_aboutGroupList as $key => $group){
+			$_aboutArticleList = M('article')->where('group_id=%d',$key)->order('create_time DESC')->find();
+			$_aboutGroupList[$key]['lastArticle'] = $_aboutArticleList;
+		};
+		$this->assign('_aboutGroupList',$_aboutGroupList);
+		
+		
+		
 	}
 }

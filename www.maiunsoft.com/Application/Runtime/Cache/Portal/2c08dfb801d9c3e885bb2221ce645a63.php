@@ -28,8 +28,6 @@
 									<!--<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'">
 											<?php echo ($md["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>-->
-									
-									<li onClick="location='<?php echo U('Article/list');?>'">行业风向<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Article/observe');?>'">业务洞察<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
                                     <li onClick="location='<?php echo U('Article/list');?>'">技术前沿<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 									<li onClick="location='<?php echo U('Article/detail');?>'">公司动态<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
@@ -60,17 +58,12 @@
 						</div>
 						<div class="menu-mask hide">
 							<div class="menu-left">
-								<!--<ul>
+								<ul>
 									<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'" style="padding-left:20px !important"><?php echo ($group["name"]); ?>
 											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
 										</li><?php endforeach; endif; ?>
-								</ul>-->
-								<ul>
-                                    <li onClick="location='<?php echo U('Service/consult');?>'">咨询<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Service/dev');?>'">开发<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Service/maintenance');?>'">运维<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                    <li onClick="location='<?php echo U('Service/train');?>'">培训<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-                                </ul>
+								</ul>
+								
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul vertical-center">
@@ -101,7 +94,8 @@
 							<div class="menu-left">
 								<ul>
 									<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><li onClick="location='<?php echo U('article/index?gid='.$key);?>'"><?php echo ($group["name"]); ?>
-											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+											<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow">
+										</li><?php endforeach; endif; ?>
 								</ul>
 							</div>
 							<div class="menu-right">
@@ -129,14 +123,14 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Job/school');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Job/social');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/school',array('type'=>1,'city'=>1),'');?>'">校园招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<li onclick="location='<?php echo U('Job/social',array('type'=>0,'city'=>1),'');?>'">社会招聘<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-ul menu-ul-2">
 									<ul class="hide">
-										<li onclick="location='<?php echo U('Job/detail');?>'">校园宣讲<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
+										<li onclick="location='<?php echo U('Job/school');?>'">校园宣讲<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
 										<li onclick="location='<?php echo U('Job/school');?>'">实习生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
 										<li onclick="location='<?php echo U('Job/school');?>'">应届生招聘<img class="hide vertical-center" src="./imgs/right-arrow.png" alt="right-arrow"></li>
 									</ul>
@@ -210,6 +204,7 @@
 							</div>
 						</div>
 					</li>
+					<!--关于-->
 					<li>
 						<div class="pointer">
 							<span>关于</span>
@@ -217,65 +212,26 @@
 						<div class="menu-mask hide">
 							<div class="menu-left">
 								<ul>
-									<li onclick="location='<?php echo U('Company/about');?>'">公司简介<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/service');?>'">服务网络<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/cooperation');?>'">合作伙伴<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
-									<li onclick="location='<?php echo U('Company/culture');?>'">企业文化<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
+									<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$ab): ?><li onclick="location='<?php echo U('Company/index',array('id'=>$ab['id']),'');?>'"><?php echo ($ab["name"]); ?><img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li><?php endforeach; endif; ?>
+									<li onClick="javascript:;">联系方式<img class="hide vertical-center" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-arrow.png" alt="right-arrow"></li>
 								</ul>
 							</div>
 							<div class="menu-right">
 								<div class="menu-about vertical-center">
+									<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$abArticle): ?><div class="hide">
+											<b><?php echo ($abArticle["lastArticle"]["title"]); ?></b>
+											<span><?php echo ($abArticle["lastArticle"]["bref"]); ?></span>
+											<a href="<?php echo U('Company/index',array('id'=>$abArticle['id']),'');?>">更多</a>
+										</div><?php endforeach; endif; ?>
+									
 									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
 										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="./Company/about">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="./about1">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="./about2">更多</a>
-									</div>
-									<div class="hide">
-										<b>脉云软件（上海）有限公司</b>
-										<span>
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                            脉云软件作为一家各个方面
-                                        </span>
-										<a href="./about3">更多</a>
+											<b>联系方式</b><br /><br /><br />
+                                        	<p>联系电话： 400-9910-540</p>
+											<p>企业邮箱： service@maiunsoft.com</p>
+											<p>企业QQ： service@maiunsoft.com</p>
+											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p> 
+                                       </span>
 									</div>
 								</div>
 							</div>
@@ -287,87 +243,73 @@
 			<div class="nav-menu vertical-center">
 				<input class="search-input" type="text" placeholder="搜索" />
 				<button class="search-btn"></button>
-				<a class="search-a" href="#"><img class="icon-menu" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/menu.png" alt="menu" /></a>
+				<!--登录接口-->
+				<!--<a class="search-a" href="#"><img class="icon-menu" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/menu.png" alt="menu" /></a>-->
 			</div>
 		</nav>
 
 		 <div class="banner-div banner-4">
-            <div class="banner-content-4 vertical-center">
-                    校园招聘
-            </div>
-            <div class="banner-mask-4 vertical-center">
+    <div class="banner-content-4 vertical-center">
+            校园宣讲
+    </div>
+    <div class="banner-mask-4 vertical-center">
 
-            </div>
-        </div>
+    </div>
+</div>
 
-        <div class="bg-color-3">
-            <div class="connection">
-                <span>联系电话： 400-9910-540</span>
-                <span>企业邮箱： service@maiunsoft.com</span>
-                <span>企业QQ： service@maiunsoft.com</span>
-            </div>
-        </div>
+<div class="bg-color-3">
+    <div class="connection">
+        <span>联系电话： 400-9910-540</span>
+        <span>企业邮箱： service@maiunsoft.com</span>
+        <span>企业QQ： service@maiunsoft.com</span>
+    </div>
+</div>
 
-        <div class="bg-color-5">
-            <div class="template-wrap">
-                <div class="template-ceil">
-                    <div class="template-ceil-head">岗位详情 -- Java实习生</div>
-                    <table class="employ-table">
-                        <tr>
-                            <td class="table-title">
-                                岗位职责：
-                            </td>
-                            <td class="table-content">
-                                1、参与设计、审核、优化公司IT系统以及各应用系统的体系架构；
-                                <br />
-                                2、全面负责公司运维项目的系统升级、扩容需求与资源落实，配合开发需求，测试、调整运维平台；
-                                <br />
-                                3、负责网络以及服务器的网络设置、维护和优化、网络的安全监控、系统性能管理和优化、网络性能管理和优化；
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                任职要求：
-                            </td>
-                            <td class="table-content">
-                                1、精通Spring、Hibernate或MyBatis并有相关工作经验；<br />
-
-                                2、熟悉HTTP、RESTful、JSON等常用技术和数据结构；<br />
-
-                                3、熟悉Redis、Memcached或Ehcache等缓存技术；<br />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                工作经验：
-                            </td>
-                            <td class="table-content">
-                                一年以上工作经验
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                公司地址：
-                            </td>
-                            <td class="table-content">
-                                上海宝山区梓坤科技园1号楼南区
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="table-title">
-                                薪资待遇：
-                            </td>
-                            <td class="table-content">
-                                5k-10k
-                            </td>
-                        </tr>
-                    </table>
-                    <!-- <a class="template-ceil-alink" href="">期待您的加入</a> -->
-                </div>
-
-
-            </div>
-        </div>
+<?php if(is_array($detailList)): foreach($detailList as $key=>$detail): ?><div class="template-card card-switch-1">
+			<div class="template-card-img">
+				<span></span>
+				<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shanghai.png" alt="">
+			</div>
+			<div class="template-card-article-3">
+				<h3 class="job-title"><?php echo ($detail["name"]); ?></h3>
+				<table>
+					<tr>
+						<td class="table-title">
+							宣讲主题：
+						</td>
+						<td class="table-content">
+							参与设计、审核、优化公司IT系统以及各应用系统的体系架构；
+						</td>
+					</tr>
+					<tr>
+						<td class="table-title">
+							宣讲时间：
+						</td>
+						<td class="table-content">
+							<?php echo ($detail["start_time"]); ?>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-title">
+							宣讲嘉宾：
+						</td>
+						<td class="table-content">
+							<?php echo ($detail["contact_name"]); ?>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-title">
+							宣讲地址：
+						</td>
+						<td class="table-content">
+							<?php echo ($detail["address"]); ?>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div><?php endforeach; endif; ?>
+      
+		
 		
 		<div class="bg-color-7" style="background:#fff;">
 			<div class="section-four">
@@ -397,6 +339,7 @@
 					<p>联系电话： 400-9910-540</p>
 					<p>企业邮箱： service@maiunsoft.com</p>
 					<p>企业QQ： service@maiunsoft.com</p>
+					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
 				</div>
 			</div>
 		</div>

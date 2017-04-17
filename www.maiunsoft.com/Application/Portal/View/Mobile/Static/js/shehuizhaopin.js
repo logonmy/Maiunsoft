@@ -11,6 +11,7 @@ $(function() {
         centeredSlides: !1
     });
     $(".info_menu a").click(function() {
+    	$(".template-city").show();
         var e = $(this).index();
         $(this).addClass("current"), $(this).siblings().removeClass("current"), e < 5 ? ($(".all-content").find(".content").eq(e).show(), $(".all-content").find(".content").eq(e).siblings().hide()) : 4 < e && e < 10 ? ($(".all-content").find(".content").eq(e - 5).show(), $(".all-content").find(".content").eq(e - 5).siblings().hide()) : ($(".all-content").find(".content").eq(e - 10).show(), $(".all-content").find(".content").eq(e - 10).siblings().hide())
     }), $(".news-top-right").tap(function() {
@@ -18,6 +19,13 @@ $(function() {
     }), $(".cpmWrapper span").tap(function() {
         $(".cpmWrapper").hide()
     }), $(".city ul li").tap(function() {
+    	var cityNum = $(this).attr("data-city");
+    	$(".template-city").each(function(i,item){
+    		$(this).hide();
+    		if($(this).attr("data-city") == cityNum){
+    			$(this).show();
+    		}
+    	})
         $(this).addClass("now"), $(this).siblings().removeClass("now");
         var e = $(this).html() + "<i></i>";
         $(".news-top-right").html(e), $(".cpmWrapper").hide()

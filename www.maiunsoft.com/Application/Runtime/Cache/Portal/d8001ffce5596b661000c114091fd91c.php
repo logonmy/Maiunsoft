@@ -43,6 +43,9 @@
 					<ul class="item">
 						<li>
 							<span>脉点<i></i></span>
+							<a href="<?php echo U('Article/index');?>"><?php echo ($test); ?></a>
+							
+							
 							<a href="<?php echo U('Article/index');?>">合作动态</a>
 							<a href="<?php echo U('Article/list');?>">行业风向</a>
 							<a href="<?php echo U('Article/observe');?>">业务洞察</a>
@@ -141,7 +144,7 @@
 	<div class="microblog">
 		<h2>脉云微博</h2>
 		<div class="QRcode">
-			<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
+			<img onClick="javascript:;" src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
 		</div>
 	</div>
 	<div class="about">
