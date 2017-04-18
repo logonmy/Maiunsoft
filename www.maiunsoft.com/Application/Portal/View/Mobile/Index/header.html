@@ -1,0 +1,65 @@
+<header class="clear">
+	<a href="{:U(\'Index/index\')}" class="logo">Maiunsoft</a>
+	<nav class="clear">
+		<!--<a href="##" class="user"></a>--><!--用户图标隐藏-->
+		<a href="##" class="menu"></a>
+			<div class="bg"></div>
+			<div class="menu_list" id="wrapper">
+				<div id="scroller">
+					<ul class="item">
+						<li>
+							<a href="{:U(\'Index/index\')}" class="shouye">首页</a>
+							<em></em>
+						</li>	
+					</ul>
+					<ul class="item">
+						<li>
+							<span>脉点<i></i></span>
+							<foreach name="mdGroupList" item="md">
+								<a href="{:U(\'article/index?gid=\'.$key)}">{$md.name}</a>
+							</foreach>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+							<span>服务<i></i></span>
+							
+							<foreach name="serviceGroupList" item="group">
+								<a href="{:U(\'article/index?gid=\'.$key)}">{$group.name}</a>
+								<div class="three">
+									<foreach name="group.articleList" item="article">
+										<a href="{:U(\'article/detail?id=\'.$key)}">{$article.title}</a>
+									</foreach>
+								</div>
+							</foreach>
+							
+						</li>
+					</ul>
+					<ul class="item">
+						<li class="kai">
+							<span>案例<i></i></span>
+							<foreach name="caseGroupList" item="group">
+								<a href="{:U(\'article/index?gid=\'.$key)}">{$group.name}</a>
+							</foreach>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+						<span>招聘<i></i></span>
+							<a href="{:U(\'Job/school',array('type'=>0),'')}">校园招聘</a>
+							<a href="{:U(\'Job/social',array('type'=>1),'')}">社会招聘</a>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+							<span>关于<i></i></span>
+							<foreach name="_aboutGroupList" item="ab">
+								<a href="{:U(\'Company/index\',array('id'=>$ab['id']))}">{$ab.name}</a>
+							</foreach>
+							<a href="{:U(\'Company/contact\')}">联系方式</a>
+						</li>
+					</ul>				
+				</div>
+			</div>
+	</nav>
+</header>	

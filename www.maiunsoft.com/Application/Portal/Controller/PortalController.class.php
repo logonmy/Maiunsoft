@@ -23,11 +23,24 @@ class PortalController extends \Common\Controller\CommonController {
 			$this->_BuildMenu();
 		}	
 	}
+	
+	//解决移动端数据绑定问题
+	function _initialize(){
+		$this->mdGroupList = M('group')->where('type=1')->order('id')->getField('id,name,type');
+		
+		$this->serviceGroupList = M('group')->where('type=2')->order('id')->getField('id,name,type');
+	
+		$this->caseGroupList = M('group')->where('type=3')->order('id')->getField('id,name,type');
+		
+		$this->_aboutGroupList = M('group')->where('type=5')->order('id')->getField('id,name,type');
+	
+	}
+	
 
 	public function _BuildMenu() {
 		// 构造顶部菜单
 		//
-		$groupService = Service('Group');
+		//$groupService = Service('Group');
 
 		$this->mdGroupList = M('group')->where('type=1')->order('id')->getField('id,name,type');
 		$this->mdArticleList = M('article')->group('group_id')->order('group_id,create_time DESC')->getField('id,title,image,bref');
@@ -85,7 +98,7 @@ class PortalController extends \Common\Controller\CommonController {
 		$this->assign('socialNeed',$socialNeed);
 		
 		
-		//关于菜单
+		//-------------------关于菜单----------------------//
 		$_aboutGroupList = M('group')->where('type=5')->order('id')->getField('id,name,type');
 		foreach($_aboutGroupList as $key => $group){
 			$_aboutArticleList = M('article')->where('group_id=%d',$key)->order('create_time DESC')->find();
@@ -94,6 +107,6 @@ class PortalController extends \Common\Controller\CommonController {
 		$this->assign('_aboutGroupList',$_aboutGroupList);
 		
 		
-		
 	}
+	
 }

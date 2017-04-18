@@ -11,24 +11,4 @@ class ServiceController extends PortalController {
 		$this->display('list');
 	}
 
-
-	//业务咨询
-	public function consult(){
-		$this->theme($this->_theme)->display('consult');
-	}
-	
-	//业务开发
-	public function dev(){
-		$this->theme($this->_theme)->display('dev');
-	}
-	
-	//业务运维
-	public function maintenance(){
-		$this->theme($this->_theme)->display('maintenance');
-	}
-	
-	//业务培训
-	public function train(){
-		$this->theme($this->_theme)->display('train');
-	}
 }

@@ -24,9 +24,9 @@
 </head>
 
 <body>
-
+<php>echo $a;</php>
 <!--导航部分-->
-<header class="clear">
+<!--<header class="clear">
 	<a href="{:U(\'Index/index\')}" class="logo">Maiunsoft</a>
 	<nav class="clear">
 		<a href="##" class="user"></a>
@@ -43,9 +43,7 @@
 					<ul class="item">
 						<li>
 							<span>脉点<i></i></span>
-							<a href="{:U(\'Article/index\')}">{$test}</a>
-							
-							
+							<a href="{:U(\'Article/index\')}">{$a}</a>
 							<a href="{:U(\'Article/index\')}">合作动态</a>
 							<a href="{:U(\'Article/list\')}">行业风向</a>
 							<a href="{:U(\'Article/observe\')}">业务洞察</a>
@@ -115,8 +113,9 @@
 				</div>
 			</div>
 	</nav>
-</header>	
+</header>	-->
 
+<include file="Mobile:Index:header" />
 <!--模板渲染-->
 <div id="main">
 	{__CONTENT__}

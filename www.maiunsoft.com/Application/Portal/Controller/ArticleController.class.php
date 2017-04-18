@@ -19,23 +19,25 @@ class ArticleController extends PortalController {
 	}
 	
 	
-	//合作动态
+	//详情
 	public function detail($id=''){
-		$this->articleInfo = M('article')->where("id=%d",$id)->find();
+		$articleInfo = M('article')->where("id=%d",$id)->find();
+		
+		$group_id = 0;
+		foreach($articleInfo as $k => $v){
+			if($k == "group_id"){
+				$group_id = $v;
+			}
+		}
+		
+		$this->articleTitle = M("group")->where('id=%d',intval($group_id))->select();
+		$this->assign('articleInfo',$articleInfo);
 		
 		$this->theme($this->_theme)->display('detail');
 		
 		
 	}
 	
-	//业务洞察
-	public function observe()
-	{
-		//数据库操作
-		
-		//模板渲染
-		$this->theme($this->_theme)->display('observe');
-	}
 
 	
 } // end contraoller

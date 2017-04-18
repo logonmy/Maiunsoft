@@ -206,7 +206,7 @@
 
 		        <div class="swiper-container banner-div">
             <div class="swiper-wrapper">
-                <?php if(is_array($bigSliderList)): foreach($bigSliderList as $key=>$slider): ?><div style="background-image:url(<?php echo UploadUrl('slider'); echo ($slider["image"]); ?>)" class="swiper-slide">
+                <?php if(is_array($bigSliderList)): foreach($bigSliderList as $key=>$slider): ?><div style="background-image:url(<?php echo UploadUrl('slider'); echo ($slider["image"]); ?>)" class="swiper-slide swiper-no-swiping">
                     </div><?php endforeach; endif; ?>
             </div>
              <!--<div class="swiper-button-prev swiper-button-white"></div>

@@ -24,9 +24,9 @@
 </head>
 
 <body>
-
+<?php echo $a; ?>
 <!--导航部分-->
-<header class="clear">
+<!--<header class="clear">
 	<a href="<?php echo U('Index/index');?>" class="logo">Maiunsoft</a>
 	<nav class="clear">
 		<a href="##" class="user"></a>
@@ -43,9 +43,7 @@
 					<ul class="item">
 						<li>
 							<span>脉点<i></i></span>
-							<a href="<?php echo U('Article/index');?>"><?php echo ($test); ?></a>
-							
-							
+							<a href="<?php echo U('Article/index');?>"><?php echo ($a); ?></a>
 							<a href="<?php echo U('Article/index');?>">合作动态</a>
 							<a href="<?php echo U('Article/list');?>">行业风向</a>
 							<a href="<?php echo U('Article/observe');?>">业务洞察</a>
@@ -115,8 +113,63 @@
 				</div>
 			</div>
 	</nav>
-</header>	
+</header>	-->
 
+<header class="clear">
+	<a href="<?php echo U('Index/index');?>" class="logo">Maiunsoft</a>
+	<nav class="clear">
+		<!--<a href="##" class="user"></a>--><!--用户图标隐藏-->
+		<a href="##" class="menu"></a>
+			<div class="bg"></div>
+			<div class="menu_list" id="wrapper">
+				<div id="scroller">
+					<ul class="item">
+						<li>
+							<a href="<?php echo U('Index/index');?>" class="shouye">首页</a>
+							<em></em>
+						</li>	
+					</ul>
+					<ul class="item">
+						<li>
+							<span>脉点<i></i></span>
+							<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($md["name"]); ?></a><?php endforeach; endif; ?>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+							<span>服务<i></i></span>
+							
+							<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($group["name"]); ?></a>
+								<div class="three">
+									<?php if(is_array($group["articleList"])): foreach($group["articleList"] as $key=>$article): ?><a href="<?php echo U('article/detail?id='.$key);?>"><?php echo ($article["title"]); ?></a><?php endforeach; endif; ?>
+								</div><?php endforeach; endif; ?>
+							
+						</li>
+					</ul>
+					<ul class="item">
+						<li class="kai">
+							<span>案例<i></i></span>
+							<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($group["name"]); ?></a><?php endforeach; endif; ?>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+						<span>招聘<i></i></span>
+							<a href="<?php echo U('Job/school',array('type'=>0),'');?>">校园招聘</a>
+							<a href="<?php echo U('Job/social',array('type'=>1),'');?>">社会招聘</a>
+						</li>
+					</ul>
+					<ul class="item">
+						<li>
+							<span>关于<i></i></span>
+							<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$ab): ?><a href="<?php echo U('Company/index',array('id'=>$ab['id']));?>"><?php echo ($ab["name"]); ?></a><?php endforeach; endif; ?>
+							<a href="<?php echo U('Company/contact');?>">联系方式</a>
+						</li>
+					</ul>				
+				</div>
+			</div>
+	</nav>
+</header>	
 <!--模板渲染-->
 <div id="main">
 	
@@ -124,7 +177,8 @@
 	<div class="swiper-container banner">
 		<div class="swiper-wrapper">
 			<?php if(is_array($bigSliderList)): foreach($bigSliderList as $key=>$slider): ?><div class="swiper-slide">
-                	<img src="<?php echo UploadUrl('slider'); echo ($slider["image"]); ?>" alt="banner" />
+                	<!--<img src="<?php echo UploadUrl('slider'); echo ($slider["image"]); ?>" alt="banner" />-->
+                	<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="banner"/>
                 </div><?php endforeach; endif; ?>
 			
 		</div>

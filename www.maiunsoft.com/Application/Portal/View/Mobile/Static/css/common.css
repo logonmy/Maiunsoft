@@ -213,6 +213,7 @@ nav .menu{
 	line-height: 1rem;
 	text-align:center;
 	background: #fff;
+	opacity: .5;
 	font-weight: bolder;
 }
 .banner .title strong,.banner .title b{

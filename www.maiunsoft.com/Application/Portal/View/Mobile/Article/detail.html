@@ -1,19 +1,18 @@
 <!--  主体-->
 <script type="text/javascript">
-	document.title="{$articleInfo.title}"
+	document.title = " 脉云软件 | {$articleInfo.title}"
 </script>
-	<!-- 焦点图 -->
-		<div class="banner">
-			<img src="__MB_STATIC__/img/md01.png" alt="">
-			<div class="title">{$articleInfo.title}</div>
-		</div>
-		<!-- 动态 -->
-		<div class="news">
-			<div class="floor floor_content">
-				<h3>{$articleInfo.title}</h3>
-				<p>{$articleInfo.content}</p>
-			</div>
-			
-		</div>   <!-- end 动态-->
+<!-- 焦点图 -->
+<div class="banner">
+	<img src="__MB_STATIC__/img/md01.png" alt="">
+	<div class="title">{$articleTitle[0].name|subtext=4}</div>
+</div>
+<!-- 动态 -->
+<div class="news">
+	<div class="floor floor_content">
+		<h3>{$articleInfo.title}</h3>
+		<p>{$articleInfo.content}</p>
+	</div>
 
-		
+</div>
+<!-- end 动态-->
