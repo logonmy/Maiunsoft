@@ -1,5 +1,6 @@
 <script type="text/javascript">document.title='脉云软件 | {$aboutGroupList[0].name}'</script>
-<div class="banner-div banner-4" style="background-image: url({:UploadUrl('slider')}{$aboutGroupList[0].image});">
+<div class="banner-div banner-4">
+	<!--style="background-image: url({:UploadUrl('group')}{$aboutGroupList[0].image});"-->
 	<div class="banner-content-4 vertical-center">
 		{$aboutGroupList[0].name}
 	</div>
@@ -7,7 +8,6 @@
 
 	</div>
 </div>
-
 <div class="bg-color-3">
 	<div class="connection">
 		<span>联系电话： 400-9910-540</span>
@@ -25,7 +25,7 @@
 				<img src="{:UploadUrl('slider')}{$aboutContentList[$group_id].image}" alt="图片未找到">
 			</div>
 			<p>
-				{$aboutContentList[$group_id].content}
+				{$aboutContentList[$group_id].content|htmlspecialchars_decode}
 				
 			</p>
 			<div style="clear:both;"></div>

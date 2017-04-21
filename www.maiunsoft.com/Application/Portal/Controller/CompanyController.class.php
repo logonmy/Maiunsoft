@@ -16,9 +16,6 @@ class CompanyController extends PortalController
 		$this->aboutContentList = M('article')->where('group_id=%d',$id)->getField('group_id,content,image');
 		$this->group_id = $id;
 		
-		
-		
-		
 		$this->theme($this->_theme)->display('index');
 	}
 	

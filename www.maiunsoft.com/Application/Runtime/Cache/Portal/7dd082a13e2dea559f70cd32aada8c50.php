@@ -9,6 +9,8 @@
                                      maximum-scale=1.0,
                                      user-scalable=no">
 			<title>脉云软件 | <?php echo ($_PageHeader["title"]); ?></title>
+			<meta name="keyword" content="<?php echo ($_PageHeader["keywords"]); ?>">
+    		<meta name="description" content="<?php echo ($_PageHeader["description"]); ?>">
 			<link rel="shortcut icon" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/favicon.png" >
 			<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/css/swiper.min.css">
 			<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/css/demo.css">
@@ -40,7 +42,7 @@
 												<img src="<?php echo UploadUrl('article'); echo ($article["image"]); ?>" alt="">
 											</div>
 											<div class="menu-article">
-												<span><?php echo ($article["bref"]); ?></span>
+												<span><?php echo (subtext($article["bref"],140)); ?></span>
 												<a href="<?php echo U('article/detail?id='.$article['id']);?>">更多</a>
 											</div>
 										</div><?php endforeach; endif; ?>
@@ -75,7 +77,7 @@
 											<?php if(is_array($group["articleList"])): foreach($group["articleList"] as $key=>$article): ?><div class="hide">
 													<b><?php echo ($article["title"]); ?></b><br />
 													<p><?php echo ($article["bref"]); ?></p>
-													<!-- <a href="./service-consult">更多</a> -->
+													 <a href="<?php echo U('article/detail?id='.$key);?>">更多</a> 
 												</div><?php endforeach; endif; ?>
 										</div><?php endforeach; endif; ?>
 								</div>
@@ -101,10 +103,10 @@
 									<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><div class="hide">
 											<b><?php echo ($group["lastArticle"]["title"]); ?></b>
 											<div class="menu-img">
-												<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/mht-1.jpg" alt="">
+												<img src="<?php echo UploadUrl('article'); echo ($group["lastArticle"]["image"]); ?>" alt="">
 											</div>
 											<div class="menu-article">
-												<span><?php echo ($group["lastArticle"]["bref"]); ?></span>
+												<span><?php echo (subtext($group["lastArticle"]["bref"],150)); ?></span>
 												<a href="<?php echo U('article/detail?id='.$group['lastArticle']['id']);?>">更多</a>
 											</div>
 										</div><?php endforeach; endif; ?>
@@ -137,7 +139,7 @@
 									</ul>
 								</div>
 								<div class="nav-4-empty-block hide"></div>
-								<div class="menu-content vertical-center">
+								<div class="menu-content vertical-center job">
 									<div>
 
 										<?php if(is_array($schoolNeed)): foreach($schoolNeed as $key=>$scNeed): ?><div class="hide">
@@ -183,10 +185,11 @@
 									<div class="hide">
 										<span>
 											<b>联系方式</b><br /><br /><br />
-                                        	<p>联系电话： 400-9910-540</p>
-											<p>企业邮箱： service@maiunsoft.com</p>
-											<p>企业QQ： service@maiunsoft.com</p>
-											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p> 
+                                        	<p>客服中心： 400-9910-560</p>
+											<p>人事中心： 021-80392945转014</p>
+											<p>商务合作： 021-80392945转00</p>
+											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
+											<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;兰州市天水中路8号2号楼11层</p>
                                        </span>
 									</div>
 								</div>
@@ -225,11 +228,11 @@
                             <div>
                                 <b><?php echo ($news["title"]); ?></b>
                                 <p>
-                                    <?php echo ($news["bref"]); ?>
+                                    <?php echo (subtext($news["bref"],50)); ?>
                                 </p>
                                 <a class="section-one-article-link">
                                 	
-                                    <span onClick="location='<?php echo U('Index/index');?>'">更多详情<img class="icon-right" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-black.png"/></span>
+                                    <span onClick="location='<?php echo ($news["url"]); ?>'">更多详情<img class="icon-right" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/right-black.png"/></span>
                                 </a>
                             </div>
                         </div><?php endforeach; endif; ?>
@@ -247,8 +250,8 @@
                             <img src="<?php echo UploadUrl('slider'); echo ($article["image"]); ?>" alt="logo-img"><br >
                             <div>
                                 <b><?php echo ($article["title"]); ?></b>
-                                <p><?php echo ($article["bref"]); ?></p>
-                                <button onClick="location='<?php echo U('Index/index');?>'" class="section-two-article-btn">了解更多</button>
+                                <p><?php echo (subtext($article["bref"],50)); ?></p>
+                                <button onClick="location='<?php echo ($article["url"]); ?>'" class="section-two-article-btn">了解更多</button>
                             </div>
                         </div><?php endforeach; endif; ?>
                 </div>
@@ -256,7 +259,7 @@
         </div>
 
         <div class="section-five">
-            <h3 id="sec-3">安全便捷的内容管理解决方案提供商</h3>
+            <h3 id="sec-3">可信赖的内容管理解决方案服务商</h3>
         </div>
 		
 		
@@ -281,70 +284,7 @@
                     </div>
                 	</div><?php endforeach; endif; ?>
             	
-                <!--<div class="section-six-bg section-six-bg-0">
-                    <div class="upblock-bg-0"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-smile.png" alt="smile-icon"><br />
-                        <img class="upblock-icon-2" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统咨询
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide">查看详情</button>
-                    </div>
-                </div>-->
-                <!--<div class="section-six-bg section-six-bg-1">
-                    <div class="upblock-bg-1"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-global.png" alt="global-icon"><br />
-                        <img class="upblock-icon-2" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统开发
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide">查看详情</button>
-                    </div>
-                </div>
-             <div class="section-six-bg section-six-bg-2">
-                    <div class="upblock-bg-2"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-setting.png" alt="setting-icon"><br />
-                        <img class="upblock-icon-2" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统运维
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide">查看详情</button>
-                    </div>
-                </div>
-             <div class="section-six-bg section-six-bg-3">
-                    <div class="upblock-bg-3"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-member.png" alt="member-icon"><br />
-                        <img class="upblock-icon-2" src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统培训
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide" onClick="location='./intro'" >查看详情</button>
-                    </div>
-                </div>-->
+                
             </div>
         </div>
 
@@ -354,10 +294,12 @@
 				<div class="link-part link-about">
 					<b>关于</b>
 					<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$group): ?><p onClick="location='<?php echo U('Company/index/?id='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
+					<p onClick="location='<?php echo U('Company/contact');?>'">联系方式</p>
 				</div>
 				<div class="link-part link-cooperation">
 					<b>服务</b>
 					<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><p onClick="location='<?php echo U('article/index?gid='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
+						
 				</div>
 				<div class="link-part link-news">
 					<b>脉点</b>
@@ -365,16 +307,16 @@
 				</div>
 				<div class="link-part link-mobile">
 					<b>移动脉云</b>
-					<p><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/qcode.png" alt="maiyun mobile QRCode"></p>
+					<p><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/qcode.jpg" alt="maiyun mobile QRCode" width="91" height="91"></p>
 				</div>
 				<div class="link-part link-global">
 					<!-- <b>聚焦数字世界 服务现代生活</b> -->
-					<b>联系方式</b>
+					<b>联系我们</b>
 					<!-- <p><img src="./imgs/world-map.png" alt="world map"></p> -->
-					<p>联系电话： 400-9910-540</p>
+					<p>联系电话： 400-9910-560</p>
+					<p>商务合作： 021-80392945转001</p>
 					<p>企业邮箱： service@maiunsoft.com</p>
-					<p>企业QQ： service@maiunsoft.com</p>
-					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
+					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼15层</p>
 				</div>
 			</div>
 		</div>
@@ -385,11 +327,11 @@
 					版权所有脉云（上海）有限公司
 				</p>
 				<p>
-					沪ICP备14051784号
+					<a href="http://www.miitbeian.gov.cn/" target="_self">沪ICP备14051784号</a>
 				</p>
-				<a><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-email.png" alt="email-icon"></a>
+				<a href="mailto:service@maiunsoft.com"><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-email.png" alt="email-icon"></a>
 				<a><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-qq.png" alt="qq-icon"></a>
-				<a href="mailto:service@maiunsoft.com"><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-weibo.png" alt="weibo-icon"></a>
+				<a href="http://weibo.com/mainusoft"><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/icon-weibo.png" alt="weibo-icon"></a>
 			</div>
 		</footer>
 		
@@ -399,7 +341,6 @@
 				var menu_mask = document.getElementsByClassName("menu-mask");
 				
 				if(banner_4){
-					//menu_mask.style.height =
 					var height = banner_4.offsetHeight;
 					for(var i = 0;i<5;i++){
 						

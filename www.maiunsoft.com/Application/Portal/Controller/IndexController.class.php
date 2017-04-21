@@ -8,9 +8,9 @@ class IndexController extends PortalController {
 		// 页面seo
 		//
 		$this->_PageHeader = array(
-			'title' => '聚焦数字世界，服务现代生活',
-			'keywords' => '',
-			'description' => ''
+			'title' => '可信赖的内容管理解决方案提供商',
+			'keywords' => '内容管理,文档管理,脉云智库,项目管理,业务流程管理,ECM,BPM,定制开发',
+			'description' => '脉云软件（上海）有限公司简称脉云软件(或Maiunsoft)成立于2014年，以聚焦数字世界，服务现代生活为使命，致力于打造企业可信赖的内容管理解决方案服务商，我们为客户输出安全、便捷、高效的内容管理工具和方法论。'
 			);
 
 		// 获取banner图

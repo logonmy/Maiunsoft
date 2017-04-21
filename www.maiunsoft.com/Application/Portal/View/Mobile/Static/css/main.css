@@ -55,7 +55,9 @@
 	height: 6.84rem;
 	background: #fff;
 	margin-bottom: 0.7rem;
+	padding-bottom: .5rem;
 }
+
 .world .article{
 	height: 1.68rem;
 	width: 5.94rem;
@@ -88,7 +90,9 @@
 	box-shadow: 2px 2px 10px #d3ebfb;
 	text-align: center;
 	line-height: 0.74rem;
-	margin-bottom: 0.56rem;
+	margin-top: .3rem;
+	/*margin-bottom: 0.56rem;*/
+	
 }
 /* 脉云介绍 */
 #main .info{
@@ -118,21 +122,20 @@
 	height: 100%;
 }
 .about{
-	margin: 0 auto;
-	margin-top: 1.3rem;
+	padding: 1.3rem .86rem;
+	color: #3A3A3A;
 }
 .about h4{
-	font-size: 0.6rem;
+	font-size: 0.42rem;
 	line-height: 0.6rem;
-	text-align: center;
 	height: 0.6rem;
 	margin-bottom: 0.5rem;
+	font-weight: 700;
 }
 .about p{
 	font-size: 0.3rem;
 	line-height: 0.6rem;
 	height: 0.6rem;
-	text-align: center;
 
 }
 /* 底部 */
@@ -183,9 +186,9 @@
 	padding-top: .9rem;
 }
 .news .floor h3{
-	height: 0.38rem;
-	line-height: 0.38rem;
-	font-size: 0.4rem;
+	height: 0.45rem;
+	line-height: 0.45rem;
+	font-size: 0.38rem;
 	color: #2a80bb;
 	padding-left: 0.5rem;
 	margin-bottom: 0.7rem;
@@ -632,4 +635,26 @@ div.cont div.info_menu{
 }
 .content{
 	display: none;
+}
+
+
+
+.socialType{
+	width: 20%;
+	background: #FBFBFB;
+	font-size: .3rem;
+	color: #373B41;
+	float: left;
+	line-height: 1.4rem;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.job-type .current{
+	background: #1784db;
+	color: #fff;
+	height: 20%;
+	line-height: 1.4rem;
+	text-align: center;
+	letter-spacing: 1px;
 }

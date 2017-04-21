@@ -1,6 +1,6 @@
 ! function() {
 	var i = function() { console.log.apply(console, arguments) };
-	i("%cWelcome To Maiun!", "background: #ccc;font-size: 42px;");
+	i("%cWelcome To Maiun!", "background: #ccc;font-size: 32px;");
 	$(".search-input").focus(function() { $(this).animate({ width: "210" }, 300, function() {}) }), $(".search-input").blur(function() { $(this).animate({ width: "140" }, 300, function() {}) });
 	$(".swiper-slide").each(function(index) { 
 		if(index > 0) { 
@@ -32,17 +32,10 @@
 		$(this).parents(".menu-right").find(".menu-content").children().eq(i).children().eq(t).show()
 	}, function() {});
 	$(".tabswitch-btn").each(function(index) {
-		if($(this).hasClass("switch-active")) {
-			for(var i = 1; i < 6; i += 1) {
-				var t = ".card-switch-" + i;
-				$(t).hide()
-			}
-			var n = $(this).index() + 1;
-			$(".card-switch-" + n).show()
-		}
+
 	});
 	$(".tabswitch-btn").click(function() {
-			$(".template-city").show();
+			//$(".template-city").show();
 			if(!$(this).hasClass("switch-active")) {
 				$(this).siblings().removeClass("switch-active");
 				$(this).addClass("switch-active");
@@ -96,5 +89,7 @@
 				}
 			})
 			$(".default-item").text($(this).text());
-		})
+		});
+		
+		
 }();

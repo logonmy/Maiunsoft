@@ -22,11 +22,11 @@
                             <div>
                                 <b>{$news.title}</b>
                                 <p>
-                                    {$news.bref}
+                                    {$news.bref|subtext=50}
                                 </p>
                                 <a class="section-one-article-link">
                                 	
-                                    <span onClick="location='{:U(\'Index/index\')}'">更多详情<img class="icon-right" src="__PC_STATIC__/imgs/right-black.png"/></span>
+                                    <span onClick="location='{$news.url}'">更多详情<img class="icon-right" src="__PC_STATIC__/imgs/right-black.png"/></span>
                                 </a>
                             </div>
                         </div>
@@ -46,8 +46,8 @@
                             <img src="{:UploadUrl('slider')}{$article.image}" alt="logo-img"><br >
                             <div>
                                 <b>{$article.title}</b>
-                                <p>{$article.bref}</p>
-                                <button onClick="location='{:U(\'Index/index\')}'" class="section-two-article-btn">了解更多</button>
+                                <p>{$article.bref|subtext=50}</p>
+                                <button onClick="location='{$article.url}'" class="section-two-article-btn">了解更多</button>
                             </div>
                         </div>
                     </foreach>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="section-five">
-            <h3 id="sec-3">安全便捷的内容管理解决方案提供商</h3>
+            <h3 id="sec-3">可信赖的内容管理解决方案服务商</h3>
         </div>
 		
 		
@@ -85,69 +85,6 @@
                 	</div>
             	</foreach>
             	
-                <!--<div class="section-six-bg section-six-bg-0">
-                    <div class="upblock-bg-0"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-smile.png" alt="smile-icon"><br />
-                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统咨询
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide">查看详情</button>
-                    </div>
-                </div>-->
-                <!--<div class="section-six-bg section-six-bg-1">
-                    <div class="upblock-bg-1"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-global.png" alt="global-icon"><br />
-                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统开发
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide">查看详情</button>
-                    </div>
-                </div>
-             <div class="section-six-bg section-six-bg-2">
-                    <div class="upblock-bg-2"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-setting.png" alt="setting-icon"><br />
-                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统运维
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide">查看详情</button>
-                    </div>
-                </div>
-             <div class="section-six-bg section-six-bg-3">
-                    <div class="upblock-bg-3"></div>
-                    <div class="upblock-bg-cg hide"></div>
-                    <div class="upblock">
-                        <img class="upblock-icon-1" src="__PC_STATIC__/imgs/icon/icon-member.png" alt="member-icon"><br />
-                        <img class="upblock-icon-2" src="__PC_STATIC__/imgs/icon/icon-line.png" alt="line">
-                        <p class="upblock-title">
-                            系统培训
-                        </p>
-                        <p class="upblock-content hide">
-                            外资企业网站系统开发系统开发<br />
-                            外资企业网站系统开发系统开发
-                        </p>
-                        <button class="upblock-btn hide" onClick="location='./intro'" >查看详情</button>
-                    </div>
-                </div>-->
+                
             </div>
         </div>

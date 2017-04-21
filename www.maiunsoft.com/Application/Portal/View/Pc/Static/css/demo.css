@@ -73,7 +73,8 @@ html {
 }
 
 * {
-	box-sizing: border-box
+	box-sizing: border-box;
+	letter-spacing: 1px;
 }
 
 .hide {
@@ -328,7 +329,7 @@ nav>img:hover {
 
 .menu-div>div>b {
 	display: block;
-	margin-left: 80px;
+	margin-left: 60px;
 	margin-bottom: 35px;
 	font-size: 22px;
 	color: #2a80bb
@@ -336,7 +337,7 @@ nav>img:hover {
 
 .menu-img {
 	float: left;
-	margin-left: 80px;
+	margin-left: 60px;
 	background-position: bottom;
 	width: 375px;
 	height: 302px
@@ -353,10 +354,18 @@ nav>img:hover {
 	position: relative;
 	width: 55%;
 	height: 320px;
-	margin-left: 40px;
+	margin-left: 60px;
 	float: left;
 	font-size: 18px;
 	line-height: 30px
+}
+.menu-article>span{
+	text-indent: 2em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
 }
 
 .menu-article>a {
@@ -392,7 +401,7 @@ nav>img:hover {
 
 .menu-about>div>a {
 	position: absolute;
-	bottom: 0;
+	bottom: 20%;
 	right: 0;
 	color: #1784db
 }
@@ -420,13 +429,17 @@ nav>img:hover {
 .menu-content>div>div>p {
 	margin-top: 40px;
 	font-size: 18px;
-	line-height: 30px
+	line-height: 30px;
+	text-indent: 2em;
+	text-align: justify;
 }
-
+div.job>div>div>p{
+	text-indent: 0em;
+}
 .menu-content>div>div>a {
 	display: inline-block;
 	position: absolute;
-	bottom: 0;
+	bottom: 20%;
 	right: 0;
 	color: #1784db;
 	font-size: 20px
@@ -758,7 +771,7 @@ nav>img:hover {
 }
 
 .upblock-title {
-	font-size: 30px
+	font-size: 25px;
 }
 
 .upblock-content {
@@ -832,7 +845,19 @@ footer {
 	color: #fff;
 	font-size: 12px
 }
+.footer-content>p>a{
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+}
+.footer-content>p>a:hover{
+	text-decoration: underline;
+	color: #5693c4;
+}
+
+
 .footer-content a{
+	
 	cursor: pointer;
 }
 
@@ -1020,7 +1045,7 @@ footer {
 	font-size: 36px
 }
 
-.banner-mask-4 {
+/*.banner-mask-4 {
 	background-color: #000;
 	opacity: .3;
 	width: 290px;
@@ -1028,7 +1053,7 @@ footer {
 	position: absolute;
 	z-index: 1;
 	right: 280px
-}
+}*/
 
 .banner-content-4 {
 	float: right;
@@ -1036,9 +1061,9 @@ footer {
 	font-size: 48px;
 	font-weight: 700;
 	padding: 16px 50px;
-	color: #f36;
 	color: #fff;
-	z-index: 2
+	z-index: 2;
+	background-color: rgba(0,0,0,.3);
 }
 
 .bg-color-5 {
@@ -1070,7 +1095,8 @@ footer {
 
 .template-ceil>p {
 	font-size: 16px;
-	line-height: 32px
+	line-height: 32px;
+	/*text-indent: 2em;*/
 }
 
 .template-ceil-img {
@@ -1152,7 +1178,7 @@ footer {
 
 .template-card-article {
 	margin: 38px 4%;
-	float: left
+	float: left;
 }
 
 .template-card-article>b {
@@ -1164,7 +1190,8 @@ footer {
 
 .template-card-article>p {
 	font-size: 16px;
-	line-height: 40px
+	line-height: 40px;
+	text-indent: 2em;
 }
 
 .template-custom {
@@ -1232,7 +1259,7 @@ footer {
 }
 
 .table-title {
-	width: 90px;
+	width: 100px;
 	font-size: 18px;
 	color: #2a80bb;
 	vertical-align: text-top
@@ -1246,7 +1273,7 @@ footer {
 .template-card-article-2 {
 	position: relative;
 	width: calc(100% - 100px);
-	margin: 0 50px;
+	margin: 0 50px 50px;
 	float: left
 }
 
@@ -1258,7 +1285,7 @@ footer {
 .template-card-imgbox {
 	position: absolute;
 	right: 80px;
-	bottom: 60px
+	bottom: 0px
 }
 
 .template-card-imgbox>img {
@@ -1305,7 +1332,7 @@ footer {
 }
 
 .tabswitch-btn {
-	width: 20%;
+	width: 19.5%;
 	height: 100%;
 	font-size: 26px;
 	color: #666;
@@ -1598,7 +1625,7 @@ footer {
 		width: calc(100% - 547px)
 	}
 	.template-card-article-2 {
-		height: 360px
+		/*height: 360px*/
 	}
 	.job-title {
 		margin-top: 70px;
@@ -1753,7 +1780,7 @@ footer {
 		width: calc(92% - 447px)
 	}
 	.template-card-article-2 {
-		height: 390px
+		/*height: 390px*/
 	}
 	.job-title {
 		margin-top: 51px;
@@ -1816,7 +1843,7 @@ footer {
 		height: 232px
 	}
 	.menu-ul-2 {
-		margin-top: 10px
+		margin-top: -10px
 	}
 	.menu-div {
 		margin-left: 0%
@@ -1924,7 +1951,7 @@ footer {
 		width: calc(100% - 280px);
 	}
 	.template-card-article-2 {
-		height: 327px
+		/*height: 327px*/
 	}
 	
 	.job-title {
@@ -1963,7 +1990,7 @@ footer {
 		height: 230px
 	}
 	.menu-content {
-		width: 52%
+		/*width: 52%*/
 	}
 }
 
@@ -2047,7 +2074,7 @@ footer {
 	.section-two-article>div>button {
 		margin-top: 32px;
 		margin-bottom: 22px;
-		padding: 10px 38px
+		padding: 10px 30px
 	}
 	.section-three {
 		width: 1092px
@@ -2102,7 +2129,7 @@ footer {
 	}
 	
 	.template-card-article-2 {
-		height: 327px
+		/*height: 327px*/
 	}
 	.job-title {
 		margin-top: 50px;

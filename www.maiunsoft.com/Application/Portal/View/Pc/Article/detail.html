@@ -27,7 +27,7 @@
                     <b>{$articleInfo.title}</b>
                     <img class="template-ceil-img" src="{:UploadUrl('article')}{$articleInfo.image}" alt="content-intro" >
                     <p>
-                        {$articleInfo.content}
+                        {$articleInfo.content|htmlspecialchars_decode}
                     </p>
                     <div style="clear:both;"></div>
                 </div>

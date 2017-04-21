@@ -42,10 +42,19 @@ class PortalController extends \Common\Controller\CommonController {
 		//
 		//$groupService = Service('Group');
 
-		$this->mdGroupList = M('group')->where('type=1')->order('id')->getField('id,name,type');
-		$this->mdArticleList = M('article')->group('group_id')->order('group_id,create_time DESC')->getField('id,title,image,bref');
-
-
+		$mdGroupList = M('group')->where('type=1')->order('id')->getField('id,name,type');
+		//遍历脉点列表
+		$mdGroupBref = array();
+		foreach($mdGroupList as $k => $v){
+			$mdArticleList = M('article')->where("group_id=%d",intval($v['id']))->order('group_id,create_time DESC')->find();
+			$mdGroupBref[$k] = $mdArticleList;
+		}
+		
+		$this->mdArticleList = $mdGroupBref;
+		$this->mdGroupList = $mdGroupList;
+		
+		
+		
 		// 服务菜单
 		$serviceGroupList = M('group')->where('type=2')->order('id')->getField('id,name,type');
 		

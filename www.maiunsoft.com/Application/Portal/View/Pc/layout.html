@@ -9,6 +9,8 @@
                                      maximum-scale=1.0,
                                      user-scalable=no">
 			<title>脉云软件 | {$_PageHeader.title}</title>
+			<meta name="keyword" content="{$_PageHeader.keywords}">
+    		<meta name="description" content="{$_PageHeader.description}">
 			<link rel="shortcut icon" href="__PC_STATIC__/imgs/favicon.png" >
 			<link rel="stylesheet" href="__PC_STATIC__/css/swiper.min.css">
 			<link rel="stylesheet" href="__PC_STATIC__/css/demo.css">
@@ -43,7 +45,7 @@
 												<img src="{:UploadUrl('article')}{$article.image}" alt="">
 											</div>
 											<div class="menu-article">
-												<span>{$article.bref}</span>
+												<span>{$article.bref|subtext=140}</span>
 												<a href="{:U('article/detail?id='.$article['id'])}">更多</a>
 											</div>
 										</div>
@@ -87,7 +89,7 @@
 												<div class="hide">
 													<b>{$article.title}</b><br />
 													<p>{$article.bref}</p>
-													<!-- <a href="./service-consult">更多</a> -->
+													 <a href="{:U(\'article/detail?id=\'.$key)}">更多</a> 
 												</div>
 											</foreach>
 										</div>
@@ -118,10 +120,10 @@
 										<div class="hide">
 											<b>{$group.lastArticle.title}</b>
 											<div class="menu-img">
-												<img src="__PC_STATIC__/imgs/mht-1.jpg" alt="">
+												<img src="{:UploadUrl('article')}{$group.lastArticle.image}" alt="">
 											</div>
 											<div class="menu-article">
-												<span>{$group.lastArticle.bref}</span>
+												<span>{$group.lastArticle.bref|subtext=150}</span>
 												<a href="{:U('article/detail?id='.$group['lastArticle']['id'])}">更多</a>
 											</div>
 										</div>
@@ -157,7 +159,7 @@
 									</ul>
 								</div>
 								<div class="nav-4-empty-block hide"></div>
-								<div class="menu-content vertical-center">
+								<div class="menu-content vertical-center job">
 									<div>
 
 										<foreach name="schoolNeed" item="scNeed">
@@ -211,10 +213,11 @@
 									<div class="hide">
 										<span>
 											<b>联系方式</b><br /><br /><br />
-                                        	<p>联系电话： 400-9910-540</p>
-											<p>企业邮箱： service@maiunsoft.com</p>
-											<p>企业QQ： service@maiunsoft.com</p>
-											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p> 
+                                        	<p>客服中心： 400-9910-560</p>
+											<p>人事中心： 021-80392945转014</p>
+											<p>商务合作： 021-80392945转00</p>
+											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
+											<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;兰州市天水中路8号2号楼11层</p>
                                        </span>
 									</div>
 								</div>
@@ -241,12 +244,14 @@
 					<foreach name="_aboutGroupList" item="group">
 						<p onClick="location='{:U(\'Company/index/?id=\'.$group['id'])}'">{$group.name}</p>
 					</foreach>
+					<p onClick="location='{:U(\'Company/contact\')}'">联系方式</p>
 				</div>
 				<div class="link-part link-cooperation">
 					<b>服务</b>
 					<foreach name="serviceGroupList" item="group">
 						<p onClick="location='{:U(\'article/index?gid=\'.$group['id'])}'">{$group.name}</p>
 					</foreach>
+						
 				</div>
 				<div class="link-part link-news">
 					<b>脉点</b>
@@ -256,16 +261,16 @@
 				</div>
 				<div class="link-part link-mobile">
 					<b>移动脉云</b>
-					<p><img src="__PC_STATIC__/imgs/qcode.png" alt="maiyun mobile QRCode"></p>
+					<p><img src="__PC_STATIC__/imgs/qcode.jpg" alt="maiyun mobile QRCode" width="91" height="91"></p>
 				</div>
 				<div class="link-part link-global">
 					<!-- <b>聚焦数字世界 服务现代生活</b> -->
-					<b>联系方式</b>
+					<b>联系我们</b>
 					<!-- <p><img src="./imgs/world-map.png" alt="world map"></p> -->
-					<p>联系电话： 400-9910-540</p>
+					<p>联系电话： 400-9910-560</p>
+					<p>商务合作： 021-80392945转001</p>
 					<p>企业邮箱： service@maiunsoft.com</p>
-					<p>企业QQ： service@maiunsoft.com</p>
-					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
+					<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼15层</p>
 				</div>
 			</div>
 		</div>
@@ -276,11 +281,11 @@
 					版权所有脉云（上海）有限公司
 				</p>
 				<p>
-					沪ICP备14051784号
+					<a href="http://www.miitbeian.gov.cn/" target="_blank">沪ICP备14051784号</a>
 				</p>
-				<a><img src="__PC_STATIC__/imgs/icon-email.png" alt="email-icon"></a>
+				<a href="mailto:service@maiunsoft.com"><img src="__PC_STATIC__/imgs/icon-email.png" alt="email-icon"></a>
 				<a><img src="__PC_STATIC__/imgs/icon-qq.png" alt="qq-icon"></a>
-				<a href="mailto:service@maiunsoft.com"><img src="__PC_STATIC__/imgs/icon-weibo.png" alt="weibo-icon"></a>
+				<a href="http://weibo.com/mainusoft"><img src="__PC_STATIC__/imgs/icon-weibo.png" alt="weibo-icon"></a>
 			</div>
 		</footer>
 		
@@ -290,7 +295,6 @@
 				var menu_mask = document.getElementsByClassName("menu-mask");
 				
 				if(banner_4){
-					//menu_mask.style.height =
 					var height = banner_4.offsetHeight;
 					for(var i = 0;i<5;i++){
 						

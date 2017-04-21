@@ -89,7 +89,7 @@ class ArticleController extends AdminController {
 		$articleId = I('post.article_id');
 		$articleType = I('post.article_type');
 		$articleGroup = I('post.article_group');
-		if(!Service('Article')->SaveArticle($article,$id))
+		if(!Service('Article')->SaveArticle($article,$articleId))
 			$this->error('保存失败了，请重新操作');
 
 		$this->success('保存成功了',U('article/admin',array('type'=>$articleType,'gid'=>$articleGroup)));

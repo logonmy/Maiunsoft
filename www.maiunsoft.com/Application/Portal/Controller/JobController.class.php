@@ -24,6 +24,8 @@ class JobController extends PortalController {
 		$this->manageList = M("job")->where("type=5 AND work_age=2")->order("update_time,urgency DESC")->select();
 		
 		
+		
+		
 		//城市列表
 		$this->jobCityList = C('CITYS');
 		$this->jobCity = $city;
@@ -57,5 +59,16 @@ class JobController extends PortalController {
 		$this->graduateList = M("job")->where("work_age=1")->order("update_time,urgency DESC")->select();
 			
 		$this->theme($this->_theme)->display('school');
+		//$this->ajaxReturn(array('data'=>$list,'status'=>1));
 	} 
+	
+//	function action($type,$city){
+//		setcookie($type,"type",time()+3600);
+//		setcookie($city,"city",time()+3600);
+//		
+//		
+//		
+//		$manageList = M("job")->where("work_age=2 AND type=%d AND work_city=%d",$type,$city)->order("update_time,urgency DESC")->select();
+//		$this->ajaxReturn($manageList);
+//	}
 }

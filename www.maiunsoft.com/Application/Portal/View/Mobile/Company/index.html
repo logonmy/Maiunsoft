@@ -2,7 +2,7 @@
 <!--<include file="Mobile:Public:TopGuid" />-->
 <!-- 焦点图 -->
 <div class="banner">
-	<img src="{:UploadUrl('slider')}{$aboutGroupList[0].image}" alt="">
+	<img onClick="javascript:;"  src="{:UploadUrl('slider')}{$aboutGroupList[0].image}" alt="">
 	<div class="title">{$aboutGroupList[0].name}</div>
 </div>
 <!-- 公司简介 -->
@@ -10,7 +10,7 @@
 	<h1>{$aboutGroupList[0].name}</h1>
 	<div class="floor" style="padding-top:0.9rem">
 		<h3>{$aboutGroupList[0].name}</h3>
-		<p>{$aboutContentList[$group_id].content}</p>
+		<p>{$aboutContentList[$group_id].content|htmlspecialchars_decode}</p>
 		<!--<a href="##" class="more" data-cont="kechixu-data_floor1">更多详情&gt;&gt;</a>-->
 	</div>
 </div>

@@ -12,9 +12,9 @@
 
 <div class="bg-color-3">
 	<div class="connection">
-		<span>联系电话： 400-9910-540</span>
+		<span>联系电话： 021-80392945转014</span>
+		<span>邮箱： hr@maiunsoft.com</span>
 		<span>企业邮箱： service@maiunsoft.com</span>
-		<span>企业QQ： service@maiunsoft.com</span>
 	</div>
 </div>
 
@@ -24,8 +24,9 @@
 			<foreach name="socialList" item="type">
 				<php>
 					$selected = $jobType == $key ? 'switch-active' : '';
+					$socialType = $_GET['type'];
 				</php>
-				<button class="tabswitch-btn {$selected}" type="button">{$type}</button>
+				<button onClick="getInfo({$socialType},{$key})" class="tabswitch-btn {$selected}" type="button" data-type="{$key}">{$type}</button>
 			</foreach>
 		</div>
 
@@ -42,6 +43,8 @@
 		</div>
 
 		<!--市场类-->
+		
+		
 		<foreach name="bazzarList" item="bazzar">
 			<div class="template-city" data-city="{$bazzar.work_city}">
 			<div class="template-card card-switch-1">
@@ -314,6 +317,58 @@
 		</foreach>
 
 		<!--管理类-->
+		<!--<div class="template-card card-switch-5">
+				<div class="template-card-article-2">
+					<h3 class="job-title"></h3>
+					<table>
+						<tr>
+							<td class="table-title">
+								岗位职责：
+							</td>
+							<td class="table-content">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								任职要求：
+							</td>
+							<td class="table-content">
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								工作经验：
+							</td>
+							<td class="table-content">
+								1-3年
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								公司地址：
+							</td>
+							<td class="table-content">
+								上海市沪太路5018弄梓坤科技园1号楼1509室
+							</td>
+						</tr>
+						<tr>
+							<td class="table-title">
+								薪资待遇：
+							</td>
+							<td class="table-content">
+								
+							</td>
+						</tr>
+					</table>
+					
+
+				</div>
+			</div>-->
+		
+		
+		
 		<foreach name="manageList" item="manage">
 			<div class="template-city" data-city="{$manage.work_city}">
 			<div class="template-card card-switch-5 hide">
@@ -382,3 +437,47 @@
 		</foreach>
 	</div>
 </div>
+
+<script type="text/javascript">
+	
+	function getInfo(type,city){
+		
+		$.get("{:U(\'Job/action\','','')}",{
+			"type":type,
+			"city":city
+		},
+		function(data){
+			for(var i=0;i<data.length;i++){
+				$(".job-title").html(data[i].name);
+				$(".table-content").eq(0).html(data[i].work_content);
+				$(".table-content").eq(1).html(data[i].requirements);
+				$(".table-content").eq(4).html(data[i].salary_scope);
+			}	
+		})
+	}
+	
+	
+//	function getInfo(type,city){
+//		var data  = {"type":type,"city":city};
+//		$.ajax({
+//			type:"get",
+//			url:"{:U(\'job/action\','','')}",
+//			data:data,
+//			dataType:"json",
+//			success:function(data){
+//				console.log(data);
+//				for(var i=0;i<data.info.length;i++){
+//					$(".job-title").html(data.info[i].name);
+//					$(".table-content").eq(0).html(data.info[i].work_content);
+//					$(".table-content").eq(1).html(data.info[i].requirements);
+//					$(".table-content").eq(4).html(data.info[i].salary_scope);
+//				}
+//				
+//			},
+//			error:function(){
+//				console.log("出错了");
+//			}
+//			
+//		})
+//	}
+</script>

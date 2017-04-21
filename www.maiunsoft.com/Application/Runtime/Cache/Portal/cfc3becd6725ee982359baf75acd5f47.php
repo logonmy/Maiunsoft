@@ -9,6 +9,8 @@
                                      maximum-scale=1.0,
                                      user-scalable=no">
 			<title>脉云软件 | <?php echo ($_PageHeader["title"]); ?></title>
+			<meta name="keyword" content="<?php echo ($_PageHeader["keywords"]); ?>">
+    		<meta name="description" content="<?php echo ($_PageHeader["description"]); ?>">
 			<link rel="shortcut icon" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/favicon.png" >
 			<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/css/swiper.min.css">
 			<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Pc/Static/css/demo.css">
@@ -40,7 +42,7 @@
 												<img src="<?php echo UploadUrl('article'); echo ($article["image"]); ?>" alt="">
 											</div>
 											<div class="menu-article">
-												<span><?php echo ($article["bref"]); ?></span>
+												<span><?php echo (subtext($article["bref"],140)); ?></span>
 												<a href="<?php echo U('article/detail?id='.$article['id']);?>">更多</a>
 											</div>
 										</div><?php endforeach; endif; ?>
@@ -75,7 +77,7 @@
 											<?php if(is_array($group["articleList"])): foreach($group["articleList"] as $key=>$article): ?><div class="hide">
 													<b><?php echo ($article["title"]); ?></b><br />
 													<p><?php echo ($article["bref"]); ?></p>
-													<!-- <a href="./service-consult">更多</a> -->
+													 <a href="<?php echo U('article/detail?id='.$key);?>">更多</a> 
 												</div><?php endforeach; endif; ?>
 										</div><?php endforeach; endif; ?>
 								</div>
@@ -104,7 +106,7 @@
 												<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/mht-1.jpg" alt="">
 											</div>
 											<div class="menu-article">
-												<span><?php echo ($group["lastArticle"]["bref"]); ?></span>
+												<span><?php echo (subtext($group["lastArticle"]["bref"],150)); ?></span>
 												<a href="<?php echo U('article/detail?id='.$group['lastArticle']['id']);?>">更多</a>
 											</div>
 										</div><?php endforeach; endif; ?>
@@ -183,10 +185,11 @@
 									<div class="hide">
 										<span>
 											<b>联系方式</b><br /><br /><br />
-                                        	<p>联系电话： 400-9910-540</p>
-											<p>企业邮箱： service@maiunsoft.com</p>
-											<p>企业QQ： service@maiunsoft.com</p>
-											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p> 
+                                        	<p>客服中心： 400-9910-560</p>
+											<p>人事中心： 021-80392945转014</p>
+											<p>商务合作： 021-80392945转00</p>
+											<p>企业地址：上海市沪太路5018弄梓坤科技园1号楼1509室</p>
+											<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;兰州市天水中路8号2号楼11层</p>
                                        </span>
 									</div>
 								</div>
@@ -229,18 +232,18 @@
 		<table>
 			<tr>
 				<td class="table-title">
-					电话：
+					客服中心：
 				</td>
 				<td class="table-content">
-					 400-9910-540
+					 400-9910-560 
 				</td>
 			</tr>
 			<tr>
 				<td class="table-title">
-					联系人：
+					商务合作：
 				</td>
 				<td class="table-content">
-					王小姐
+					021-80392945转001
 				</td>
 			</tr>
 			<tr>
@@ -262,6 +265,50 @@
 		</table>
 	</div>
 </div>
+
+<div class="template-card card-switch-1">
+	<div class="template-card-img">
+		<span></span>
+		<img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/shenzhen.png" alt="">
+	</div>
+	<div class="template-card-article-3">
+		<h3 class="job-title">兰州分部</h3>
+		<table>
+			<tr>
+				<td class="table-title">
+					客服中心：
+				</td>
+				<td class="table-content">
+					 400-9910-560 
+				</td>
+			</tr>
+			<tr>
+				<td class="table-title">
+					商务合作：
+				</td>
+				<td class="table-content">
+					021-80392945转001
+				</td>
+			</tr>
+			<tr>
+				<td class="table-title">
+					企业邮箱：
+				</td>
+				<td class="table-content">
+					service@maiunsoft.com
+				</td>
+			</tr>
+			<tr>
+				<td class="table-title">
+					企业地址：
+				</td>
+				<td class="table-content">
+					兰州市天水中路8号2号楼11层
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
 </div>
 </div>
 
@@ -270,10 +317,12 @@
 				<div class="link-part link-about">
 					<b>关于</b>
 					<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$group): ?><p onClick="location='<?php echo U('Company/index/?id='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
+					<p onClick="location='<?php echo U('Company/contact');?>'">联系方式</p>
 				</div>
 				<div class="link-part link-cooperation">
 					<b>服务</b>
 					<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><p onClick="location='<?php echo U('article/index?gid='.$group['id']);?>'"><?php echo ($group["name"]); ?></p><?php endforeach; endif; ?>
+						
 				</div>
 				<div class="link-part link-news">
 					<b>脉点</b>
@@ -281,11 +330,11 @@
 				</div>
 				<div class="link-part link-mobile">
 					<b>移动脉云</b>
-					<p><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/qcode.png" alt="maiyun mobile QRCode"></p>
+					<p><img src="/www.maiunsoft.com/Application/Portal/View/Pc/Static/imgs/qcode.jpg" alt="maiyun mobile QRCode" width="91" height="91"></p>
 				</div>
 				<div class="link-part link-global">
 					<!-- <b>聚焦数字世界 服务现代生活</b> -->
-					<b>联系方式</b>
+					<b>联系我们</b>
 					<!-- <p><img src="./imgs/world-map.png" alt="world map"></p> -->
 					<p>联系电话： 400-9910-540</p>
 					<p>企业邮箱： service@maiunsoft.com</p>

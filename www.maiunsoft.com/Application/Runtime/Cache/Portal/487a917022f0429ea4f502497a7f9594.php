@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/css/reset.css">
 	<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/css/swiper.min.css">
 	<link rel="stylesheet" href="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/css/common.css">
-	<link rel="stylesheet" type="text/css" href="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/css/main.css"/> 
+	<link rel="stylesheet" type="text/css" href="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/css/main.css"/>
 	<script src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/js/zepto.min.js"></script>
 	<script src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/js/iscroll.js"></script>
 	<script src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/js/swiper.min.js"></script>
@@ -24,195 +24,63 @@
 </head>
 
 <body>
-<?php echo $a; ?>
 <!--导航部分-->
-<!--<header class="clear">
-	<a href="<?php echo U('Index/index');?>" class="logo">Maiunsoft</a>
-	<nav class="clear">
-		<a href="##" class="user"></a>
-		<a href="##" class="menu"></a>
-			<div class="bg"></div>
-			<div class="menu_list" id="wrapper">
-				<div id="scroller">
-					<ul class="item">
-						<li>
-							<a href="<?php echo U('Index/index');?>" class="shouye">首页</a>
-							<em></em>
-						</li>	
-					</ul>
-					<ul class="item">
-						<li>
-							<span>脉点<i></i></span>
-							<a href="<?php echo U('Article/index');?>"><?php echo ($a); ?></a>
-							<a href="<?php echo U('Article/index');?>">合作动态</a>
-							<a href="<?php echo U('Article/list');?>">行业风向</a>
-							<a href="<?php echo U('Article/observe');?>">业务洞察</a>
-						</li>
-					</ul>
-					<ul class="item">
-						<li>
-							<span>服务<i></i></span>
-							<a href="<?php echo U('Service/consult');?>" class="has">咨询</a>
-							<div class="three">
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-							</div>
-
-							<a href="<?php echo U('Service/dev');?>" class="has">开发</a>
-							<div class="three">
-								<a href="ruanjiankaifa">软件开发</a>
-								<a href="ruanjiankaifa">软件开发</a>
-								<a href="ruanjiankaifa">软件开发</a>
-							</div>
-
-							<a href="<?php echo U('Service/maintenance');?>" class="has">运维</a>
-							<div class="three">
-								<a href="zhuomianyunwei">桌面运维</a>
-								<a href="zhuomianyunwei">桌面运维</a>
-								<a href="zhuomianyunwei">桌面运维</a>
-							</div>
-
-							<a href="<?php echo U('Service/train');?>" class="has">培训</a>
-							<div class="three">
-								<a href="peixun">IT培训</a>
-								<a href="peixun">IT培训</a>
-								<a href="peixun">IT培训</a>
-							</div>
-						</li>
-					</ul>
-					<ul class="item">
-						<li class="kai">
-							<span>客户<i></i></span>
-							<a href="<?php echo U('Customer/finance');?>">金融</a>
-							<a href="<?php echo U('Customer/edu');?>">教育</a>
-							<a href="<?php echo U('Customer/consult');?>">咨询</a>
-							<a href="<?php echo U('Customer/engineering');?>">工程</a>
-						</li>
-					</ul>
-					<ul class="item">
-						<li>
-						<span>招聘<i></i></span>
-							<a href="<?php echo U('Job/school',array('type'=>0),'');?>">校园招聘</a>
-							<a href="<?php echo U('Job/social',array('type'=>1),'');?>">社会招聘</a>
-						</li>
-					</ul>
-					<ul class="item">
-						<li>
-							<span>关于<i></i></span>
-							<a href="<?php echo U('Company/about');?>">公司简介</a>
-							<a href="<?php echo U('Company/service');?>">服务网络</a>
-							<a href="<?php echo U('Company/cooperation');?>">合作伙伴</a>
-							<a href="<?php echo U('Company/culture');?>">企业文化</a>
-							<a href="<?php echo U('Company/sustainable');?>">可持续发展</a>
-						</li>
-					</ul>				
-				</div>
-			</div>
-	</nav>
-</header>	-->
-
 <header class="clear">
 	<a href="<?php echo U('Index/index');?>" class="logo">Maiunsoft</a>
 	<nav class="clear">
-		<a href="##" class="user"></a>
+		<!--<a href="##" class="user"></a>-->
+		<!--用户图标隐藏-->
 		<a href="##" class="menu"></a>
-			<div class="bg"></div>
-			<div class="menu_list" id="wrapper">
-				<div id="scroller">
-					<ul class="item">
-						<li>
-							<a href="<?php echo U('Index/index');?>" class="shouye">首页</a>
-							<em></em>
-						</li>	
-					</ul>
-					<ul class="item">
-						<li>
-							<span>脉点<i></i></span>
-							<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($md["name"]); ?></a><?php endforeach; endif; ?>
-							<!--<a href="<?php echo U('Article/index');?>"><?php echo ($a); ?></a>
-							<a href="<?php echo U('Article/index');?>">合作动态</a>
-							<a href="<?php echo U('Article/list');?>">行业风向</a>
-							<a href="<?php echo U('Article/observe');?>">业务洞察</a>-->
-						</li>
-					</ul>
-					<ul class="item">
-						<li>
-							<span>服务<i></i></span>
-							
-							<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($group["name"]); ?></a>
-								<div class="three">
-									<?php if(is_array($group["articleList"])): foreach($group["articleList"] as $key=>$article): ?><a href="<?php echo U('article/detail?id='.$key);?>"><?php echo ($article["title"]); ?></a><?php endforeach; endif; ?>
-								</div><?php endforeach; endif; ?>
-							
-							<!--<a href="<?php echo U('Service/consult');?>" class="has">咨询</a>
-							<div class="three">
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-								<a href="zhuanyezixun">专业咨询</a>
-							</div>
+		<div class="bg"></div>
+		<div class="menu_list" id="wrapper">
+			<div id="scroller">
+				<ul class="item">
+					<li>
+						<a href="<?php echo U('Index/index');?>" class="shouye">首页</a>
+						<em></em>
+					</li>
+				</ul>
+				<ul class="item">
+					<li>
+						<span>脉点<i></i></span>
+						<?php if(is_array($mdGroupList)): foreach($mdGroupList as $key=>$md): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($md["name"]); ?></a><?php endforeach; endif; ?>
+					</li>
+				</ul>
+				<ul class="item">
+					<li>
+						<span>服务<i></i></span>
 
-							<a href="<?php echo U('Service/dev');?>" class="has">开发</a>
+						<?php if(is_array($serviceGroupList)): foreach($serviceGroupList as $key=>$group): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($group["name"]); ?></a>
 							<div class="three">
-								<a href="ruanjiankaifa">软件开发</a>
-								<a href="ruanjiankaifa">软件开发</a>
-								<a href="ruanjiankaifa">软件开发</a>
-							</div>
+								<?php if(is_array($group["articleList"])): foreach($group["articleList"] as $key=>$article): ?><a href="<?php echo U('article/detail?id='.$key);?>"><?php echo ($article["title"]); ?></a><?php endforeach; endif; ?>
+							</div><?php endforeach; endif; ?>
 
-							<a href="<?php echo U('Service/maintenance');?>" class="has">运维</a>
-							<div class="three">
-								<a href="zhuomianyunwei">桌面运维</a>
-								<a href="zhuomianyunwei">桌面运维</a>
-								<a href="zhuomianyunwei">桌面运维</a>
-							</div>
-
-							<a href="<?php echo U('Service/train');?>" class="has">培训</a>
-							<div class="three">
-								<a href="peixun">IT培训</a>
-								<a href="peixun">IT培训</a>
-								<a href="peixun">IT培训</a>
-							</div>-->
-						</li>
-					</ul>
-					<ul class="item">
-						<li class="kai">
-							<span>案例<i></i></span>
-							<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($group["name"]); ?></a><?php endforeach; endif; ?>
-							<!--<a href="<?php echo U('Customer/finance');?>">金融</a>
-							<a href="<?php echo U('Customer/edu');?>">教育</a>
-							<a href="<?php echo U('Customer/consult');?>">咨询</a>
-							<a href="<?php echo U('Customer/engineering');?>">工程</a>-->
-						</li>
-					</ul>
-					<ul class="item">
-						<li>
+					</li>
+				</ul>
+				<ul class="item">
+					<li class="kai">
+						<span>案例<i></i></span>
+						<?php if(is_array($caseGroupList)): foreach($caseGroupList as $key=>$group): ?><a href="<?php echo U('article/index?gid='.$key);?>"><?php echo ($group["name"]); ?></a><?php endforeach; endif; ?>
+					</li>
+				</ul>
+				<ul class="item">
+					<li>
 						<span>招聘<i></i></span>
-							<a href="<?php echo U('Job/school',array('type'=>0),'');?>">校园招聘</a>
-							<a href="<?php echo U('Job/social',array('type'=>1),'');?>">社会招聘</a>
-						</li>
-					</ul>
-					<ul class="item">
-						<li>
-							<span>关于<i></i></span>
-							<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$ab): ?><a href="<?php echo U('Company/index',array('id'=>$ab['id']));?>"><?php echo ($ab["name"]); ?></a><?php endforeach; endif; ?>
-							<a href="<?php echo U('Company/contact');?>">联系方式</a>
-							<!--<a href="<?php echo U('Company/about');?>">公司简介</a>
-							<a href="<?php echo U('Company/service');?>">服务网络</a>
-							<a href="<?php echo U('Company/cooperation');?>">合作伙伴</a>
-							<a href="<?php echo U('Company/culture');?>">企业文化</a>
-							<a href="<?php echo U('Company/sustainable');?>">可持续发展</a>-->
-						</li>
-					</ul>				
-				</div>
+						<a href="<?php echo U('Job/school',array('type'=>0),'');?>">校园招聘</a>
+						<a href="<?php echo U('Job/social',array('type'=>1),'');?>">社会招聘</a>
+					</li>
+				</ul>
+				<ul class="item">
+					<li>
+						<span>关于<i></i></span>
+						<?php if(is_array($_aboutGroupList)): foreach($_aboutGroupList as $key=>$ab): ?><a href="<?php echo U('Company/index',array('id'=>$ab['id']));?>"><?php echo ($ab["name"]); ?></a><?php endforeach; endif; ?>
+						<a href="<?php echo U('Company/contact');?>">联系方式</a>
+					</li>
+				</ul>
 			</div>
+		</div>
 	</nav>
-</header>	
+</header>
 <!--模板渲染-->
 <div id="main">
 	<script type="text/javascript">
@@ -220,7 +88,7 @@
 </script>
 <!-- 焦点图 -->
 <div class="banner">
-	<img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/md01.png" alt="">
+	<img onClick="javascript:;" src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/placehold-img.png" data-original="<?php echo UploadUrl('slider'); echo ($articleTitle[0]["image"]); ?>" alt="">
 	<div class="title"><?php echo (subtext($articleTitle[0]["name"],4)); ?></div>
 </div>
 <!-- 合作动态 -->
@@ -237,17 +105,13 @@
 
 	<!-- 脉云介绍 -->
 <div class="info">
-	<div class="microblog">
-		<h2>脉云微博</h2>
-		<div class="QRcode">
-			<img onClick="javascript:;" src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/QRcode.jpg" alt="QRcode">
-		</div>
-	</div>
+
 	<div class="about">
 		<h4>联系方式</h4>
-		<p>联系方式：400-9910-540</p>
+		<p>联系QQ：400-9910-560</p>
+		<p>联系电话：021-80392945转001</p>
 		<p>企业邮箱：service@maiunsoft.com</p>
-		<p>企业QQ：service@maiunsoft.com</p>
+		<p>企业公众号：service@maiunsoft.com</p>
 	</div>
 </div>
 </div>
@@ -262,6 +126,27 @@
 		<a href="##"><img src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/img05.png" alt="share"></a>
 	</div>
 </footer>
-</body>
 
+
+<!--<script src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/js/jquery.lazyload.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$("img").lazyload({
+			placeholder:"/www.maiunsoft.com/Application/Portal/View/Mobile/Static/img/loading.gif",
+			effect:"fadeIn",
+			effectspeed:500
+		})
+	})
+</script>-->
+
+
+<script src="/www.maiunsoft.com/Application/Portal/View/Mobile/Static/js/echo.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+	echo.init()
+</script>
+
+</body>
 </html>

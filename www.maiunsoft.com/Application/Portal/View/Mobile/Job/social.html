@@ -5,23 +5,10 @@
 <!--  主体-->
 
 <!-- 焦点图 -->
-<!--<div class="swiper-container banner">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<img src="__MB_STATIC__/img/banner.jpg" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="__MB_STATIC__/img/shezhao01.png" alt="">
-			</div>
-			<div class="swiper-slide">
-				<img src="__MB_STATIC__/img/md01.png" alt="">
-			</div>
-		</div>
-		<div class="swiper-pagination"></div>
-	</div>-->
+
 
 <div class="banner">
-	<img src="__MB_STATIC__/img/banner03.png" alt="">
+	<img onClick="javascript:;"  src="__MB_STATIC__/img/placehold-img.png" alt="">
 	<div class="title">社会招聘</div>
 </div>
 
@@ -53,20 +40,20 @@
 		</div>-->
 	<div class="information">
 		<div class="cont_wrapper">
-			<div class="swiper-container cont">
-				<div class="info_menu swiper-wrapper">
-
+			
+			<div class="swiper-container job-social">
+				<div class="job-type swiper-wrapper">
 					<foreach name="socialList" item="type">
 						<php>
 							$selected = $jobType == $key ? 'current' : '';
 						</php>
-						<a href="javascript:;" class="swiper-slide job {$selected}">{$type}</a>
+						<div class="swiper-slide socialType {$select}">{$type}</div>
 					</foreach>
-
 				</div>
 			</div>
-			<span class="left"></span>
-			<span class="right"></span>
+			
+			
+			
 		</div>
 
 		<div style="height:2rem"></div>
@@ -81,11 +68,11 @@
 							<span>{$bazzar.name}</span>
 						<switch name='bazzar.urgency'>
 							<case value="2">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush">
 							</case>
 							<case value="3">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
-							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/jinji.png" alt="rush">
 							</case>
 							<default />
 						</switch>
@@ -118,7 +105,7 @@
 									<td class="right">{$bazzar.salary_scope}</td>
 								</tr>
 							</table>
-							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+							<a href="mailto:hr@maiunsoft.com" class="more" data-cont="shehuizhaopin-data_floor1">投递简历&gt;&gt;</a>
 						</div>
 					</div>
 				</foreach>
@@ -132,11 +119,11 @@
 						<span>{$development.name}</span>
 						<switch name='development.urgency'>
 							<case value="2">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush">
 							</case>
 							<case value="3">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
-							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/jinji.png" alt="rush">
 							</case>
 							<default />
 						</switch>
@@ -169,7 +156,7 @@
 									<td class="right">{$development.salary_scope}</td>
 								</tr>
 							</table>
-							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+							<a href='mailto:hr@maiunsoft.com' class="more" data-cont="shehuizhaopin-data_floor1">投递简历&gt;&gt;</a>
 						</div>
 					</div>
 				</foreach>
@@ -183,11 +170,11 @@
 						<span>{$operation.name}</span>
 						<switch name='operation.urgency'>
 							<case value="2">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush">
 							</case>
 							<case value="3">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
-							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/jinji.png" alt="rush">
 							</case>
 							<default />
 						</switch>
@@ -220,7 +207,7 @@
 									<td class="right">{$operation.salary_scope}</td>
 								</tr>
 							</table>
-							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+							<a href='mailto:hr@maiunsoft.com' class="more" data-cont="shehuizhaopin-data_floor1">投递简历&gt;&gt;</a>
 						</div>
 					</div>
 				</foreach>
@@ -234,11 +221,11 @@
 						<span>{$function.name}</span>
 						<switch name='function.urgency'>
 							<case value="2">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush">
 							</case>
 							<case value="3">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
-							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/jinji.png" alt="rush">
 							</case>
 							<default />
 						</switch>
@@ -271,7 +258,7 @@
 									<td class="right">{$function.salary_scope}</td>
 								</tr>
 							</table>
-							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+							<a href='mailto:hr@maiunsoft.com' class="more" data-cont="shehuizhaopin-data_floor1">投递简历&gt;&gt;</a>
 						</div>
 					</div>
 				</foreach>
@@ -285,11 +272,11 @@
 						<span>{$manage.name}</span>
 						<switch name='manage.urgency'>
 							<case value="2">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush">
 							</case>
 							<case value="3">
-							<img src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
-							<img src="__MB_STATIC__/img/jinji.png" alt="rush">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/ji.png" alt="rush" style="margin-right:4px;">
+							<img onClick="javascript:;"  src="__MB_STATIC__/img/jinji.png" alt="rush">
 							</case>
 							<default />
 						</switch>
@@ -322,7 +309,7 @@
 									<td class="right">{$manage.salary_scope}</td>
 								</tr>
 							</table>
-							<a href="##" class="more" data-cont="shehuizhaopin-data_floor1">更多详情&gt;&gt;</a>
+							<a href='mailto:hr@maiunsoft.com' class="more" data-cont="shehuizhaopin-data_floor1">投递简历&gt;&gt;</a>
 						</div>
 					</div>
 				</foreach>
